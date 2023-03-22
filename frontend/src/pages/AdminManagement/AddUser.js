@@ -11,7 +11,7 @@ export default function AddUser() {
     <Container style={{marginTop : '1%',display : 'block',width : '50%',justifyContent : 'center'}}>
 
     <Form>
-    <h1 style={{fontWeight:'bold'}}><center>PROVIDE ACCESS</center></h1>
+    <h1 style={{fontWeight:'bold'}}><center>ADD USER</center></h1>
         <br></br>
         <hr></hr>
         <Form.Group className="mb-3" >
