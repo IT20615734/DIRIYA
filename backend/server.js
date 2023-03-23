@@ -1,9 +1,11 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
+
+const express = require('express');
+const mongoose =  require ('mongoose');
+const cors = require('cors');
 const app = express();
-const dotenv = require("dotenv");
-const bodyParser = require("body-parser"); //js middleware
+const dotenv = require('dotenv');
+const bodyParser = require('body-parser'); //js middleware
+
 require("dotenv").config();
 
 //////dinuka add/////
@@ -15,7 +17,7 @@ const port = process.env.PORT || 8070;
 
 const url = process.env.MONGODB_URL;
 
-// app.use(cors());
+app.use(cors());
 app.use(bodyParser.json());
 
 ////////////////dinuka add////////////
@@ -42,9 +44,9 @@ connection.once("open", () => {
   console.log("MongoDb connected!");
 });
 
-// // http://localhost:8080/User
-// const User = require('./routes/Users.js');
-// app.use("/Users",User);
+//http://localhost:8080/User/AddUser
+const Users = require('./routes/Users.js');
+app.use("/User",Users);
 
 app.listen(port, () => {
   console.log("PORT connected on " + port);
