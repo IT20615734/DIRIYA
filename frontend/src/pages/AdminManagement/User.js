@@ -14,7 +14,7 @@ export default function () {
       <h2>USERS</h2>
       <br></br>
       <Link to = "/Admin/AddUser"><Button variant="primary">+ Add New User</Button></Link>
-      
+      <br></br>
       <Table striped bordered hover style={{width : '100%',justifyContent : 'center',marginTop : 20}}>
       <thead>
         <tr>
@@ -27,30 +27,28 @@ export default function () {
           <th> User Name</th>
           <th> Manage Member </th>  
         </tr>
-        <tr style={{textAlign : 'center',fontWeight : '400'}}>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td><center><Button variant="outline-primary">Edit</Button>        <Button variant="outline-danger">Delete</Button></center></td>
-        </tr>
-        <tr style={{textAlign : 'center',fontWeight : '400'}}>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td><center><Button variant="outline-primary">Edit</Button>        <Button variant="outline-danger">Delete</Button></center></td>
-        </tr>
-
       </thead>
       <tbody>
-
+        <tr style={{textAlign : 'center',fontWeight : '400'}}>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td><center><Button variant="outline-primary">Edit</Button>        <Button variant="outline-danger">Delete</Button></center></td>
+        </tr>
+        <tr style={{textAlign : 'center',fontWeight : '400'}}>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td><center><Button variant="outline-primary">Edit</Button>        <Button variant="outline-danger">Delete</Button></center></td>
+        </tr>
       </tbody>
       </Table>
     </Container>

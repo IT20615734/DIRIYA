@@ -1,15 +1,16 @@
 const mongoose = require('mongoose');
 
-var userschema = new mongoose.Schema({
+var User = new mongoose.Schema({
     role:{
         type:String,
         required:true,
+        index:true,
     },
     firstName:{
         type:String,
         required:true,
     },
-    lasttName:{
+    lastName:{
         type:String,
         required:true,
     },
@@ -29,7 +30,11 @@ var userschema = new mongoose.Schema({
         type:String,
         required:true,
     },
+    Password:{
+        type:String,
+        required:true,
+    }    
     
-})
-const userCollection = mongoose.model('User', userSchema);
-module.exports = userCollection;
+});
+const Users = mongoose.model("User", User);
+module.exports = Users;
