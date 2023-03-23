@@ -1,4 +1,3 @@
-
 const express = require('express');
 const mongoose =  require ('mongoose');
 const cors = require('cors');
@@ -13,7 +12,7 @@ const cookieParser = require("cookie-parser");
 //////end///////////
 
 //MONGODB Connect
-const port = process.env.PORT || 8070;
+const port = process.env.PORT || 8080;
 
 const url = process.env.MONGODB_URL;
 
