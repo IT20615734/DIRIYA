@@ -1,34 +1,51 @@
-const express = require('express');
-const mongoose =  require ('mongoose');
-// const cors = require('cors');
-const dotenv = require('dotenv');
-const bodyParser = require('body-parser'); //js middleware
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const app = express();
+const dotenv = require("dotenv");
+const bodyParser = require("body-parser"); //js middleware
 require("dotenv").config();
 
-const app = express();
+//////dinuka add/////
+const cookieParser = require("cookie-parser");
+//////end///////////
 
-const port = process.env.PORT || 8080;
+//MONGODB Connect
+const port = process.env.PORT || 8070;
+
+const url = process.env.MONGODB_URL;
 
 // app.use(cors());
 app.use(bodyParser.json());
 
-const url = process.env.MONGODB_URL;
+////////////////dinuka add////////////
+//connect routes>foodmanagement.js file
+const foodRoutes = require("./routes/food-router");
 
-mongoose.connect(url,{
-    useNewUrlParser :true,
-    useUnifiedTopology :true
+//Middelware
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(cors());
+
+//localhost:8070/diriya
+app.use("/diriya", foodRoutes);
+///////////end ///////////////////
+
+mongoose.connect(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 const connection = mongoose.connection;
 
-connection.once("open",() =>{
-    console.log("MongoDb connected!");
+connection.once("open", () => {
+  console.log("MongoDb connected!");
 });
 
 // // http://localhost:8080/User
 // const User = require('./routes/Users.js');
 // app.use("/Users",User);
 
-app.listen(port,()=>{
-    console.log("PORT connected on "+port);
-})
+app.listen(port, () => {
+  console.log("PORT connected on " + port);
+});
