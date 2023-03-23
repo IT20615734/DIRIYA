@@ -86,8 +86,10 @@ function AddUser() {
     <Admin/>
     <Container style={{marginTop : '1%',display : 'block',width : '50%',justifyContent : 'center'}}>
 
+
     <Form onSubmit={Validate}>
     <h1 style={{fontWeight:'bold'}}><center>PROVIDE ACCESS</center></h1>
+
         <br></br>
         <hr></hr>
         <Form.Group className="mb-3" >

@@ -9,6 +9,10 @@ import AddUser from './pages/AdminManagement/AddUser';
 import Jobs from './pages/AdminManagement/Jobs';
 import AddJobs from './pages/AdminManagement/AddJobs';
 
+import Beneficiaries from './pages/BeneficiaryManagement/Beneficiaries';
+import ManageBeneficiary from './pages/BeneficiaryManagement/ManageBeneficiary';
+import AddBeneficiary from './pages/BeneficiaryManagement/AddBeneficiaries';
+
 function App() {
   return (
     <>
@@ -26,6 +30,10 @@ function App() {
           <Route exact path="/Admin/Jobs" element={<Jobs/>}/>
           <Route exact path="/Admin/AddJobs" element={<AddJobs/>}/>
 
+          {/* Beneficiary */}
+          <Route exact path="/Beneficiaries" element={<Beneficiaries />} />
+          <Route exact path="/Beneficiaries/ManageBeneficiary" element={<ManageBeneficiary/>}/>
+          <Route exact path="/Beneficiaries/AddBeneficiaries" element={<AddBeneficiary/>}/>
         </Routes>
     </BrowserRouter>
     </>
