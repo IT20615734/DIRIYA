@@ -47,6 +47,10 @@ connection.once("open", () => {
 const Users = require('./routes/Users.js');
 app.use("/User",Users);
 
+//http://localhost:8080/Beneficiaries/AddBeneficiaries
+const Beneficiaries = require('./routes/Beneficiaries.js');
+app.use("/Beneficiaries",Beneficiaries);
+
 app.listen(port, () => {
   console.log("PORT connected on " + port);
 });
