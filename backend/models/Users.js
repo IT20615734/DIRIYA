@@ -6,11 +6,11 @@ var User = new mongoose.Schema({
         required:true,
         index:true,
     },
-    firstName:{
+    fullName:{
         type:String,
         required:true,
     },
-    lastName:{
+    nic:{
         type:String,
         required:true,
     },
