@@ -13,7 +13,8 @@ export default function Beneficiaries() {
             NavLinkScroll
           >
             <Nav.Link href="/Beneficiaries/ManageBeneficiary">Manage Beneficiaries</Nav.Link>
-            <Nav.Link href="/Beneficiaries/JobApplications">Job Applications</Nav.Link>
+            <Nav.Link href="/Beneficiaries/JobOpportunities">Job Opportunities</Nav.Link>
+            <Nav.Link href="/Beneficiaries/ManageApplication">Manage Application</Nav.Link>
           </Nav>
         </Container>
     </Navbar>
