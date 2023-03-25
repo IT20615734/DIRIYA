@@ -26,8 +26,10 @@ export default function ManageBeneficiary() {
           <th> Mobile Number</th>
           <th> Number of Family Members</th>
           <th> Action</th>
-         
         </tr>
+      </thead>
+         
+      <tbody>
         <tr style={{textAlign : 'center',fontWeight : '400'}}>
             <td>Ex</td>
             <td>Ex</td>
@@ -47,8 +49,6 @@ export default function ManageBeneficiary() {
             <td><center><Button variant="outline-primary">Edit</Button>        <Button variant="outline-danger">Delete</Button></center></td>
         </tr>
 
-      </thead>
-      <tbody>
 
       </tbody>
       </Table>
