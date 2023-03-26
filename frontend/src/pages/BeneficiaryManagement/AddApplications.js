@@ -22,10 +22,6 @@ function AddApplications() {
     //       onChange(name, date);
     //     };
 
-
-
-
-
   return (
     <>
     <Applications/>
