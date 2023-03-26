@@ -14,11 +14,11 @@ router.route("/").get(async (req,res) =>{
  router.route("/AddUser").post(async(req,res) => {
     // const{role,firstName,lastName,address,email,mobileNumber,userName,Password} = req.body;
     
-try{const{role,firstName,lastName,address,email,mobileNumber,userName,Password} = req.body;
+try{const{role,fullName,nic,address,email,mobileNumber,userName,Password} = req.body;
 const newUser = new User({
     role,
-    firstName,
-    lastName,
+    fullName,
+    nic,
     address,
     email,
     mobileNumber,

@@ -3,15 +3,15 @@ import Container from 'react-bootstrap/esm/Container'
 import Admin from './Admin'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/esm/Button';
-//import { Navigate, useNavigate } from 'react-router-dom';
+// import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
 function AddUser() {
 
     const[role, setRole] = useState();
-    const[firstName, setFirstName] =useState();
-    const[lastName, setlastName] =useState();
+    const[fullName, setFulltName] =useState();
+    const[nic, setNic] =useState();
     const[address, setAddress] =useState();
     const[email, setEmail] =useState();
     const[mobileNumber, setMobileNumber] =useState();
@@ -49,8 +49,8 @@ function AddUser() {
 
         const formData = new FormData();
             formData.append("role",role);
-            formData.append("firstName",firstName)
-            formData.append("lastName",lastName)
+            formData.append("fullName",fullName)
+            formData.append("nic",nic)
             formData.append("address",address);
             formData.append("email",email);
             formData.append("mobileNumber",mobileNumber);
@@ -60,8 +60,8 @@ function AddUser() {
     const  data = 
         {
             "role":role,
-            "firstName":firstName,
-            "lastName":lastName,
+            "fullName":fullName,
+            "nic":nic,
             "address":address,
             "email":email,
             "mobileNumber":mobileNumber,
@@ -103,13 +103,13 @@ function AddUser() {
               </Form.Select>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>First name</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setFirstName(e.target.value)}} required/>
+            <Form.Label>Full Name</Form.Label>
+            <Form.Control type="text" onChange={(e)=>{setFulltName(e.target.value)}} required/>
         </Form.Group>
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Last name</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setlastName(e.target.value)}} required/>
+            <Form.Label>NIC</Form.Label>
+            <Form.Control type="text" onChange={(e)=>{setNic(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
