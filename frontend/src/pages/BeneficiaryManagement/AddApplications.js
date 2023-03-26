@@ -1,10 +1,31 @@
-import React from 'react'
+import { React ,useState } from 'react';
 import Button from 'react-bootstrap/esm/Button';
 import Container from 'react-bootstrap/esm/Container'
 import Form from 'react-bootstrap/Form';
 import Applications from './Beneficiaries'
 
+
+// import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
+
+
 function AddApplications() {
+
+    // const DatePickerComponent = (props) => {
+    //     const { label, name, value, onChange } = props;
+    //     const [selectedDate, setSelectedDate] = useState(
+    //       value ? new Date(value) : null
+    //     );
+      
+    //     const handleDateChange = (date) => {
+    //       setSelectedDate(date);
+    //       onChange(name, date);
+    //     };
+
+
+
+
+
   return (
     <>
     <Applications/>
@@ -73,7 +94,8 @@ function AddApplications() {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Date of Birth</Form.Label>
-            <Form.Control type="text" /*onChange={(e)=>{setMobileNumber(e.target.value)}} maxLength={10} minLength ={10}*/ required/>
+            {/* <DatePicker selected={selectedDate} onChange={handleDateChange} /> */}
+            {/* <Form.Control type="text" onChange={(e)=>{setMobileNumber(e.target.value)}} maxLength={10} minLength ={10} required/> */}
         </Form.Group>
 
         <Button variant="primary" type="submit" style={{width:'20%',marginBottom:20}}>
@@ -87,3 +109,29 @@ function AddApplications() {
 }
 
 export default AddApplications;
+
+// import React, { useState } from "react";
+// import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
+
+// const DatePickerComponent = (props) => {
+//   const { label, name, value, onChange } = props;
+//   const [selectedDate, setSelectedDate] = useState(
+//     value ? new Date(value) : null
+//   );
+
+//   const handleDateChange = (date) => {
+//     setSelectedDate(date);
+//     onChange(name, date);
+//   };
+
+//   return (
+//     <div>
+//       <label>{label}</label>
+//       <br />
+//       <DatePicker selected={selectedDate} onChange={handleDateChange} />
+//     </div>
+//   );
+// };
+
+// export default DatePickerComponent;
