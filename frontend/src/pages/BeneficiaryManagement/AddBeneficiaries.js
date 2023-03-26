@@ -106,4 +106,5 @@ function AddBeneficiaries() {
   )
 }
 
+
 export default AddBeneficiaries;
