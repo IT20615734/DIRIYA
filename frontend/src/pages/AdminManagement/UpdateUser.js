@@ -1,24 +1,74 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/esm/Container'
 import Admin from './Admin'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form';
+import axios from 'axios';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 function UpdateUser() {
+
+    // const[role, setRole] = useState();
+    // const[fullName, setFulltName] =useState();
+    // const[nic, setNic] =useState();
+    // const[address, setAddress] =useState();
+    // const[email, setEmail] =useState();
+    // const[mobileNumber, setMobileNumber] =useState();
+    // const[userName, setUserName] =useState();
+    // const[password, setPassword] =useState();
+
+   
+
+    // const Validate =(e)=>{
+    //     e.preventDefault();
+
+    //     const formData = new FormData();
+    //         formData.append("role",role);
+    //         formData.append("fullName",fullName)
+    //         formData.append("nic",nic)
+    //         formData.append("address",address);
+    //         formData.append("email",email);
+    //         formData.append("mobileNumber",mobileNumber);
+    //         formData.append("userName",userName);
+    //         formData.append("password",password);
+        
+    // const  data = 
+    //     {
+    //         "role":role,
+    //         "fullName":fullName,
+    //         "nic":nic,
+    //         "address":address,
+    //         "email":email,
+    //         "mobileNumber":mobileNumber,
+    //         "userName":userName,
+    //         "Password":password
+    //     }
+
+    //     axios.put("http://localhost:8080/User/Updateuser",data).then((res) =>{
+    //         alert(res.data.status)
+    //         Navigate(-1);
+    //     }).catch(err =>{
+    //         alert( "There is an existing user by this user name; use different user name")
+    //     })
+    // }
+
+
+
+
   return (
     <>
     <Admin/>
     <Container style={{marginTop : '1%',display : 'block',width : '50%',justifyContent : 'center'}}>
 
 
-    <Form>
+    <Form >
     <h1 style={{fontWeight:'bold'}}><center>UPDATE USER</center></h1>
 
         <br></br>
         <hr></hr>
         <Form.Group className="mb-3" >
               <Form.Label>User Type</Form.Label>
-              <Form.Select required >
+              <Form.Select  required >
                 <option></option>
                 <option value = 'Admin'>Admin</option>
                 <option value = 'FoodManager'>Food Manager</option>
@@ -48,7 +98,7 @@ function UpdateUser() {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Mobile number</Form.Label>
-            <Form.Control type="text"maxLength={10} minLength ={10} required/>
+            <Form.Control type="text"maxLength={10} minLength ={10}required/>
         </Form.Group>
 
         <h4 style={{fontWeight:'bold'}}>Login details</h4>
@@ -60,7 +110,7 @@ function UpdateUser() {
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" required/>
+            <Form.Control type="password"required/>
         </Form.Group>
 
         <Button variant="primary" type="submit" style={{width:'20%',marginBottom:20}}>
