@@ -15,7 +15,7 @@ router.route("/").get(async (req,res) =>{
     
 try{const{beneficiaryID,beneficiaryName,address,nic,mobileNumber,numberOfFamilyMembers} = req.body;
 const newBeneficiary = new Beneficiaries({
-    beneficiaryID,
+    // beneficiaryID,
     beneficiaryName,
     address,
     nic,
@@ -34,13 +34,25 @@ const newBeneficiary = new Beneficiaries({
 }
 })
 
+router.route("/delete/:id").delete((req,res)=>{
+    const id  = req.params.id;
+
+    Beneficiaries.findByIdAndDelete(id).then(()=>{
+        res.status(200).send({state:"Deleted Successfully"});
+    }).catch(err =>{
+        res.status(100).send({state:err});
+        
+    })
+
+})
+
 //update reterive part
 router.route("/update").put(async(req,res) =>{
 const {beneficiaryID,beneficiaryName,address,nic,mobileNumber,numberOfFamilyMembers} = req.body;
 const id = req.body.id;
 
     const newData = {
-    beneficiaryID,
+    // beneficiaryID,
     beneficiaryName,
     address,
     nic,

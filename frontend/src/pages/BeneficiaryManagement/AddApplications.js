@@ -3,13 +3,57 @@ import Button from 'react-bootstrap/esm/Button';
 import Container from 'react-bootstrap/esm/Container'
 import Form from 'react-bootstrap/Form';
 import Applications from './Beneficiaries'
-
-
+import axios from 'axios';
 // import DatePicker from "react-datepicker";
 // import "react-datepicker/dist/react-datepicker.css";
 
 
 export default function AddApplications() {
+
+    // const[beneficiaryID, setBeneficiaryID] = useState();
+    const[jobTitle, setJobTitle] =useState();
+    const[district, setDistrict] =useState();
+    const[applicantName, setApplicantName] =useState();
+    const[nic, setnic] =useState();
+    const[gender, setGender] =useState();
+    const[dateOfBirth, setDateOfBirth] =useState();
+    
+    
+
+    const Validate =(e)=>{
+        e.preventDefault();
+
+        const formData = new FormData();
+            //formData.append("beneficiaryID",beneficiaryID);
+            formData.append("jobTitle",jobTitle)
+            formData.append("district",district)
+            formData.append("applicantName",applicantName);
+            formData.append("nic",nic);
+            formData.append("gender",gender);
+            formData.append("dateOfBirth",dateOfBirth);
+        
+    const  data = 
+        {
+            "jobTitle":jobTitle,
+            "district":"test_district",
+            "applicantName":applicantName,
+            "nic":nic,
+            "gender":gender,
+            "dateOfBirth":dateOfBirth,
+        }
+
+
+        console.log("FormData", formData )
+        axios.post("http://localhost:8080/Applications/AddApplications", data).then(res=>{
+            alert ("New Application Added!")
+            console.log("data adedd")
+        }).catch(err=>{
+            alert(err)
+        })
+    }
+
+
+
 
     // const DatePickerComponent = (props) => {
     //     const { label, name, value, onChange } = props;
@@ -27,18 +71,18 @@ export default function AddApplications() {
     <Applications/>
     <Container style={{marginTop : '1%',display : 'block',width : '50%',justifyContent : 'center'}}>
 
-    <Form /*onSubmit={Validate}*/>
+    <Form onSubmit={Validate}>
     <h1 style={{fontWeight:'bold'}}><center>ADD JOB APPLICATIONS</center></h1>
         <br></br>
         <hr></hr>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Reference No</Form.Label>
-            <Form.Control type="text" /*onChange={(e)=>{setBeneficiaryID(e.target.value)}}*/ required/>
-        </Form.Group>
+            <Form.Control type="text" onChange={(e)=>{setBeneficiaryID(e.target.value)}} required/>
+        </Form.Group> */}
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Job Title</Form.Label>
-            <Form.Control type="text" /*onChange={(e)=>{setBeneficiaryName(e.target.value)}}*/ required/>
+            <Form.Control type="text" onChange={(e)=>{setJobTitle(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" >
@@ -75,23 +119,23 @@ export default function AddApplications() {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Applicant Name</Form.Label>
-            <Form.Control type="text" /*onChange={(e)=>{setEmail(e.target.value)}}*/ required/>
+            <Form.Control type="text" onChange={(e)=>{setApplicantName(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>NIC</Form.Label>
-            <Form.Control type="text" /*onChange={(e)=>{setnic(e.target.value)}} maxLength={12} minLength ={10}*/ required/>
+            <Form.Control type="text" onChange={(e)=>{setnic(e.target.value)}} maxLength={12} minLength ={10} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Gender</Form.Label>
-            <Form.Control type="text" /*onChange={(e)=>{setnumberOfFamilyMembers(e.target.value)}}*/ required/>
+            <Form.Control type="text" onChange={(e)=>{setGender(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Date of Birth</Form.Label>
             {/* <DatePicker selected={selectedDate} onChange={handleDateChange} /> */}
-            {/* <Form.Control type="text" onChange={(e)=>{setMobileNumber(e.target.value)}} maxLength={10} minLength ={10} required/> */}
+            <Form.Control type="text" onChange={(e)=>{setDateOfBirth(e.target.value)}} maxLength={10} minLength ={10} required/>
         </Form.Group>
 
         <Button variant="primary" type="submit" style={{width:'20%',marginBottom:20}}>

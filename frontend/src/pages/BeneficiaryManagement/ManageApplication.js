@@ -12,7 +12,7 @@ export default function ManageApplication() {
   const [search,setSearch] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:8080/Beneficiaries").then((res) =>{
+    axios.get("http://localhost:8080/Applications").then((res) =>{
       setAddApplications(res.data.AddApplications);
 
     }).catch((e) =>{
@@ -29,7 +29,7 @@ export default function ManageApplication() {
       <br></br>
       <h2>APPLICATIONS</h2>
       <br></br>
-      {/* <Link to = "/Beneficiaries/AddApplications"><Button variant="primary">Add Applications</Button></Link> */}
+      {<Link to = "/Beneficiaries/AddApplications"><Button variant="primary">Add Applications</Button></Link>}
       
       <Table striped bordered hover style={{textAlign : 'center', width : '100%',justifyContent : 'center',marginTop : 20}}>
       <thead>
@@ -45,7 +45,7 @@ export default function ManageApplication() {
          
         </tr>
         </thead>
-        {/* <tbody>
+        <tbody>
          {AddApplications.filter((element) =>{
                 if(search === ""){
                     return element
@@ -56,15 +56,16 @@ export default function ManageApplication() {
             ).map((e,i) =>(
               <tr key={i} style={{textAlign : 'center',fontWeight : '400'}}>
                   <td>{i+1}</td>
-                  <td>{e.beneficiaryName}</td>
-                  <td>{e.address}</td>
+                  <td>{e.jobTitle}</td>
+                  <td>{e.district}</td>
+                  <td>{e.applicantName}</td>
                   <td>{e.nic}</td>
-                  <td>{e.mobileNumber}</td>
-                  <td>{e.numberOfFamilyMembers}</td>
+                  <td>{e.gender}</td>
+                  <td>{e.dateOfBirth}</td>
                   <td><center><Button variant="outline-primary">Edit</Button>        <Button variant="outline-danger">Delete</Button></center></td>
               </tr>
           ))}
-    </tbody> */}
+    </tbody>
     </Table>
   </Container>
 
