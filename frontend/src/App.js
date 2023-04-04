@@ -13,6 +13,7 @@ import UpdateUser from './pages/AdminManagement/UpdateUser';
 import Beneficiaries from './pages/BeneficiaryManagement/Beneficiaries';
 import ManageBeneficiary from './pages/BeneficiaryManagement/ManageBeneficiary';
 import AddBeneficiary from './pages/BeneficiaryManagement/AddBeneficiaries';
+import UpdateBeneficiaries from './pages/BeneficiaryManagement/UpdateBeneficiaries';
 import JobOpportunities from './pages/BeneficiaryManagement/JobOpportunities';
 import AddApplication from './pages/BeneficiaryManagement/AddApplications';
 import ManageApplication from './pages/BeneficiaryManagement/ManageApplication';
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/Beneficiaries" element={<Beneficiaries />} />
           <Route exact path="/Beneficiaries/ManageBeneficiary" element={<ManageBeneficiary/>}/>
           <Route exact path="/Beneficiaries/AddBeneficiaries" element={<AddBeneficiary/>}/>
+          <Route exact path="/Beneficiaries/UpdateBeneficiaries" element={<UpdateBeneficiaries/>}/>
           <Route exact path="/Beneficiaries/JobOpportunities" element={<JobOpportunities/>}/>
           <Route exact path="/Beneficiaries/AddApplications" element={<AddApplication/>}/>
           <Route exact path="/Beneficiaries/ManageApplication" element={<ManageApplication/>}/>
