@@ -6,7 +6,6 @@ import Button from 'react-bootstrap/esm/Button';
 import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-
 function AddUser() {
 
     const[role, setRole] = useState();

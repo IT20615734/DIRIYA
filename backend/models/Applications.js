@@ -1,16 +1,20 @@
 const mongoose = require('mongoose');
 
-var Beneficiary = new mongoose.Schema({
+var Application = new mongoose.Schema({
     // beneficiaryID:{
     //     type:String,
     //     required:true,
     //     index:true,
     // },
-    beneficiaryName:{
+    jobTitle:{
         type:String,
         required:true,
     },
-    address:{
+    district:{
+        type:String,
+        required:true,
+    },
+    applicantName:{
         type:String,
         required:true,
     },
@@ -18,16 +22,16 @@ var Beneficiary = new mongoose.Schema({
         type:String,
         required:true,
     },
-    mobileNumber:{
+    gender:{
         type:String,
         required:true,
     },
-    numberOfFamilyMembers:{
+    dateOfBirth:{
         type:String,
         required:true,
     }
     
     
 });
-const Beneficiaries = mongoose.model("Beneficiary", Beneficiary);
-module.exports = Beneficiaries;
+const Applications = mongoose.model("Application", Application);
+module.exports = Applications;
