@@ -5,7 +5,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/esm/Button';
 import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Navigate, useNavigate } from 'react-router-dom';
 
 
 function AddUser() {
