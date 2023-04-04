@@ -34,5 +34,26 @@ const newBeneficiary = new Beneficiaries({
 }
 })
 
+//update reterive part
+router.route("/update").put(async(req,res) =>{
+const {beneficiaryID,beneficiaryName,address,nic,mobileNumber,numberOfFamilyMembers} = req.body;
+const id = req.body.id;
 
+    const newData = {
+    beneficiaryID,
+    beneficiaryName,
+    address,
+    nic,
+    mobileNumber,
+    numberOfFamilyMembers,
+        
+    }
+
+    await Attendance.findByIdAndUpdate(id,newData).then(()=>{
+        res.status(200).send({state : "Updated"})
+    }).catch(err =>{
+        res.status(400).send({state : err})
+
+    })
+})
 module.exports = router;

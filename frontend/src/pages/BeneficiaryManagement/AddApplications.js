@@ -9,7 +9,7 @@ import Applications from './Beneficiaries'
 // import "react-datepicker/dist/react-datepicker.css";
 
 
-function AddApplications() {
+export default function AddApplications() {
 
     // const DatePickerComponent = (props) => {
     //     const { label, name, value, onChange } = props;
@@ -21,10 +21,6 @@ function AddApplications() {
     //       setSelectedDate(date);
     //       onChange(name, date);
     //     };
-
-
-
-
 
   return (
     <>
@@ -108,7 +104,7 @@ function AddApplications() {
   )
 }
 
-export default AddApplications;
+
 
 // import React, { useState } from "react";
 // import DatePicker from "react-datepicker";

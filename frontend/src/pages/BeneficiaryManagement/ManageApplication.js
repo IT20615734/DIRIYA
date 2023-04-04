@@ -1,11 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/esm/Container'
 import Applications from './Beneficiaries'
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import axios from 'axios';
 
 export default function ManageApplication() {
+
+  const [AddApplications,setAddApplications] = useState([]);
+  const [search,setSearch] = useState("");
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/Beneficiaries").then((res) =>{
+      setAddApplications(res.data.AddApplications);
+
+    }).catch((e) =>{
+        alert(e)
+    })
+
+}, [AddApplications])
+
   return (
     <>
     <Applications/>
@@ -29,34 +44,30 @@ export default function ManageApplication() {
           <th> Action</th>
          
         </tr>
-        <tr style={{textAlign : 'center',fontWeight : '400'}}>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td><center><Button variant="outline-primary">Edit</Button>        <Button variant="outline-danger">Delete</Button></center></td>
-        </tr>
-        <tr style={{textAlign : 'center',fontWeight : '400'}}>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td><center><Button variant="outline-primary">Edit</Button>        <Button variant="outline-danger">Delete</Button></center></td>
-        </tr>
+        </thead>
+        {/* <tbody>
+         {AddApplications.filter((element) =>{
+                if(search === ""){
+                    return element
+                }else if (element.role.includes(search)){
+                    return element
+                }
+            }
+            ).map((e,i) =>(
+              <tr key={i} style={{textAlign : 'center',fontWeight : '400'}}>
+                  <td>{i+1}</td>
+                  <td>{e.beneficiaryName}</td>
+                  <td>{e.address}</td>
+                  <td>{e.nic}</td>
+                  <td>{e.mobileNumber}</td>
+                  <td>{e.numberOfFamilyMembers}</td>
+                  <td><center><Button variant="outline-primary">Edit</Button>        <Button variant="outline-danger">Delete</Button></center></td>
+              </tr>
+          ))}
+    </tbody> */}
+    </Table>
+  </Container>
 
-      </thead>
-      <tbody>
-
-      </tbody>
-      </Table>
-    </Container>
-
-    </>
+  </>
   )
 }
