@@ -37,5 +37,17 @@ const newUser = new User({
 }
 })
 
+router.route("/delete/:id").delete((req,res)=>{
+    const id  = req.params.id;
+
+    User.findByIdAndDelete(id).then(()=>{
+        res.status(200).send({state:"Deleted Successfully"});
+    }).catch(err =>{
+        res.status(100).send({state:err});
+        
+    })
+
+})
+
 
 module.exports = router;
