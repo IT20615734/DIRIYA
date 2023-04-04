@@ -8,7 +8,7 @@ import axios from 'axios';
 //export default function AddBeneficiary() {
 
 function AddBeneficiaries() {
-
+    
     const[beneficiaryID, setBeneficiaryID] = useState();
     const[beneficiaryName, setBeneficiaryName] =useState();
     const[address, setAddress] =useState();
@@ -19,7 +19,7 @@ function AddBeneficiaries() {
 
     const Validate =(e)=>{
         e.preventDefault();
-
+        console.log("called") 
         const formData = new FormData();
             formData.append("beneficiaryID",beneficiaryID);
             formData.append("beneficiaryName",beneficiaryName)
@@ -46,7 +46,8 @@ function AddBeneficiaries() {
             alert ("New Beneficiary Added!")
 
         }).catch(err=>{
-            alert(e)
+            console.log("create failed " + err)
+            alert(err)
         })
     }
     
@@ -59,10 +60,10 @@ function AddBeneficiaries() {
     <h1 style={{fontWeight:'bold'}}><center>ADD BENEFICIARIES</center></h1>
         <br></br>
         <hr></hr>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Beneficiary ID</Form.Label>
             <Form.Control type="text" onChange={(e)=>{setBeneficiaryID(e.target.value)}} required/>
-        </Form.Group>
+        </Form.Group> */}
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Beneficiary name</Form.Label>
