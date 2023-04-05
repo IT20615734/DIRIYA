@@ -17,6 +17,7 @@ import UpdateBeneficiaries from './pages/BeneficiaryManagement/UpdateBeneficiari
 import JobOpportunities from './pages/BeneficiaryManagement/JobOpportunities';
 import AddApplication from './pages/BeneficiaryManagement/AddApplications';
 import ManageApplication from './pages/BeneficiaryManagement/ManageApplication';
+import UpdateApplications from './pages/BeneficiaryManagement/UpdateApplications';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route exact path="/Beneficiaries/JobOpportunities" element={<JobOpportunities/>}/>
           <Route exact path="/Beneficiaries/AddApplications" element={<AddApplication/>}/>
           <Route exact path="/Beneficiaries/ManageApplication" element={<ManageApplication/>}/>
+          <Route exact path="/Beneficiaries/UpdateApplications" element={<UpdateApplications/>}/>
         </Routes>
     </BrowserRouter>
     </>
