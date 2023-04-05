@@ -35,7 +35,7 @@ function App() {
           <Route exact path="/Admin/AddUser" element={<AddUser/>}/>
           <Route exact path="/Admin/Jobs" element={<Jobs/>}/>
           <Route exact path="/Admin/AddJobs" element={<AddJobs/>}/>
-          <Route exact path="/Admin/UpdateUser" element={<UpdateUser/>}/>
+          <Route exact path="/Admin/User/Admin/UpdateUser/:id" element={<UpdateUser/>}/>
 
           {/* Beneficiary */}
           <Route exact path="/Beneficiaries" element={<Beneficiaries />} />

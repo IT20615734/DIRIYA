@@ -3,9 +3,8 @@ import Container from 'react-bootstrap/esm/Container'
 import Admin from './Admin'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/esm/Button';
+import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
-// import { Navigate, useNavigate } from 'react-router-dom';
 
 
 function AddUser() {
@@ -19,31 +18,7 @@ function AddUser() {
     const[userName, setUserName] =useState();
     const[password, setPassword] =useState();
 
-
-    // const navigate = useNavigate();
-
-    // const validate = async(e) =>{
-    //     e.preventDefault();
-
-        // const data = {
-        //     role : role.current.value,
-        //     firstName : firstName.current.value,
-        //     lasttName : lasttName.current.value,
-        //     address : address.current.value,
-        //     email : email.current.value,
-        //     mobileNumber : mobileNumber.current.value,
-        //     userName : userName.current.value,
-        //     password : password.current.value,
-        // }
-
-        // await axios.post("http://localhost:8080/authUser/RegisterUser",data).then((res) =>{
-        //     alert(res.data.status)
-        //     navigate(-1);
-        // }).catch(err =>{
-        //     // alert(err)
-        //     alert( "There is an existing user by this user name; use different user name")
-        // })
-    //}
+    const navigate = useNavigate();
 
     const Validate =(e)=>{
         e.preventDefault();
@@ -73,7 +48,8 @@ function AddUser() {
 
         console.log("FormData", formData )
         axios.post("http://localhost:8080/User/AddUser", data).then(res=>{
-            alert ("New User Added!")
+            alert ("New User Added!");
+            navigate(-1);
 
         }).catch(err=>{
             alert(e)
@@ -110,7 +86,7 @@ function AddUser() {
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>NIC</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setNic(e.target.value)}} required/>
+            <Form.Control type="text" maxLength={12} minLength ={10} onChange={(e)=>{setNic(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
