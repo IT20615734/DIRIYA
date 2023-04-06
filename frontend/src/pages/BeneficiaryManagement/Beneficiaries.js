@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 
 export default function Beneficiaries() {
   return (
-    <Navbar bg="light" variant="light">
+    <Navbar bg="dark" variant="dark">
         <Container>
         <Nav
             className="me-auto my-2 my-lg-0"
