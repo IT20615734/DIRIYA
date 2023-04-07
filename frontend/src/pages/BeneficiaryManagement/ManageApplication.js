@@ -11,6 +11,8 @@ export default function ManageApplication() {
   const [AddApplications,setAddApplications] = useState([]);
   const [search,setSearch] = useState("");
 
+
+  //GET (GET DATA FROM DB)
   useEffect(() => {
     axios.get("http://localhost:8080/Applications").then((res) =>{
       setAddApplications(res.data.AddApplications);
@@ -21,6 +23,8 @@ export default function ManageApplication() {
 
 }, [AddApplications])
 
+
+//DELETE (DELETE DATA FROM DB)
 const deleteRecord = (e) =>{
   console.log(e);
   axios.delete(`http://localhost:8080/Applications/delete/${e}`).then(res =>{
@@ -73,7 +77,7 @@ const deleteRecord = (e) =>{
                   <td>{e.nic}</td>
                   <td>{e.gender}</td>
                   <td>{e.dateOfBirth}</td>
-                  <td><center><Link to = "/Beneficiaries/UpdateBeneficiaries"><Button variant="outline-primary">Edit</Button></Link>       <Button variant="outline-danger" onClick={() => deleteRecord(e._id)}>Delete</Button></center></td>
+                  <td><center><Link to = {`Applications/UpdateApplications/${e._id}`}><Button variant="outline-primary">Edit</Button></Link>       <Button variant="outline-danger" onClick={() => deleteRecord(e._id)}>Delete</Button></center></td>
               </tr>
           ))}
     </tbody>

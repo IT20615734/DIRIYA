@@ -52,6 +52,7 @@ function App() {
           <Route exact path="/Beneficiaries/AddApplications" element={<AddApplication/>}/>
           <Route exact path="/Beneficiaries/ManageApplication" element={<ManageApplication/>}/>
           <Route exact path="/Beneficiaries/ManageApplication/Applications/UpdateApplications/:id" element={<UpdateApplications/>}/>
+          
 
            {/* Donations */}
            <Route exact path="/Donations" element={<Donations />} />
