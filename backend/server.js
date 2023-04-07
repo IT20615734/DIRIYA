@@ -19,18 +19,10 @@ const url = process.env.MONGODB_URL;
 app.use(cors());
 app.use(bodyParser.json());
 
-////////////////dinuka add////////////
-//connect routes>foodmanagement.js file
-const foodRoutes = require("./routes/food-router");
-
 //Middelware
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
-
-//localhost:8070/diriya
-app.use("/diriya", foodRoutes);
-///////////end ///////////////////
 
 mongoose.connect(url, {
   useNewUrlParser: true,
@@ -62,6 +54,11 @@ app.use("/Applications",Applications);
 //http://localhost:8080/Donations/AddDonations
 const Donations = require('./routes/Donations.js');
 app.use("/Donations",Donations);
+
+//http://localhost:8080/Food/AddFood
+const Foods = require('./routes/Foods.js');
+app.use("/Food",Foods);
+
 
 
 
