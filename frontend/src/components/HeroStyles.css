@@ -1,0 +1,36 @@
+.hero{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+img{
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+    opacity: 70%;
+}
+
+.hero-text{
+    position: absolute;
+    top: 400px;
+    left: 35%;
+    transform:translate(-50% ,-50%);
+    color: aliceblue;
+}
+
+.hero-text h1{
+    font-size: 3rem;
+    font-weight: 800;
+    background: #fff;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}
+.hero-text h2{
+    top: 800px;
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: #de1515f9;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}

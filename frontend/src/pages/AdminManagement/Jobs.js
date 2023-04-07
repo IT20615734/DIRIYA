@@ -24,25 +24,25 @@ export default function Jobs() {
           <th> Company Names</th>
           <th> Action</th>
         </tr>
-        <tr style={{textAlign : 'center',fontWeight : '400'}}>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td><center><Button variant="outline-primary">Edit</Button>        <Button variant="outline-danger">Delete</Button></center></td>
-        </tr>
-        <tr style={{textAlign : 'center',fontWeight : '400'}}>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td>Ex</td>
-            <td><center><Button variant="outline-primary">Edit</Button>        <Button variant="outline-danger">Delete</Button></center></td>
-        </tr>
-
       </thead>
       <tbody>
-
+        <tr style={{textAlign : 'center',fontWeight : '400'}}>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td><center><Button variant="outline-primary">Edit</Button>        <Button variant="outline-danger">Delete</Button></center></td>
+        </tr>
+        <tr style={{textAlign : 'center',fontWeight : '400'}}>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td>Ex</td>
+            <td><center><Button variant="outline-primary">Edit</Button>        <Button variant="outline-danger">Delete</Button></center></td>
+        </tr>
       </tbody>
+
+
       </Table>
     </Container>
     </>
