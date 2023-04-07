@@ -40,7 +40,7 @@ const deleteRecord = (e) =>{
     <>
     <Applications/>
     
-    <Container style={{marginTop : '1%',display : 'block',width : '100%',justifyContent : 'center'}}>
+    <Container style={{marginTop :'1%', display : 'block', width : '200%', justifyContent : 'center'}}>
       <br></br>
       <h2>APPLICATIONS</h2>
       <br></br>
@@ -68,6 +68,8 @@ const deleteRecord = (e) =>{
                     return element
                 }
             }
+
+            //catch data for the columns created using on change events
             ).map((e,i) =>(
               <tr key={i} style={{textAlign : 'center',fontWeight : '400'}}>
                   <td>{i+1}</td>
