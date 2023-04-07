@@ -6,14 +6,15 @@
 
 img{
     width: 100%;
-    height: 90%;
+    height: 95%;
     object-fit: cover;
+    opacity: 70%;
 }
 
 .hero-text{
     position: absolute;
-    top: 300px;
-    left: 50%;
+    top: 400px;
+    left: 35%;
     transform:translate(-50% ,-50%);
     color: aliceblue;
 }
@@ -25,9 +26,11 @@ img{
     -webkit-background-clip:text;
     -webkit-text-fill-color: transparent;
 }
-
-.hero-text p{
-    font-size: 1.3rem;
-    color: #fff;
-    padding: 0.5rem 0 2rem 0;
+.hero-text h2{
+    top: 800px;
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: #de1515f9;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
 }

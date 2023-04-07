@@ -9,11 +9,11 @@ import axios from 'axios';
 
 function AddBeneficiaries() {
     
-    const[beneficiaryID, setBeneficiaryID] = useState();
+    //const[beneficiaryID, setBeneficiaryID] = useState();
     const[beneficiaryName, setBeneficiaryName] =useState();
     const[address, setAddress] =useState();
     const[nic, setnic] =useState();
-    const[email, setEmail] =useState();
+    // const[email, setEmail] =useState();
     const[mobileNumber, setMobileNumber] =useState();
     const[numberOfFamilyMembers, setnumberOfFamilyMembers] =useState();
 
@@ -21,21 +21,21 @@ function AddBeneficiaries() {
         e.preventDefault();
         console.log("called") 
         const formData = new FormData();
-            formData.append("beneficiaryID",beneficiaryID);
+            //formData.append("beneficiaryID",beneficiaryID);
             formData.append("beneficiaryName",beneficiaryName)
             formData.append("address",address)
             formData.append("nic",nic);
-            formData.append("email",email);
+            // formData.append("email",email);
             formData.append("mobileNumber",mobileNumber);
             formData.append("numberOfFamilyMembers",numberOfFamilyMembers);
         
     const  data = 
         {
-            "beneficiaryID":beneficiaryID,
+            //"beneficiaryID":beneficiaryID,
             "beneficiaryName":beneficiaryName,
             "address":address,
             "nic":nic,
-            "email":email,
+            // "email":email,
             "mobileNumber":mobileNumber,
             "numberOfFamilyMembers":numberOfFamilyMembers,
         }
@@ -80,11 +80,10 @@ function AddBeneficiaries() {
             <Form.Control type="text" onChange={(e)=>{setnic(e.target.value)}} maxLength={12} minLength ={10} required/>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email</Form.Label>
             <Form.Control type="text" onChange={(e)=>{setEmail(e.target.value)}} required/>
-        
-        </Form.Group>
+        </Form.Group> */}
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Mobile Number</Form.Label>
