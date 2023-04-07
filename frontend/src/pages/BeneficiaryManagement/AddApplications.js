@@ -17,6 +17,8 @@ export default function AddApplications() {
     const[nic, setnic] =useState();
     const[gender, setGender] =useState();
     const[dateOfBirth, setDateOfBirth] =useState();
+    const[mobileNumber, setMobileNumber] =useState();
+    
     
     
 
@@ -31,15 +33,17 @@ export default function AddApplications() {
             formData.append("nic",nic);
             formData.append("gender",gender);
             formData.append("dateOfBirth",dateOfBirth);
+            formData.append("mobileNumber",mobileNumber);
         
     const  data = 
         {
             "jobTitle":jobTitle,
-            "district":"test_district",
+            "district":district,
             "applicantName":applicantName,
             "nic":nic,
             "gender":gender,
             "dateOfBirth":dateOfBirth,
+            "mobileNumber":mobileNumber,
         }
 
 
@@ -51,8 +55,6 @@ export default function AddApplications() {
             alert(err)
         })
     }
-
-
 
 
     // const DatePickerComponent = (props) => {
@@ -87,7 +89,7 @@ export default function AddApplications() {
 
         <Form.Group className="mb-3" >
               <Form.Label>District</Form.Label>
-              <Form.Select  required >
+              <Form.Select onChange={(e)=>{setDistrict(e.target.value)}}  required >
                 <option></option>
                 <option value = 'Colombo'>Colombo</option>
                 <option value = 'Gampaha'>Gampaha</option>
@@ -138,6 +140,11 @@ export default function AddApplications() {
             <Form.Control type="text" onChange={(e)=>{setDateOfBirth(e.target.value)}} maxLength={10} minLength ={10} required/>
         </Form.Group>
 
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Mobile number</Form.Label>
+            <Form.Control type="text"maxLength={10} minLength ={10} onChange={(e)=>{setMobileNumber(e.target.value)}} required/>
+        </Form.Group>
+
         <Button variant="primary" type="submit" style={{width:'20%',marginBottom:20}}>
             Save
         </Button>
@@ -147,8 +154,6 @@ export default function AddApplications() {
     </>
   )
 }
-
-
 
 // import React, { useState } from "react";
 // import DatePicker from "react-datepicker";
