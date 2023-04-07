@@ -29,8 +29,11 @@ var Application = new mongoose.Schema({
     dateOfBirth:{
         type:String,
         required:true,
+    },
+    mobileNumber:{
+        type:String,
+        required:true,
     }
-    
     
 });
 const Applications = mongoose.model("Application", Application);

@@ -50,6 +50,7 @@ app.use("/User",Users);
 //http://localhost:8080/Beneficiaries/AddBeneficiaries
 const Beneficiaries = require('./routes/Beneficiaries.js');
 app.use("/Beneficiaries",Beneficiaries);
+
 //http://localhost:8080/Beneficiaries/AddApplications
 const Applications = require('./routes/Applications.js');
 app.use("/Applications",Applications);
