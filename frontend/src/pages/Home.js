@@ -22,6 +22,10 @@ function Home() {
     <div className="one-text">
       <h2>How to make the difference?</h2>
       <p>We recognize that donations from generous Sri Lankans are often distributed unequally, which is why we propose a system that ensures equal distribution of donations. Donators can submit their donations, and village servants of each district can then distribute them among the families under their care based on the need. This will ensure that those who require the most support receive it, and that donations are distributed fairly and effectively.</p>
+      <h2>A sustainable solution…</h2>
+      <p>We also believe that sustainable solutions are essential to addressing poverty. That's why we propose collecting minor level job opportunities from various individuals and companies and making them visible to each village servant. This way, the village servants can communicate the opportunities to the underprivileged groups and help them earn an income.</p>
+      <h2>Our mission…</h2>
+      <p>We are committed in creating a Sri Lanka without poverty. We believe that by working together, we can make a lasting impact on the lives of millions of people in Sri Lanka. Join us in our mission to feed hunger, eradicate disease, and give everyone a chance to live a productive and prosperous life.</p>
     </div>
     <div className="image">
       <img alt="img" src={first}/>
@@ -29,7 +33,7 @@ function Home() {
     </div>
   </div>
   </div>
-    </>
+  </>
   )
 }
 

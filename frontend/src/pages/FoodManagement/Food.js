@@ -12,8 +12,8 @@ function Food() {
           style={{ maxHeight: "100px" }}
           NavLinkScroll
         >
-          <Nav.Link href="/Admin/User">Users</Nav.Link>
-          <Nav.Link href="/Admin/Jobs">Job Bank</Nav.Link>
+          <Nav.Link href="/Food/ManageFood">Manage Foods</Nav.Link>
+          <Nav.Link href="/Admin/Jobs">Donations</Nav.Link>
         </Nav>
       </Container>
     </Navbar>

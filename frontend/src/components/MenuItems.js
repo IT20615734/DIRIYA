@@ -24,7 +24,14 @@ export const MenuItems = [
         title: "Donations",
         url: "/Donations",  
         cname: "nav-links",
-        icon: "fa-solid fa-user",
+        icon: "fa-solid fa-hand-holding-heart",
+    },
+
+    {
+        title: "Food Management",
+        url: "/Food",  
+        cname: "nav-links",
+        icon: "fa-solid fa-hand-holding-heart",
     },
 
     {
