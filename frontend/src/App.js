@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from './pages/Home';
+import Contact from './pages/Contact';
 import NavLink from './components/NavLink';
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           {/* Basic */}
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/Contact" element={<Contact />} />
           {/* Admin */}
           <Route exact path="/Admin" element={<Admin />} />
           <Route exact path="/Admin/User" element={<User/>} />
