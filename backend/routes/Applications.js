@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { count } = require("../models/Applications");
+//const { count } = require("../models/Applications");
 const Applications = require("../models/Applications");
 
 router.route("/").get(async (req, res) => {
@@ -17,7 +17,7 @@ router.route("/").get(async (req, res) => {
 router.route("/AddApplications").post(async (req, res) => {
   try {
     //console.log("caled");
-    const { jobTitle, district, applicantName, nic, gender, dateOfBirth } =
+    const { jobTitle, district, applicantName, nic, gender, dateOfBirth, mobileNumber} =
       req.body;
 
     const newApplication = new Applications({
@@ -28,6 +28,7 @@ router.route("/AddApplications").post(async (req, res) => {
       nic,
       gender,
       dateOfBirth,
+      mobileNumber
     });
 
     return await newApplication
@@ -58,9 +59,17 @@ router.route("/delete/:id").delete((req, res) => {
 });
 
 //update reterive part
-router.route("/update").put(async (req, res) => {
-  const { jobTitle, district, applicantName, nic, gender, dateOfBirth } =
-    req.body;
+router.route("/update/:id").put(async (req, res) => {
+  console.log("update method called");
+  const {
+      jobTitle, 
+     district, 
+      applicantName, 
+      nic, 
+      gender, 
+      dateOfBirth, 
+      mobileNumber
+  } = req.body;
   const id = req.body.id;
 
   const newData = {
@@ -71,14 +80,14 @@ router.route("/update").put(async (req, res) => {
     nic,
     gender,
     dateOfBirth,
+    mobileNumber,
   };
-
-  await Attendance.findByIdAndUpdate(id, newData)
-    .then(() => {
-      res.status(200).send({ state: "Updated" });
-    })
+  console.log("id is " + id);
+  Applications.findByIdAndUpdate(id,newData).then((value)=>{
+    return res.status(201).json({"message" : "updated succesfully",value})
+  })
     .catch((err) => {
-      res.status(400).send({ state: err });
+      return res.status(400).send({ state: err });
     });
 });
 module.exports = router;
