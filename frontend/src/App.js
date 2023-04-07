@@ -54,13 +54,14 @@ function App() {
           <Route exact path="/Beneficiaries/ManageApplication/Applications/UpdateApplications/:id" element={<UpdateApplications/>}/>
           
 
+
            {/* Donations */}
            <Route exact path="/Donations" element={<Donations />} />
            <Route exact path="/Donations/ManageDonations" element={<ManageDonations/>}/>
-           <Route exact path="/Donations/AddnewDonations" element={<AddDonations/>}/>
+           <Route exact path="/Donations/AddDonations" element={<AddDonations/>}/>
 
 
-          <Route exact path="/Beneficiaries/UpdateApplications" element={<UpdateApplications/>}/>
+          
 
 
         </Routes>

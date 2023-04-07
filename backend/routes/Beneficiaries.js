@@ -20,20 +20,18 @@ try{
         address,
         nic,
         mobileNumber,
-        numberOfFamilyMembers,
+        numberOfFamilyMembers
     } = req.body;
-    const newBeneficiary = new Beneficiaries({
-        //beneficiaryID,
-        beneficiaryName,
-        address,
-        nic,
-        mobileNumber,
-        numberOfFamilyMembers,
-    })
+const newBeneficiary = new Beneficiaries({
+    // beneficiaryID,
+    beneficiaryName,
+    address,
+    nic,
+    mobileNumber,
+    numberOfFamilyMembers,
+})
 
-    return await newBeneficiary
-    .save()
-    .then(() =>{
+ return await newBeneficiary.save().then(() =>{
         res.status(200).send({status:"New Beneficiary Added"})
     }).catch((e)=>{
   return res.status(400).send({status : e})
