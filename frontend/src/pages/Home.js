@@ -1,6 +1,8 @@
 import React from 'react'
 import Hero from '../components/Hero';
 import "../Styles/Home.css"
+import first from "../Assets/first.jpg"
+import second from "../Assets/second.jpeg"
 
 function Home() {
   return (
@@ -17,12 +19,13 @@ function Home() {
       <p>At Diriya, we are committed to fighting poverty and providing opportunities for underprivileged communities in Sri Lanka. Unfortunately, poverty in Sri Lanka has risen from 13% to 25% in 2022. We believe that no one should have to suffer from lack of basic needs such as food, water, and healthcare, and we are dedicated to making a difference.</p>
 
   <div className="first-des">
-    <div className="des-text">
+    <div className="one-text">
       <h2>How to make the difference?</h2>
       <p>We recognize that donations from generous Sri Lankans are often distributed unequally, which is why we propose a system that ensures equal distribution of donations. Donators can submit their donations, and village servants of each district can then distribute them among the families under their care based on the need. This will ensure that those who require the most support receive it, and that donations are distributed fairly and effectively.</p>
     </div>
     <div className="image">
-      
+      <img alt="img" src={first}/>
+      <img alt="img" src={second}/>
     </div>
   </div>
   </div>

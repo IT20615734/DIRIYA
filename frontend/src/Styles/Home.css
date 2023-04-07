@@ -1,4 +1,63 @@
 .description{
     margin: 4rem 6rem;
     margin-top: 0%;
+    font-size: 1.5rem;
 }
+
+.description h1{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.first-des{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4.5rem;
+}
+
+.one-text{
+   width: 45%;
+   text-align:start;
+   font-size: 1.1rem;
+}
+
+.one-text h2{
+    padding-bottom: 1rem;
+}
+
+.image{
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    z-index: -99;
+}
+
+.image img{
+    width: 49%;
+    height: 350px;
+    object-fit: cover;
+    border-radius:6px;
+    box-shadow: -1px 1px 62px -18px rgba(0, 0, 0, 0.19);
+}
+
+.image img:nth-child(2){
+    position: absolute;
+    top: -40px;
+    right: 0;
+}
+
+.one-text{
+    width: 45%;
+    height: 50%;
+    top: 100%;
+    text-align:start;
+    font-size: 1.2rem;
+ }
+ 
+ .one-text h2{
+     padding-bottom: 1rem;
+ }
+
+
