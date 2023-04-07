@@ -7,6 +7,13 @@ export const MenuItems = [
     },
 
     {
+        title: "Contact",
+        url: "/Contact",  
+        cname: "nav-links",
+        icon: "fa-solid fa-address-card",
+    },
+
+    {
         title: "Beneficiaries",
         url: "Beneficiaries",  
         cname: "nav-links",
