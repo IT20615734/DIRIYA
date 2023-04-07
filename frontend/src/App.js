@@ -50,15 +50,16 @@ function App() {
           <Route exact path="/Beneficiaries/JobOpportunities" element={<JobOpportunities/>}/>
           <Route exact path="/Beneficiaries/AddApplications" element={<AddApplication/>}/>
           <Route exact path="/Beneficiaries/ManageApplication" element={<ManageApplication/>}/>
+          <Route exact path="/Beneficiaries/UpdateApplications" element={<UpdateApplications/>}/>
 
 
            {/* Donations */}
            <Route exact path="/Donations" element={<Donations />} />
            <Route exact path="/Donations/ManageDonations" element={<ManageDonations/>}/>
-           <Route exact path="/Donations/AddnewDonations" element={<AddDonations/>}/>
+           <Route exact path="/Donations/AddDonations" element={<AddDonations/>}/>
 
 
-          <Route exact path="/Beneficiaries/UpdateApplications" element={<UpdateApplications/>}/>
+          
 
         </Routes>
     </BrowserRouter>

@@ -47,12 +47,24 @@ connection.once("open", () => {
 const Users = require('./routes/Users.js');
 app.use("/User",Users);
 
+
+
 //http://localhost:8080/Beneficiaries/AddBeneficiaries
 const Beneficiaries = require('./routes/Beneficiaries.js');
 app.use("/Beneficiaries",Beneficiaries);
 //http://localhost:8080/Beneficiaries/AddApplications
 const Applications = require('./routes/Applications.js');
 app.use("/Applications",Applications);
+
+
+
+//http://localhost:8080/Donations/AddDonations
+const Donations = require('./routes/Donations.js');
+app.use("/Donations",Donations);
+
+
+
+
 
 app.listen(port, () => {
   console.log("PORT connected on " + port);

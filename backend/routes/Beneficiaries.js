@@ -13,7 +13,15 @@ router.route("/").get(async (req,res) =>{
 
  router.route("/AddBeneficiaries").post(async(req,res) => {
     
-try{const{beneficiaryID,beneficiaryName,address,nic,mobileNumber,numberOfFamilyMembers} = req.body;
+try{
+    const{
+        beneficiaryID,
+        beneficiaryName,
+        address,
+        nic,
+        mobileNumber,
+        numberOfFamilyMembers
+    } = req.body;
 const newBeneficiary = new Beneficiaries({
     // beneficiaryID,
     beneficiaryName,
@@ -23,7 +31,7 @@ const newBeneficiary = new Beneficiaries({
     numberOfFamilyMembers,
 })
 
- return   await newBeneficiary.save().then(() =>{
+ return await newBeneficiary.save().then(() =>{
         res.status(200).send({status:"New Beneficiary Added"})
     }).catch((e)=>{
   return      res.status(400).send({status : e})

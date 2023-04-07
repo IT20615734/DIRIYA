@@ -8,7 +8,14 @@ export const MenuItems = [
 
     {
         title: "Beneficiaries",
-        url: "Beneficiaries",  
+        url: "/Beneficiaries",  
+        cname: "nav-links",
+        icon: "fa-solid fa-user",
+    },
+
+    {
+        title: "Donations",
+        url: "/Donations",  
         cname: "nav-links",
         icon: "fa-solid fa-user",
     },
