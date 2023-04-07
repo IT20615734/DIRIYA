@@ -12,6 +12,7 @@ export default function ManageBeneficiary() {
   const [AddBeneficiaries,setAddBeneficiaries] = useState([]);
   const [search,setSearch] = useState("");
 
+  //GET (GET DATA FROM DB)
   useEffect(() => {
     axios.get("http://localhost:8080/Beneficiaries").then((res) =>{
       
@@ -23,6 +24,7 @@ export default function ManageBeneficiary() {
 
 }, [AddBeneficiaries])
 
+//DELETE (DELETE DATA FROM DB)
 const deleteRecord = (e) =>{
   console.log(e);
   axios.delete(`http://localhost:8080/Beneficiaries/delete/${e}`).then(res =>{
@@ -73,7 +75,12 @@ const deleteRecord = (e) =>{
                     <td>{e.nic}</td>
                     <td>{e.mobileNumber}</td>
                     <td>{e.numberOfFamilyMembers}</td>
-                    <td><center><Link to = "/Beneficiaries/UpdateApplications"><Button variant="outline-primary">Edit</Button></Link>        <Button variant="outline-danger" onClick={() => deleteRecord(e._id)}>Delete</Button></center></td>
+                    <td><center>
+                    <Link to={`Beneficiaries/UpdateBeneficiaries/${e._id}`}>
+                      <Button variant="outline-primary">Edit</Button>
+                    </Link>{" "}       
+                        
+                        <Button variant="outline-danger" onClick={() => deleteRecord(e._id)}>Delete</Button></center></td>
                 </tr>
             ))}
       </tbody>
