@@ -22,6 +22,7 @@ function NavLink() {
             <Nav.Link href ="/" style={{textDecoration:"none"}}>Home</Nav.Link>
             <Nav.Link href="/Beneficiaries">Beneficiaries</Nav.Link>
             <Nav.Link href="/Admin">Admin</Nav.Link>
+            <Nav.Link href="/Donations">Donations</Nav.Link>
         </Nav>
         </Container>
         </Navbar>

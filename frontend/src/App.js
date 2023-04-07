@@ -17,6 +17,11 @@ import JobOpportunities from './pages/BeneficiaryManagement/JobOpportunities';
 import AddApplication from './pages/BeneficiaryManagement/AddApplications';
 import ManageApplication from './pages/BeneficiaryManagement/ManageApplication';
 
+import Donations from './pages/DonatorsManagement/Donations';
+import ManageDonations from './pages/DonatorsManagement/ManageDonations';
+import AddDonations from './pages/DonatorsManagement/AddDonations';
+
+
 function App() {
   return (
     <>
@@ -42,6 +47,12 @@ function App() {
           <Route exact path="/Beneficiaries/JobOpportunities" element={<JobOpportunities/>}/>
           <Route exact path="/Beneficiaries/AddApplications" element={<AddApplication/>}/>
           <Route exact path="/Beneficiaries/ManageApplication" element={<ManageApplication/>}/>
+
+           {/* Donations */}
+           <Route exact path="/Donations" element={<Donations />} />
+           <Route exact path="/Donations/ManageDonations" element={<ManageDonations/>}/>
+           <Route exact path="/Donations/AddnewDonations" element={<AddDonations/>}/>
+
         </Routes>
     </BrowserRouter>
     </>
