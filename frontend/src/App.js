@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from './pages/Home';
+import Contact from './pages/Contact';
 import NavLink from './components/NavLink';
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 
@@ -19,6 +20,10 @@ import AddApplication from './pages/BeneficiaryManagement/AddApplications';
 import ManageApplication from './pages/BeneficiaryManagement/ManageApplication';
 import UpdateApplications from './pages/BeneficiaryManagement/UpdateApplications';
 
+import Donations from './pages/DonatorsManagement/Donations';
+import ManageDonations from './pages/DonatorsManagement/ManageDonations';
+import AddDonations from './pages/DonatorsManagement/AddDonations';
+
 function App() {
   return (
     <>
@@ -29,6 +34,7 @@ function App() {
         <Routes>
           {/* Basic */}
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/Contact" element={<Contact />} />
           {/* Admin */}
           <Route exact path="/Admin" element={<Admin />} />
           <Route exact path="/Admin/User" element={<User/>} />
@@ -47,6 +53,16 @@ function App() {
           <Route exact path="/Beneficiaries/ManageApplication" element={<ManageApplication/>}/>
           <Route exact path="/Beneficiaries/ManageApplication/Applications/UpdateApplications/:id" element={<UpdateApplications/>}/>
           
+
+           {/* Donations */}
+           <Route exact path="/Donations" element={<Donations />} />
+           <Route exact path="/Donations/ManageDonations" element={<ManageDonations/>}/>
+           <Route exact path="/Donations/AddnewDonations" element={<AddDonations/>}/>
+
+
+          <Route exact path="/Beneficiaries/UpdateApplications" element={<UpdateApplications/>}/>
+
+
         </Routes>
     </BrowserRouter>
     </>
