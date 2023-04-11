@@ -13,8 +13,8 @@ function AddBeneficiaries() {
     const[beneficiaryName, setBeneficiaryName] =useState();
     const[address, setAddress] =useState();
     const[nic, setnic] =useState();
-    // const[email, setEmail] =useState();
     const[mobileNumber, setMobileNumber] =useState();
+    const[monthlyIncome, setMonthlyIncome] =useState();
     const[numberOfFamilyMembers, setnumberOfFamilyMembers] =useState();
 
     const Validate =(e)=>{
@@ -25,8 +25,8 @@ function AddBeneficiaries() {
             formData.append("beneficiaryName",beneficiaryName)
             formData.append("address",address)
             formData.append("nic",nic);
-            // formData.append("email",email);
             formData.append("mobileNumber",mobileNumber);
+            formData.append("monthlyIncome",monthlyIncome);
             formData.append("numberOfFamilyMembers",numberOfFamilyMembers);
         
     const  data = 
@@ -35,8 +35,8 @@ function AddBeneficiaries() {
             "beneficiaryName":beneficiaryName,
             "address":address,
             "nic":nic,
-            // "email":email,
             "mobileNumber":mobileNumber,
+            "monthlyIncome":monthlyIncome,
             "numberOfFamilyMembers":numberOfFamilyMembers,
         }
 
@@ -80,15 +80,14 @@ function AddBeneficiaries() {
             <Form.Control type="text" onChange={(e)=>{setnic(e.target.value)}} maxLength={12} minLength ={10} required/>
         </Form.Group>
 
-        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setEmail(e.target.value)}} required/>
-        </Form.Group> */}
-
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Mobile Number</Form.Label>
             <Form.Control type="text" onChange={(e)=>{setMobileNumber(e.target.value)}} maxLength={10} minLength ={10} required/>
-        
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Monthly Income</Form.Label>
+            <Form.Control type="text" onChange={(e)=>{setMonthlyIncome(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
