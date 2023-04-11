@@ -77,12 +77,12 @@ function AddBeneficiaries() {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>NIC</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setnic(e.target.value)}} maxLength={12} minLength ={10} required/>
+            <Form.Control type="text" onChange={(e)=>{setnic(e.target.value)}} maxLength={12} minLength ={10} placeholder='Eg: [741922757V or 197419202757]' required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Mobile Number</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setMobileNumber(e.target.value)}} maxLength={10} minLength ={10} required/>
+            <Form.Control type="text" onChange={(e)=>{setMobileNumber(e.target.value)}} maxLength={10} minLength ={10} placeholder='Eg: 076 155 4468' required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -92,7 +92,7 @@ function AddBeneficiaries() {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Number of Family Members</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setnumberOfFamilyMembers(e.target.value)}} required/>
+            <Form.Control type="number" onChange={(e)=>{setnumberOfFamilyMembers(e.target.value)}} placeholder='enter a number' required/>
         </Form.Group>
 
         <Button variant="primary" type="submit" style={{width:'20%',marginBottom:20}}>
