@@ -126,7 +126,7 @@ export default function AddApplications() {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>NIC</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setnic(e.target.value)}} maxLength={12} minLength ={10} required/>
+            <Form.Control type="text" onChange={(e)=>{setnic(e.target.value)}} maxLength={12} minLength ={10} placeholder='Eg: [741922757V or 197419202757]' required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -137,12 +137,12 @@ export default function AddApplications() {
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Date of Birth</Form.Label>
             {/* <DatePicker selected={selectedDate} onChange={handleDateChange} /> */}
-            <Form.Control type="text" onChange={(e)=>{setDateOfBirth(e.target.value)}} maxLength={10} minLength ={10} required/>
+            <Form.Control type="text" onChange={(e)=>{setDateOfBirth(e.target.value)}} maxLength={10} minLength ={10} placeholder='YY/MM/DD' required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Mobile number</Form.Label>
-            <Form.Control type="text"maxLength={10} minLength ={10} onChange={(e)=>{setMobileNumber(e.target.value)}} required/>
+            <Form.Control type="text"maxLength={10} minLength ={10} onChange={(e)=>{setMobileNumber(e.target.value)}} placeholder='Eg: 076 155 4468' required/>
         </Form.Group>
 
         <Button variant="primary" type="submit" style={{width:'20%',marginBottom:20}}>
