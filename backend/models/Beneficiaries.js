@@ -22,6 +22,10 @@ var Beneficiary = new mongoose.Schema({
         type:String,
         required:true,
     },
+    monthlyIncome:{
+        type:String,
+        required:true,
+    },
     numberOfFamilyMembers:{
         type:String,
         required:true,
