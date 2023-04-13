@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
+import Login from "./pages/Login ";
 import NavLink from "./components/NavLink";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -24,6 +25,8 @@ import UpdateApplications from "./pages/BeneficiaryManagement/UpdateApplications
 import Donations from "./pages/DonatorsManagement/Donations";
 import ManageDonations from "./pages/DonatorsManagement/ManageDonations";
 import AddDonations from "./pages/DonatorsManagement/AddDonations";
+import NewDonater from "./pages/DonatorsManagement/NewDonater";
+
 
 import Food from "./pages/FoodManagement/Food";
 import ManageFood from "./pages/FoodManagement/ManageFood";
@@ -40,6 +43,7 @@ function App() {
           {/* Basic */}
           <Route exact path="/" element={<Home />} />
           <Route exact path="/Contact" element={<Contact />} />
+          <Route exact path="/Login" element={<Login />} />
           {/* Admin */}
           <Route exact path="/Admin" element={<Admin />} />
           <Route exact path="/Admin/User" element={<User />} />
@@ -63,6 +67,7 @@ function App() {
           <Route exact path="/Donations" element={<Donations />} />
           <Route exact path="/Donations/ManageDonations" element={<ManageDonations />}/>
           <Route exact path="/Donations/AddDonations" element={<AddDonations />} />
+          <Route exact path="/Donater/NewDonater" element={<NewDonater />} />
 
           {/* Food Management */}
           <Route exact path="/Food" element={<Food />} />

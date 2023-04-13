@@ -5,6 +5,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import "../components/NavLink.css";
 import { MenuItems } from './MenuItems';
 import Button from 'react-bootstrap/esm/Button';
+import { Link } from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
 
 
 function NavLink() {
@@ -28,7 +30,8 @@ function NavLink() {
             {/* <a href="/Beneficiaries">Beneficiaries</a>
             <a href="/Admin">Admin</a> */}
             </ul>
-            <Button variant="warning">Sign Up</Button>
+            <Nav.Link href="/Login" className='btn btn-warning' style={{marginLeft:100,color : "black",fontWeight:'700'}}>Donate</Nav.Link>
+            {/* <Button variant="warning">Donate</Button> */}
         </nav>
         {/* </Container> */}
         {/* </Navbar> */}
