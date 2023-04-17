@@ -4,6 +4,7 @@ import { SocialIcon } from 'react-social-icons';
 import PhoneSharpIcon from '@mui/icons-material/PhoneSharp';
 import EmailSharpIcon from '@mui/icons-material/EmailSharp';
 import { Link } from 'react-router-dom'
+import logo2 from "../Assets/logo2.png"
 
 function Footer() {
   return (
@@ -11,13 +12,13 @@ function Footer() {
     <div className='row footer'>
       <div class='column about'>
       <div className='h3'>
-      <Link to="../Pages/Home.js">
-        <img src = {''}  width  = '150px' style={{  marginTop: 20  }} />
+      <Link to="/">
+        <img src = {logo2} style={{width : 150 , height : 60 , marginTop : 5  }} />
         </Link>
       </div>
 
         <div class="column contactus">
-        <h3 style={{  marginTop: 20  }}>Contact Us</h3>
+        <h3 style={{  marginTop: 5  }}>Contact Us</h3>
         
         <p class="h6">
         <PhoneSharpIcon style={{ color: "white", height:25, width:25, marginRight: 15 }}></PhoneSharpIcon>
