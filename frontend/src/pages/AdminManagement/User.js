@@ -9,7 +9,7 @@ import '../../Styles/Search.css'
 
 function User() {
   const [AddUser, setAddUser] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState([]);
 
   useEffect(() => {
     axios
@@ -80,7 +80,7 @@ function User() {
             {AddUser.filter((element) => {
               if (search === "") {
                 return element;
-              } else if (element.role.includes(search)) {
+              } else if (element.fullName.includes(search)) {
                 return element;
               }
             }).map((e, i) => (
