@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import "../Styles/Home.css"
 import first from "../Assets/first.jpg"
 import second from "../Assets/second.jpeg"
+import Slider from 'react-slick';
 
 function Home() {
   return (
@@ -12,8 +13,8 @@ function Home() {
     heroImg="https://scontent.fcmb4-2.fna.fbcdn.net/v/t39.30808-6/294476149_590531945769761_7598775614928024688_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=pGpeOy9he94AX8sxUxD&_nc_ht=scontent.fcmb4-2.fna&oh=00_AfDf9DAWKe977E6IYwV3iE7UCfOCXBrrsjlf37i9VgMQUg&oe=643420E6"
     title="Poverty doesn't discriminate. It affects people of all ages, genders, and backgrounds. "
     p="TOGETHER, WE CAN MAKE A DIFFERENCE!"
-
     />
+
   <div className="description">
       <h1>What is DIRIYA?</h1>
       <p>At Diriya, we are committed to fighting poverty and providing opportunities for underprivileged communities in Sri Lanka. Unfortunately, poverty in Sri Lanka has risen from 13% to 25% in 2022. We believe that no one should have to suffer from lack of basic needs such as food, water, and healthcare, and we are dedicated to making a difference.</p>
