@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 import axios from "axios";
+import '../../Styles/Search.css'
 
 function User() {
   const [AddUser, setAddUser] = useState([]);
@@ -52,6 +53,10 @@ function User() {
         <Link to="/Admin/AddUser">
           <Button variant="primary">+ Add New User</Button>
         </Link>
+        <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40 }}>
+        <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Name" />
+        <input class="button--submit" value="Search" type="submit"></input>
+      </div>
         <br></br>
         <Table
           striped
