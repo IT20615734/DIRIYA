@@ -56,18 +56,6 @@ export default function AddApplications() {
         })
     }
 
-
-    // const DatePickerComponent = (props) => {
-    //     const { label, name, value, onChange } = props;
-    //     const [selectedDate, setSelectedDate] = useState(
-    //       value ? new Date(value) : null
-    //     );
-      
-    //     const handleDateChange = (date) => {
-    //       setSelectedDate(date);
-    //       onChange(name, date);
-    //     };
-
   return (
     <>
     <Applications/>
