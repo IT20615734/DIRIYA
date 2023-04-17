@@ -1,7 +1,11 @@
 import React from 'react'
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import slide1 from "../Assets/Slide1.png"
+import slide1 from "../Assets/img1.png"
+import slide2 from "../Assets/img2.png"
+import slide3 from "../Assets/img3.png"
+import slide4 from "../Assets/img4.png"
+
 
 function SlideShow() {
     const [index, setIndex] = useState(0);
@@ -25,7 +29,7 @@ function SlideShow() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={slide1}
+          src={slide2}
           alt="Second slide"
         />
 
@@ -37,10 +41,16 @@ function SlideShow() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={slide1}
+          src={slide3}
           alt="Third slide"
         />
-
+        </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={slide4}
+          alt="Fourth slide"
+        />
         {/* <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>
