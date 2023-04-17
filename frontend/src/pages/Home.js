@@ -3,7 +3,7 @@ import Hero from '../components/Hero';
 import "../Styles/Home.css"
 import first from "../Assets/first.jpg"
 import second from "../Assets/second.jpeg"
-import Slider from 'react-slick';
+
 
 function Home() {
   return (
