@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Admin from "./pages/AdminManagement/Admin";
 import User from "./pages/AdminManagement/User";
 import AddUser from "./pages/AdminManagement/AddUser";
+import Footer from "./components/Footer";
 import Jobs from "./pages/AdminManagement/Jobs";
 import AddJobs from "./pages/AdminManagement/AddJobs";
 import UpdateUser from "./pages/AdminManagement/UpdateUser";
@@ -75,6 +76,7 @@ function App() {
           <Route exact path="/Food/AddFood" element={<AddFood />}/>
 
         </Routes>
+        <Footer/> 
       </BrowserRouter>
     </>
   );

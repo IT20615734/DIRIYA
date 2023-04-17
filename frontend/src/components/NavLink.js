@@ -7,6 +7,7 @@ import { MenuItems } from './MenuItems';
 import Button from 'react-bootstrap/esm/Button';
 import { Link } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
+import logo1 from "../Assets/logo1.png"
 
 
 function NavLink() {
@@ -18,7 +19,8 @@ function NavLink() {
         {/* <Container> */}
         {/* <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px'}}NavLinkScrol> */}
         <nav className = "NavbarItems">
-            <h1 className = "navbar-logo">Diriya</h1>
+            {/* <h1 className = "navbar-logo">Diriya</h1> */}
+            <img src = {logo1}  style={{  width: 300  }} />
             <ul className="nav-manu">
               {MenuItems.map((item,index)=>{
                 return(
