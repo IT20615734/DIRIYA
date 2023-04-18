@@ -26,8 +26,8 @@ import UpdateApplications from "./pages/BeneficiaryManagement/UpdateApplications
 import Donations from "./pages/DonatorsManagement/Donations";
 import ManageDonations from "./pages/DonatorsManagement/ManageDonations";
 import AddDonations from "./pages/DonatorsManagement/AddDonations";
+import EditDonations from "./pages/DonatorsManagement/EditDonations";
 import NewDonater from "./pages/DonatorsManagement/NewDonater";
-
 
 import Food from "./pages/FoodManagement/Food";
 import ManageFood from "./pages/FoodManagement/ManageFood";
@@ -68,7 +68,9 @@ function App() {
           <Route exact path="/Donations" element={<Donations />} />
           <Route exact path="/Donations/ManageDonations" element={<ManageDonations />}/>
           <Route exact path="/Donations/AddDonations" element={<AddDonations />} />
+          <Route exact path="/Donations/ManageDonations/Donations/EditDonations/:id" element={<EditDonations />} />
           <Route exact path="/Donater/NewDonater" element={<NewDonater />} />
+
 
           {/* Food Management */}
           <Route exact path="/Food" element={<Food />} />

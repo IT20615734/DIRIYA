@@ -22,15 +22,15 @@ export default function ManageDonations() {
 
 }, [AddDonations])
 
-// const deleteRecord = (e) =>{
-//   console.log(e);
-//   axios.delete(`http://localhost:8080/Beneficiaries/delete/${e}`).then(res =>{
-//     alert("Beneficiary Deleted!")
-//     console.log(res.state)
-//   }).catch(err => {
-//     alert(err);
-//   })
-// }
+const deleteRecord = (e) =>{
+  console.log(e);
+  axios.delete(`http://localhost:8080/Donations/delete/${e}`).then(res =>{
+    alert("Donation Deleted!")
+    console.log(res.state)
+  }).catch(err => {
+    alert(err);
+  })
+}
 
 
   return (
@@ -41,7 +41,7 @@ export default function ManageDonations() {
       <br></br>
       <h2>DONATIONS</h2>
       <br></br>
-      <Link to = "/Donations/AddDonations"><Button variant="primary">Add Donation</Button></Link>
+      <Link to = "/Donations/AddDonations"><Button variant="primary">+ Add Donation</Button></Link>
       
       <Table striped bordered hover style={{textAlign : 'center', width : '100%',justifyContent : 'center',marginTop : 20}}>
       <thead>
@@ -73,7 +73,7 @@ export default function ManageDonations() {
                     <td>{e.dateOfHandOver}</td>
                     <td>{e.district}</td>
                     <td>{e.mobileNumber}</td>
-                    <td><center><Link to = "/Donations/UpdateDonations"><Button variant="outline-primary">Edit</Button></Link>        <Button variant="outline-danger">Delete</Button></center></td>
+                    <td><center><Link to ={`Donations/EditDonations${e._id}`}><Button variant="outline-primary">Edit</Button></Link>{" "}         <Button variant="outline-danger"onClick={() => deleteRecord(e._id)}>Delete</Button></center></td>
                 </tr>
             ))}
       </tbody>
