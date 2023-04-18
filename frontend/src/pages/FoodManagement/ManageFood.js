@@ -47,7 +47,7 @@ function ManageFood() {
         }}
       >
         <br></br>
-        <h2>USERS</h2>
+        <h2>FOOD STOCK</h2>
         <br></br>
         <Link to="/Food/AddFood">
           <Button variant="primary">+ Add Food Stock</Button>

@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const Donations = require('../models/Donations');
-// const {count} = require('../models/Donations');
 
 router.route("/").get(async (req, res) => {
   await Donations.find()
@@ -45,45 +44,43 @@ router.route("/AddDonations").post(async (req, res) => {
   }
 });
 
-// router.route("/delete/:id").delete((req, res) => {
-//   const id = req.params.id;
+router.route("/delete/:id").delete((req, res) => {
+  const id = req.params.id;
 
-//   User.findByIdAndDelete(id)
-//     .then(() => {
-//       res.status(200).send({ state: "Deleted Successfully" });
-//     })
-//     .catch((err) => {
-//       res.status(100).send({ state: err });
-//     });
-// });
+  User.findByIdAndDelete(id)
+    .then(() => {
+      res.status(200).send({ state: "Deleted Successfully" });
+    })
+    .catch((err) => {
+      res.status(100).send({ state: err });
+    });
+});
 
-// router.route("/update/:id").put(async (req, res) => {
-//   console.log("update metod called");
-//   const {
-//       donationID,
-//       foodCategory,
-//       quantity,
-//       dateOfHandOver,
-//       district,
-//       mobileNumber,
-//   } = req.body;
-//   const id = req.params.id;
+router.route("/update/:id").put(async (req, res) => {
+  console.log("update metod called");
+   const {
+      foodCategory,
+      quantity,
+      dateOfHandOver,
+      district,
+      mobileNumber,
+  } = req.body;
+  const id = req.params.id;
 
-//   const newData = {
-//       donationID,
-//       foodCategory,
-//       quantity,
-//       dateOfHandOver,
-//       district,
-//       mobileNumber,
-//   };
-//   console.log("id is " + id);
-//   User.findByIdAndUpdate(id,newData).then((value)=>{
-//     return res.status(201).json({"message" : "updated succesfully",value})
-//   })
-//     .catch((err) => {
-//       return res.status(400).send({ state: err });
-//     });
-// });
+  const newData = {
+      foodCategory,
+      quantity,
+      dateOfHandOver,
+      district,
+      mobileNumber,
+  };
+  console.log("id is " + id);
+  User.findByIdAndUpdate(id,newData).then((value)=>{
+    return res.status(201).json({"message" : "updated succesfully",value})
+  })
+    .catch((err) => {
+      return res.status(400).send({ state: err });
+    });
+});
 
 module.exports = router;
