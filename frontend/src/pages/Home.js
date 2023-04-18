@@ -1,39 +1,48 @@
 import React from 'react'
-import Hero from '../components/Hero';
 import "../Styles/Home.css"
+import SlideShow from '../components/SlideShow';
+import stat from "../Assets/stat.png"
+import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/esm/Button';
 import first from "../Assets/first.jpg"
-import second from "../Assets/second.jpeg"
+
 
 function Home() {
   return (
     <>
-    <Hero
-    cName="hero"
-    heroImg="https://scontent.fcmb4-2.fna.fbcdn.net/v/t39.30808-6/294476149_590531945769761_7598775614928024688_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=pGpeOy9he94AX8sxUxD&_nc_ht=scontent.fcmb4-2.fna&oh=00_AfDf9DAWKe977E6IYwV3iE7UCfOCXBrrsjlf37i9VgMQUg&oe=643420E6"
-    title="Poverty doesn't discriminate. It affects people of all ages, genders, and backgrounds. "
-    p="TOGETHER, WE CAN MAKE A DIFFERENCE!"
-
-    />
-  <div className="description">
+    <SlideShow/>
+    <div className="description">
       <h1>What is DIRIYA?</h1>
       <p>At Diriya, we are committed to fighting poverty and providing opportunities for underprivileged communities in Sri Lanka. Unfortunately, poverty in Sri Lanka has risen from 13% to 25% in 2022. We believe that no one should have to suffer from lack of basic needs such as food, water, and healthcare, and we are dedicated to making a difference.</p>
-
-  <div className="first-des">
-    <div className="one-text">
-      <h2>How to make the difference?</h2>
-      <p>We recognize that donations from generous Sri Lankans are often distributed unequally, which is why we propose a system that ensures equal distribution of donations. Donators can submit their donations, and village servants of each district can then distribute them among the families under their care based on the need. This will ensure that those who require the most support receive it, and that donations are distributed fairly and effectively.</p>
-      <h2>A sustainable solution…</h2>
-      <p>We also believe that sustainable solutions are essential to addressing poverty. That's why we propose collecting minor level job opportunities from various individuals and companies and making them visible to each village servant. This way, the village servants can communicate the opportunities to the underprivileged groups and help them earn an income.</p>
-      <h2>Our mission…</h2>
-      <p>We are committed in creating a Sri Lanka without poverty. We believe that by working together, we can make a lasting impact on the lives of millions of people in Sri Lanka. Join us in our mission to feed hunger, eradicate disease, and give everyone a chance to live a productive and prosperous life.</p>
+      <div style={{ display: 'flex', marginLeft:900, marginTop: 40 ,height:600}}>
+      <img src={stat} />
+      </div>
+      <div style={{marginLeft:250 , marginTop: -600}}>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2023603.3984208487!2d79.38684731070474!3d7.858350414214859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593cf65a1e9d%3A0xe13da4b400e2d38c!2sSri%20Lanka!5e0!3m2!1sen!2slk!4v1681626800074!5m2!1sen!2slk"
+        width="50%"
+        height="600"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      </div>
+      
+      <div style={{ display: 'flex', justifyContent: 'center',marginTop:10 }}>
+      <Link to ="/Login"><Button variant="warning">Donate Now</Button></Link>
     </div>
-    <div className="image">
-      <img alt="img" src={first}/>
-      <img alt="img" src={second}/>
+    <br></br>
+    <h2 style={{marginTop:30}}>Highlights</h2>
+    <br></br>
+    <ul style={{width:700 , fontSize:20, listStyleType: 'inherit'}}>
+     <li> An acute economic crisis since early 2022 has caused severe food insecurity in Sri Lanka, and the situation is predicted to deteriorate between October 2022 and February 2023. </li>
+     <li> An estimated 6.2 million people (28 percent of the population) are moderately acute food insecure, while 66,000 people are severely acute food insecure.</li> 
+     <li> Two in five households (41.8 per cent) spend more than 75 percent of their expenditures on purchasing food, leaving little to spend on health and education. </li>
+     <li> Many families have exhausted their savings and are struggling due to crippling inflation. </li>
+     <li> DIRIYA will prioritize in reducing the poverty of underprivileged families focusing all the districts in Sri Lanka through village servants, existing systems, where possible, and incorporate community-based approaches where relevant.</li>
+    </ul>
+    <img src = {first} style={{marginLeft:800,marginTop:-450 , width: 650, height: 500}} />
     </div>
-  </div>
-  </div>
-  </>
+    </>
   )
 }
 

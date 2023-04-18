@@ -12,7 +12,7 @@ export default function Donations() {
             style={{ maxHeight: '100px' }}
             NavLinkScroll
           >
-            <Nav.Link href="/Donations/DonateHistory">Donate History</Nav.Link>
+            <Nav.Link href="/Donations/DonateHistory">Donation History</Nav.Link>
             <Nav.Link href="/Donations/ManageDonations"> Manage Donations </Nav.Link>
           </Nav>
         </Container>
