@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 
-export default function Admin() {
+function Admin() {
+
   return (
     <Navbar bg="dark" variant="dark">
         <Container>
@@ -17,5 +18,7 @@ export default function Admin() {
           </Nav>
         </Container>
     </Navbar>
-  )
+    
+  );
 }
+export default Admin;

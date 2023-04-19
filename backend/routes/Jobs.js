@@ -15,6 +15,7 @@ router.route("/").get(async (req, res) => {
   
     try {
       const {
+        jobId,
         jobTitle,
         district,
         gender,
@@ -23,6 +24,7 @@ router.route("/").get(async (req, res) => {
         contactNumber,
       } = req.body;
       const newJob = new Jobs({
+        jobId,
         jobTitle,
         district,
         gender,

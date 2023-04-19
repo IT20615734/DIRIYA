@@ -25,7 +25,7 @@ function NavLink() {
               {MenuItems.map((item,index)=>{
                 return(
                   <li key = {index}>
-                  <a className ={item.cname}href ={item.url}><i className={item.icon}></i>{item.title}</a>
+                  <a className ={item.cname} href ={item.url}><i className={item.icon}></i>{item.title}</a>
                   </li>
                 )
               })}

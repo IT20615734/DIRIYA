@@ -47,7 +47,7 @@ router.route("/AddDonations").post(async (req, res) => {
 router.route("/delete/:id").delete((req, res) => {
   const id = req.params.id;
 
-  User.findByIdAndDelete(id)
+  Donations.findByIdAndDelete(id)
     .then(() => {
       res.status(200).send({ state: "Deleted Successfully" });
     })
@@ -75,7 +75,7 @@ router.route("/update/:id").put(async (req, res) => {
       mobileNumber,
   };
   console.log("id is " + id);
-  User.findByIdAndUpdate(id,newData).then((value)=>{
+  Donations.findByIdAndUpdate(id,newData).then((value)=>{
     return res.status(201).json({"message" : "updated succesfully",value})
   })
     .catch((err) => {
