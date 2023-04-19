@@ -7,7 +7,17 @@ import { Navigate,useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function AddJobs() {
+  const generateRandomString = (length) => {
+    let result = '';
+    const characters = '0123456789';
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  };
 
+  const[jobId, setJobId] = useState(`JI_${generateRandomString(6)}`);
   const[jobTitle,setjobTitle] = useState();
   const[district,setdistrict] = useState();
   const[gender,setgender] = useState();
@@ -21,6 +31,7 @@ function AddJobs() {
     e.preventDefault();
 
     const formData = new FormData();
+      formData.append("jobId",jobId);
       formData.append("jobTitle",jobTitle);
       formData.append("district",district);
       formData.append("gender",gender);
@@ -30,6 +41,7 @@ function AddJobs() {
 
   const data =
   {
+    "jobId":jobId,
     "jobTitle":jobTitle,
     "district":district,
     "gender":gender,
@@ -44,7 +56,7 @@ function AddJobs() {
             navigate(-1);
 
         }).catch(err=>{
-            alert(e)
+            alert(err)
         })
     }
 

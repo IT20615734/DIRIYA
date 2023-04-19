@@ -52,7 +52,7 @@ export default function Jobs() {
       <Table striped bordered hover style={{textAlign : 'center', width : '100%',justifyContent : 'center',marginTop : 20}}>
       <thead>
         <tr>
-          <th>Job Reference Number</th>
+          <th>Job ID</th>
           <th> Job Title</th>
           <th> District</th>
           <th> Gender</th>
@@ -71,7 +71,7 @@ export default function Jobs() {
               }
             }).map((e, i) => (
               <tr key={i} style={{ textAlign: "center", fontWeight: "400" }}>
-                <td>{i + 1}</td>
+                <td>{e.jobId}</td>
                 <td>{e.jobTitle}</td>
                 <td>{e.district}</td>
                 <td>{e.gender}</td>

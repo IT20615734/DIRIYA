@@ -66,7 +66,8 @@ function User() {
         >
           <thead>
             <tr>
-              <th>Index Id</th>
+              {/* <th>Index Id</th> */}
+              <th>User Id</th>
               <th>User Type</th>
               <th>Full Name</th>
               <th>NIC</th>
@@ -85,7 +86,8 @@ function User() {
               }
             }).map((e, i) => (
               <tr key={i} style={{ textAlign: "center", fontWeight: "400" }}>
-                <td>{i + 1}</td>
+                {/* <td>{i + 1}</td> */}
+                <td>{e.userId}</td>
                 <td>{e.role}</td>
                 <td>{e.fullName}</td>
                 <td>{e.nic}</td>
@@ -108,7 +110,8 @@ function User() {
               </tr>
             ))}
           </tbody>
-        </Table>
+        </Table> 
+
       </Container>
     </>
   );

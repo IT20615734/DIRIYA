@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 var User = new mongoose.Schema({
+    userId:{
+        type:String,
+        required:true,
+    },
+
     role:{
         type:String,
         required:true,
@@ -29,6 +34,7 @@ var User = new mongoose.Schema({
     userName:{
         type:String,
         required:true,
+        
     },
     Password:{
         type:String,

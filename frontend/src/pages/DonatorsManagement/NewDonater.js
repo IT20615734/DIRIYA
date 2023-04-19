@@ -6,7 +6,16 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function NewDonater() {
-
+    const generateRandomString = (length) => {
+        let result = '';
+        const characters = '0123456789';
+        const charactersLength = characters.length;
+        for (let i = 0; i < length; i++) {
+          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+      };
+    const[userId, setUserId] = useState(`UI_${generateRandomString(6)}`);
     const[role, setRole] = useState('Donater');
     const[fullName, setFulltName] =useState();
     const[nic, setNic] =useState();
@@ -22,6 +31,7 @@ function NewDonater() {
         e.preventDefault();
 
         const formData = new FormData();
+            formData.append("userId",userId);
             formData.append("role",role);
             formData.append("fullName",fullName)
             formData.append("nic",nic)
@@ -33,6 +43,7 @@ function NewDonater() {
         
     const  data = 
         {
+            "userId":userId,
             "role":role,
             "fullName":fullName,
             "nic":nic,

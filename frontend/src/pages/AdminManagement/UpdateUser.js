@@ -7,6 +7,7 @@ import axios from "axios";
 import {Navigate,useLocation,useNavigate,useParams,} from "react-router-dom";
 
 function UpdateUser() {
+  const [userId, setUserId] = useState();
   const [role, setRole] = useState();
   const [fullName, setFulltName] = useState();
   const [nic, setNic] = useState();
@@ -26,7 +27,7 @@ function UpdateUser() {
         for (let user of users) {
           if (user["_id"] === id) {
             //console.log("user found");
-
+            setUserId(user["userId"]);
             setRole(user["role"]);
             setFulltName(user["fullName"]);
             setNic(user["nic"]);
@@ -49,6 +50,7 @@ function UpdateUser() {
     e.preventDefault();
 
     const data = {
+      userId:userId,
       role: role,
       fullName: fullName,
       nic: nic,
@@ -85,9 +87,14 @@ function UpdateUser() {
 
           <br></br>
           <hr></hr>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>User Id</Form.Label>
+            <Form.Control type="text" disabled={true} value={userId} onChange={(e) => {setUserId(e.target.value);}}required/>
+          </Form.Group>
+
           <Form.Group className="mb-3">
             <Form.Label>User Type</Form.Label>
-            <Form.Select value={role}onChange={(e) => {setRole(e.target.value);}} required>
+            <Form.Select disabled={true} value={role}onChange={(e) => {setRole(e.target.value);}} required>
               <option></option>
               <option value="Admin">Admin</option>
               <option value="FoodManager">Food Manager</option>

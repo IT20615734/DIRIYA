@@ -7,7 +7,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function UpdateJob() {
-
+    const[jobId, setJobId] = useState();
     const[jobTitle,setjobTitle] = useState();
     const[district,setdistrict] = useState();
     const[gender,setgender] = useState();
@@ -25,7 +25,7 @@ function UpdateJob() {
         for (let Job of Jobs) {
           if (Job["_id"] === id) {
             //console.log("user found");
-
+            setJobId(Job["jobId"]);
             setjobTitle(Job["jobTitle"]);
             setdistrict(Job["district"]);
             setgender(Job["gender"]);
@@ -47,6 +47,7 @@ function UpdateJob() {
     e.preventDefault();
 
     const data = {
+        jobId : jobId,
         jobTitle : jobTitle,
         district : district,
         gender : gender,
@@ -79,10 +80,10 @@ function UpdateJob() {
     <h1 style={{fontWeight:'bold'}}><center>UPDATE JOB OPPORTUNITY</center></h1>
         <br></br>
         <hr></hr>
-        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Job Reference Number</Form.Label>
-            <Form.Control type="text" value={jobTitle}onChange={(e) => {setjobTitle(e.target.value);}}required/>
-        </Form.Group> */}
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Job Id</Form.Label>
+            <Form.Control type="text" disabled={true} value={jobId}onChange={(e) => {setJobId(e.target.value);}}required/>
+        </Form.Group>
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Job Title</Form.Label>
