@@ -20,6 +20,7 @@ try{
         address,
         nic,
         mobileNumber,
+        monthlyIncome,
         numberOfFamilyMembers
     } = req.body;
 const newBeneficiary = new Beneficiaries({
@@ -28,6 +29,7 @@ const newBeneficiary = new Beneficiaries({
     address,
     nic,
     mobileNumber,
+    monthlyIncome,
     numberOfFamilyMembers,
 })
 
@@ -63,6 +65,7 @@ router.route("/update/:id").put(async (req, res) => {
         address,
         nic,
         mobileNumber,
+        monthlyIncome,
         numberOfFamilyMembers
     } = req.body;
     const id = req.params.id;
@@ -73,6 +76,7 @@ router.route("/update/:id").put(async (req, res) => {
         address,
         nic,
         mobileNumber,
+        monthlyIncome,
         numberOfFamilyMembers
     };
     console.log("id is " + id);

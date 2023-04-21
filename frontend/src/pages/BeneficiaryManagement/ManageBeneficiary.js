@@ -55,6 +55,7 @@ const deleteRecord = (e) =>{
           <th> NIC</th>
           <th> Mobile Number</th>
           <th> Number of Family Members</th>
+          <th> Monthly Income</th>
           <th> Action</th>
         </tr>
       </thead>
@@ -75,6 +76,7 @@ const deleteRecord = (e) =>{
                     <td>{e.nic}</td>
                     <td>{e.mobileNumber}</td>
                     <td>{e.numberOfFamilyMembers}</td>
+                    <td>{e.monthlyIncome}</td>
                     <td><center>
                     <Link to={`Beneficiaries/UpdateBeneficiaries/${e._id}`}>
                       <Button variant="outline-primary">Edit</Button>

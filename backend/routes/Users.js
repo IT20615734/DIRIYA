@@ -16,6 +16,7 @@ router.route("/AddUser").post(async (req, res) => {
 
   try {
     const {
+      userId,
       role,
       fullName,
       nic,
@@ -26,6 +27,7 @@ router.route("/AddUser").post(async (req, res) => {
       Password,
     } = req.body;
     const newUser = new User({
+      userId,
       role,
       fullName,
       nic,

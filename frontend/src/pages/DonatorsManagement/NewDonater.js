@@ -1,14 +1,11 @@
 import { React ,useState } from 'react';
 import Container from 'react-bootstrap/esm/Container'
-import Admin from './Admin'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/esm/Button';
 import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { v1 as uuidv1 } from 'uuid';
 
-
-function AddUser() {
+function NewDonater() {
     const generateRandomString = (length) => {
         let result = '';
         const characters = '0123456789';
@@ -18,9 +15,8 @@ function AddUser() {
         }
         return result;
       };
-    
     const[userId, setUserId] = useState(`UI_${generateRandomString(6)}`);
-    const[role, setRole] = useState();
+    const[role, setRole] = useState('Donater');
     const[fullName, setFulltName] =useState();
     const[nic, setNic] =useState();
     const[address, setAddress] =useState();
@@ -61,11 +57,11 @@ function AddUser() {
 
         console.log("FormData", formData )
         axios.post("http://localhost:8080/User/AddUser", data).then(res=>{
-            alert ("New User Added!");
+            alert ("New Account Created!");
             navigate(-1);
 
         }).catch(err=>{
-            alert(e)
+            alert(err)
         })
     }
         // const Back = () =>
@@ -73,30 +69,25 @@ function AddUser() {
 
   return (
     <>
-    <Admin/>
     <Container style={{marginTop : '1%',display : 'block',width : '50%',justifyContent : 'center'}}>
 
 
     <Form onSubmit={Validate}>
-    <h1 style={{fontWeight:'bold'}}><center>PROVIDE ACCESS</center></h1>
+    <h1 style={{fontWeight:'bold'}}><center>CREATE AN ACCOUNT</center></h1>
 
         <br></br>
         <hr></hr>
-        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>User ID</Form.Label>
-            <Form.Control type="text" value={userId} onChange={(e)=>{setUserId(e.target.value)}} required/>
-        </Form.Group> */}
-
-        <Form.Group className="mb-3" >
+        {/* <Form.Group className="mb-3" >
               <Form.Label>User Type</Form.Label>
-              <Form.Select  onChange={(e)=>{setRole(e.target.value)}} required >
+              <Form.Select  disabled={true} onChange={(e)=>{setRole(e.target.value)}} required >
+                <option value='Donater'>Donater</option>
                 <option></option>
                 <option value = 'Admin'>Admin</option>
                 <option value = 'FoodManager'>Food Manager</option>
                 <option value='VillageOfficer'>Village Officer</option>``
-                <option value='Donater'>Donater</option>
+                
               </Form.Select>
-        </Form.Group>
+        </Form.Group> */}
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Full Name</Form.Label>
             <Form.Control type="text" onChange={(e)=>{setFulltName(e.target.value)}} required/>
@@ -126,7 +117,7 @@ function AddUser() {
         <hr></hr>
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>User Name</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setUserName(e.target.value)}}  required/>
+            <Form.Control type="text" onChange={(e)=>{setUserName(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -142,4 +133,5 @@ function AddUser() {
     </>
   )
 }
-export default AddUser;
+
+export default NewDonater
