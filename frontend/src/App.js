@@ -37,8 +37,9 @@ import UpdateFood from "./pages/FoodManagement/UpdateFood";
 function App() {
   return (
     <>
+      <body style={{ backgroundColor: '#FDF7F6' }}>
       <React.Fragment>
-        <NavLink />
+      <NavLink />  
       </React.Fragment>
       <BrowserRouter>
         <Routes>
@@ -108,6 +109,7 @@ function App() {
         </Routes>
         <Footer/> 
       </BrowserRouter>
+      </body>
     </>
   );
 }
