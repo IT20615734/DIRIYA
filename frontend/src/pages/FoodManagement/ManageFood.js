@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import Food from './Food'
-import Container from 'react-bootstrap/esm/Container';
-import { Link } from 'react-router-dom';
-import Button from 'react-bootstrap/esm/Button';
-import Table from 'react-bootstrap/esm/Table';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import Food from "./Food";
+import Container from "react-bootstrap/esm/Container";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/esm/Button";
+import Table from "react-bootstrap/esm/Table";
+import axios from "axios";
 
 function ManageFood() {
   const [AddFood, setAddFood] = useState([]);
@@ -22,23 +22,24 @@ function ManageFood() {
       });
   }, [AddFood]);
 
-  // const deleteRecord = (e) => {
-  //   console.log(e);
-  //   axios
-  //     .delete(`http://localhost:8080/User/delete/${e}`)
-  //     .then((res) => {
-  //       alert("User Deleted !");
-  //       console.log(res.state);
-  //     })
-  //     .catch((err) => {
-  //       alert(err);
-  //     });
-  // };
+  //DELETE (DELETE DATA FROM DB)
+  const deleteRecord = (e) => {
+    console.log(e);
+    axios
+      .delete(`http://localhost:8080/Food/delete/${e}`)
+      .then((res) => {
+        alert("Food Deleted !");
+        console.log(res.state);
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
 
   return (
     <>
-    <Food/>
-    <Container
+      <Food />
+      <Container
         style={{
           marginTop: "1%",
           display: "block",
@@ -47,7 +48,9 @@ function ManageFood() {
         }}
       >
         <br></br>
+
         <h2>All FOODS</h2>
+
         <br></br>
         <Link to="/Food/AddFood">
           <Button variant="primary">+ Add Food Stock</Button>
@@ -82,12 +85,12 @@ function ManageFood() {
                 <td>{e.donaterName}</td>
                 <td>
                   <center>
-                    <Link to={`Admin/UpdateUser/${e._id}`}>
+                    <Link to={`/Food/UpdateFood/${e._id}`}>
                       <Button variant="outline-primary">Edit</Button>
                     </Link>{" "}
                     <Button
                       variant="outline-danger"
-      
+                      onClick={() => deleteRecord(e._id)}
                     >
                       Delete
                     </Button>
@@ -99,7 +102,7 @@ function ManageFood() {
         </Table>
       </Container>
     </>
-  )
+  );
 }
 
-export default ManageFood
+export default ManageFood;
