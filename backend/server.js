@@ -45,7 +45,7 @@ app.use("/User",Users);
 const Beneficiaries = require('./routes/Beneficiaries.js');
 app.use("/Beneficiaries",Beneficiaries);
 
-//http://localhost:8080/Beneficiaries/AddApplications
+//http://localhost:8080/Applications/AddApplications
 const Applications = require('./routes/Applications.js');
 app.use("/Applications",Applications);
 
@@ -58,6 +58,10 @@ app.use("/Donations",Donations);
 //http://localhost:8080/Food/AddFood
 const Foods = require('./routes/Foods.js');
 app.use("/Food",Foods);
+
+//http://localhost:8080/Job/AddJob
+const Jobs = require('./routes/Jobs.js');
+app.use("/Job",Jobs);
 
 
 

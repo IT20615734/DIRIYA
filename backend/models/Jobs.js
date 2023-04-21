@@ -1,46 +1,37 @@
 const mongoose = require('mongoose');
 
-var User = new mongoose.Schema({
-    userId:{
+var Job = new mongoose.Schema({
+    jobId:{
         type:String,
         required:true,
     },
-
-    role:{
+    jobTitle:{
+        type:String,
+        required:true,
+    },
+    district:{
         type:String,
         required:true,
         index:true,
     },
-    fullName:{
+    gender:{
+        type:String,
+        required:true,
+        index:true,
+    },
+    numberOfPeople:{
         type:String,
         required:true,
     },
-    nic:{
+    companyName:{
         type:String,
         required:true,
     },
-    address:{
+    contactNumber:{
         type:String,
         required:true,
     },
-    email:{
-        type:String,
-        required:true,
-    },
-    mobileNumber:{
-        type:String,
-        required:true,
-    },
-    userName:{
-        type:String,
-        required:true,
-        
-    },
-    Password:{
-        type:String,
-        required:true,
-    }    
-    
-});
-const Users = mongoose.model("User", User);
-module.exports = Users;
+
+})
+const Jobs = mongoose.model("job",Job);
+module.exports = Jobs

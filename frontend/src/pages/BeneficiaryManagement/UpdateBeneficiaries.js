@@ -13,6 +13,7 @@ export default function UpdateBeneficiaries() {
     const[nic, setnic] =useState();
     const[mobileNumber, setMobileNumber] =useState();
     const[numberOfFamilyMembers, setnumberOfFamilyMembers] =useState();
+    const[monthlyIncome, setMonthlyIncome] =useState();
 
     const location = useLocation();
   const { id } = useParams();
@@ -31,6 +32,7 @@ export default function UpdateBeneficiaries() {
             setnic(beneficiary["nic"]);
             setMobileNumber(beneficiary["mobileNumber"]);
             setnumberOfFamilyMembers(beneficiary["numberOfFamilyMembers"]);
+            setMonthlyIncome(beneficiary["monthlyIncome"]);
           }
         }
         })
@@ -51,6 +53,7 @@ export default function UpdateBeneficiaries() {
             nic: nic,
             mobileNumber: mobileNumber,
             numberOfFamilyMembers: numberOfFamilyMembers,
+            monthlyIncome: monthlyIncome,
         };
      
         await axios
@@ -100,7 +103,11 @@ export default function UpdateBeneficiaries() {
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Mobile Number</Form.Label>
             <Form.Control type="text" value={mobileNumber} onChange={(e)=>{setMobileNumber(e.target.value)}} maxLength={10} minLength ={10} required/>
-        
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Monthly Income</Form.Label>
+            <Form.Control type="text" onChange={(e)=>{setMonthlyIncome(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">

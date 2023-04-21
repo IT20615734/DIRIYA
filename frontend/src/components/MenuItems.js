@@ -7,7 +7,7 @@ export const MenuItems = [
     },
 
     {
-        title: "Contact",
+        title: "What we do ",
         url: "/Contact",  
         cname: "nav-links",
         icon: "fa-solid fa-address-card",
@@ -15,28 +15,28 @@ export const MenuItems = [
 
     {
         title: "Beneficiaries",
-        url: "/Beneficiaries",  
+        url: "/Beneficiaries/ManageBeneficiary",  
         cname: "nav-links",
         icon: "fa-solid fa-user",
     },
 
     {
         title: "Donations",
-        url: "/Donations",  
+        url: "/Donations/ManageDonations",  
         cname: "nav-links",
         icon: "fa-solid fa-hand-holding-heart",
     },
 
     {
         title: "Food Management",
-        url: "/Food",  
+        url: "/Food/ManageFood",  
         cname: "nav-links",
-        icon: "fa-solid fa-hand-holding-heart",
+        icon: "fa-solid fa-bars-progress",
     },
 
     {
         title: "Admin",
-        url: "/Admin",  
+        url: "/Admin/User",  
         cname: "nav-links",
         icon: "fa-solid fa-lock",
     },
