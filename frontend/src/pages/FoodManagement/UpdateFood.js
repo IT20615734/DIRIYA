@@ -4,18 +4,15 @@ import Container from "react-bootstrap/esm/Container";
 import Form from "react-bootstrap/Form";
 import Food from "./Food";
 import axios from "axios";
-import {
-  Navigate,
-  useLocation,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 export default function UpdateFood() {
   //const[FoodID, setFoodID] = useState();
   const [foodCategory, setfoodCategory] = useState();
   const [quantity, setquantity] = useState();
   const [donaterName, setdonaterName] = useState();
+
+  const location = useLocation();
 
   const { id } = useParams();
   useEffect(() => {
@@ -37,7 +34,7 @@ export default function UpdateFood() {
       .catch((err) => {
         console.log("cant find the Food" + err);
       });
-  }, []);
+  }, [id]);
 
   const navigate = useNavigate();
 

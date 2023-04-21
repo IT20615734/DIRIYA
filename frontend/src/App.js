@@ -33,6 +33,7 @@ import Food from "./pages/FoodManagement/Food";
 import ManageFood from "./pages/FoodManagement/ManageFood";
 import AddFood from "./pages/FoodManagement/AddFood";
 import UpdateFood from "./pages/FoodManagement/UpdateFood";
+import Overview from "./pages/FoodManagement/Overview";
 
 function App() {
   return (
@@ -106,6 +107,7 @@ function App() {
           <Route exact path="/Food/ManageFood" element={<ManageFood />} />
           <Route exact path="/Food/AddFood" element={<AddFood />} />
           <Route exact path="/Food/UpdateFood/:id" element={<UpdateFood />} />
+          <Route exact path="/Food/Overview" element={<Overview />} />
         </Routes>
         <Footer/> 
       </BrowserRouter>
