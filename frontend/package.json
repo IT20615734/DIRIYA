@@ -18,13 +18,11 @@
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
-<<<<<<< HEAD
-    "recharts": "^2.5.0",
-=======
     "react-social-icons": "^5.1.0",
+    "rechart": "^0.0.1",
+    "recharts": "^2.5.0",
     "rsuite": "^5.31.1",
     "uuid": "^9.0.0",
->>>>>>> b257d65d951afa5e8620826c28d5c9f0e6f28ab2
     "web-vitals": "^2.1.4"
   },
   "scripts": {
