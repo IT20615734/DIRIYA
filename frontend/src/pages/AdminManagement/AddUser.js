@@ -59,13 +59,14 @@ function AddUser() {
         }
 
 
-        console.log("FormData", formData )
-        axios.post("http://localhost:8080/User/AddUser", data).then(res=>{
+        // console.log("FormData", formData )
+        axios.post("http://localhost:8080/authUser/RegisterUser", data).then(res=>{
             alert ("New User Added!");
             navigate(-1);
+            
 
         }).catch(err=>{
-            alert(e)
+            alert(err)
         })
     }
         // const Back = () =>

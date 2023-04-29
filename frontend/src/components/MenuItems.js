@@ -4,6 +4,7 @@ export const MenuItems = [
       url: "/",  
       cname: "nav-links",
       icon: "fa-solid fa-house-chimney",
+      access : ["Admin","Donater","VillageOfficer","FoodManager",undefined]
     },
 
     {
@@ -11,6 +12,7 @@ export const MenuItems = [
         url: "/Contact",  
         cname: "nav-links",
         icon: "fa-solid fa-address-card",
+        access : ["Admin","Donater","VillageOfficer","FoodManager",undefined]
     },
 
     {
@@ -18,6 +20,8 @@ export const MenuItems = [
         url: "/Beneficiaries/ManageBeneficiary",  
         cname: "nav-links",
         icon: "fa-solid fa-user",
+        access : ["Admin","VillageOfficer"]
+
     },
 
     {
@@ -25,6 +29,7 @@ export const MenuItems = [
         url: "/Donations/ManageDonations",  
         cname: "nav-links",
         icon: "fa-solid fa-hand-holding-heart",
+        access : ["Admin","Donater"]
     },
 
     {
@@ -32,6 +37,7 @@ export const MenuItems = [
         url: "/Food/ManageFood",  
         cname: "nav-links",
         icon: "fa-solid fa-bars-progress",
+        access : ["Admin","FoodManager"]
     },
 
     {
@@ -39,5 +45,6 @@ export const MenuItems = [
         url: "/Admin/User",  
         cname: "nav-links",
         icon: "fa-solid fa-lock",
+        access : ["Admin"]
     },
 ]
