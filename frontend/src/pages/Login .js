@@ -1,44 +1,56 @@
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useEffect, useRef, useState } from 'react'
 import Button from 'react-bootstrap/esm/Button'
 import Container from 'react-bootstrap/esm/Container'
 import Form from 'react-bootstrap/Form';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { UserDetails } from '../context/UserContext';
 
 function Login () {
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [username,setUsername] = useState();
+  const [password,setPassword] = useState();
+  const Navigate = useNavigate();
 
-  const handleLogin = () => {
-    // Perform authentication logic here
-    // Example: Send API request to backend for authentication
-    // using username and password
+  const {user,setUser} = UserDetails();
 
-    // For simplicity, let's assume successful authentication
-    const authenticated = true;
+  const validate=async(e) =>{
 
-    if (authenticated) {
-      // Redirect to dashboard or home page
-      window.location.href = "/dashboard";
-    } else {
-      // Display error message
-      setError("Invalid username or password");
+    // alert('Pressed')
+    e.preventDefault();
+
+    const data = {
+      username,
+      password
     }
-  };
 
+    console.log(data);
+
+    await axios.post("http://localhost:8080/authUser/login",data).then(res =>{
+      localStorage.setItem('user',res.data.token);
+      setUser(res.data.user)
+      Navigate('/')
+    }).catch(err =>{
+      alert(err)
+    })
+
+
+  }
+  
+ 
   return (
     <Container style={{marginTop : 100,width : '500px' , border:'1px solid black', padding:'15px', borderRadius:'20px',marginBottom:20}}>
-    <Form>
+    <Form onSubmit={(e) => {validate(e)}}>
         <h2 style={{textAlign:'center', fontSize:'40px', fontWeight:'bold'}}>Login</h2>
         <hr style={{width:'100%'}}></hr>
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>User Name: </Form.Label>
-            <Form.Control type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Enter username" style={{width:'5in'}}  required/>
+            <Form.Control type="text"  placeholder="Enter Username" style={{width:'5in'}} onChange={(e) => {setUsername(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Password: </Form.Label>
-            <Form.Control type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter your password" style={{width:'5in'}}  required/>
+            <Form.Control type="password" placeholder="Enter your password" style={{width:'5in'}} onChange={(e) => {setPassword(e.target.value)}} required/>
         </Form.Group>
 
         <Button type="submit" style={{backgroundColor:'blue', padding:'10px', borderRadius:'6px', width:'60%', textAlign:'center', marginLeft:'20%', marginBottom:'5px', border:'2px solid black'}} >

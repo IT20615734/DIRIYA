@@ -28,20 +28,10 @@ function NewDonater() {
     const navigate = useNavigate();
 
     const Validate =(e)=>{
-        e.preventDefault();
 
-        const formData = new FormData();
-            formData.append("userId",userId);
-            formData.append("role",role);
-            formData.append("fullName",fullName)
-            formData.append("nic",nic)
-            formData.append("address",address);
-            formData.append("email",email);
-            formData.append("mobileNumber",mobileNumber);
-            formData.append("userName",userName);
-            formData.append("password",password);
+        e.preventDefault();
         
-    const  data = 
+        const data = 
         {
             "userId":userId,
             "role":role,
@@ -53,16 +43,28 @@ function NewDonater() {
             "userName":userName,
             "Password":password
         }
+        console.log(data);
+
+        // console.log(userId);
 
 
-        console.log("FormData", formData )
-        axios.post("http://localhost:8080/User/AddUser", data).then(res=>{
+//         console.log("FormData", data )
+
+        axios.post("http://localhost:8080/authUser/RegisterUser", data).then(res=>{
             alert ("New Account Created!");
             navigate(-1);
 
         }).catch(err=>{
             alert(err)
         })
+
+        // axios.post("http://localhost:8080/User/AddUser", data).then(res=>{
+        //     alert ("New Account Created!");
+        //     navigate(-1);
+
+        // }).catch(err=>{
+        //     alert(err)
+        // })
     }
         // const Back = () =>
         // navigate("/Admin/User");

@@ -54,7 +54,7 @@ function User() {
           <Button variant="primary">+ Add New User</Button>
         </Link>
         <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40 }}>
-        <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Name" />
+        <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Name " />
         <input class="button--submit" value="Search" type="submit"></input>
       </div>
         <br></br>
