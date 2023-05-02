@@ -43,7 +43,7 @@ function Footer() {
         <h3 style={{  marginTop: 20  }}>Links</h3>
       <ul>
        <li>
-         <a href="#faq">F.A.Q</a>
+         <a href="#faq">FAQ</a>
         </li>
        <li>
          <a href="#cookies-policy">Cookies Policy</a>
@@ -93,7 +93,7 @@ function Footer() {
     </div>
 
     <div class='row copyright'>
-        <p>Copyright &copy; ITPM 2023 </p>
+        <p>Copyright &copy; GRP_12 </p>
       </div>
       </>  
   )
