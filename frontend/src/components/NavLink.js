@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import "../components/NavLink.css";
 import { MenuItems } from './MenuItems';
 import Button from 'react-bootstrap/esm/Button';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, navigate, useNavigate } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import logo1 from "../Assets/logo1.png"
 import { UserDetails } from '../context/UserContext';
@@ -25,8 +25,8 @@ function NavLink() {
       localStorage.removeItem('user');
       localStorage.removeItem('Role');
       setUser({})
-      // navigate('/')
       window.location.reload();
+      // navigate('/')
   }
   
   }
