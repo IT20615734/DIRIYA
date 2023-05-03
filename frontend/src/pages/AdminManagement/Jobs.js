@@ -5,6 +5,7 @@ import Table from 'react-bootstrap/esm/Table'
 import { Link } from 'react-router-dom'
 import Admin from './Admin'
 import axios from 'axios'
+import '../../Styles/Search.css'
 
 export default function Jobs() {
   const [AddJob, setAddJob] = useState([]);
@@ -43,11 +44,15 @@ export default function Jobs() {
       <h2>JOB OPPORTUNITIES</h2>
       <br></br>
       <Link to="/Admin/AddJobs"><Button variant="primary">+ Add Job Opportunity</Button></Link>
+      <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40}}>
+        <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Job title" />
+        <input class="button--submit" value="Search" type="submit"></input>
+      </div>
       
       <Table striped bordered hover style={{textAlign : 'center', width : '100%',justifyContent : 'center',marginTop : 20}}>
       <thead>
         <tr>
-          <th>Job Reference Number</th>
+          <th>Job ID</th>
           <th> Job Title</th>
           <th> District</th>
           <th> Gender</th>
@@ -66,7 +71,7 @@ export default function Jobs() {
               }
             }).map((e, i) => (
               <tr key={i} style={{ textAlign: "center", fontWeight: "400" }}>
-                <td>{i + 1}</td>
+                <td>{e.jobId}</td>
                 <td>{e.jobTitle}</td>
                 <td>{e.district}</td>
                 <td>{e.gender}</td>

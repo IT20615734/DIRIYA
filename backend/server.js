@@ -63,6 +63,11 @@ app.use("/Food",Foods);
 const Jobs = require('./routes/Jobs.js');
 app.use("/Job",Jobs);
 
+//http://localhost:8080/registrationStudent
+const UserAuth = require('./routes/AuthUser.js');
+app.use("/authUser",UserAuth);
+
+
 
 
 

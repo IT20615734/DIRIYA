@@ -5,10 +5,21 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/esm/Button';
 import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { v1 as uuidv1 } from 'uuid';
 
 
 function AddUser() {
-
+    const generateRandomString = (length) => {
+        let result = '';
+        const characters = '0123456789';
+        const charactersLength = characters.length;
+        for (let i = 0; i < length; i++) {
+          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+      };
+    
+    const[userId, setUserId] = useState(`UI_${generateRandomString(6)}`);
     const[role, setRole] = useState();
     const[fullName, setFulltName] =useState();
     const[nic, setNic] =useState();
@@ -24,6 +35,7 @@ function AddUser() {
         e.preventDefault();
 
         const formData = new FormData();
+            formData.append("userId",userId);
             formData.append("role",role);
             formData.append("fullName",fullName)
             formData.append("nic",nic)
@@ -35,6 +47,7 @@ function AddUser() {
         
     const  data = 
         {
+            "userId":userId,
             "role":role,
             "fullName":fullName,
             "nic":nic,
@@ -46,13 +59,14 @@ function AddUser() {
         }
 
 
-        console.log("FormData", formData )
-        axios.post("http://localhost:8080/User/AddUser", data).then(res=>{
+        // console.log("FormData", formData )
+        axios.post("http://localhost:8080/authUser/RegisterUser", data).then(res=>{
             alert ("New User Added!");
             navigate(-1);
+            
 
         }).catch(err=>{
-            alert(e)
+            alert(err)
         })
     }
         // const Back = () =>
@@ -69,6 +83,11 @@ function AddUser() {
 
         <br></br>
         <hr></hr>
+        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>User ID</Form.Label>
+            <Form.Control type="text" value={userId} onChange={(e)=>{setUserId(e.target.value)}} required/>
+        </Form.Group> */}
+
         <Form.Group className="mb-3" >
               <Form.Label>User Type</Form.Label>
               <Form.Select  onChange={(e)=>{setRole(e.target.value)}} required >
@@ -108,7 +127,7 @@ function AddUser() {
         <hr></hr>
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>User Name</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setUserName(e.target.value)}} required/>
+            <Form.Control type="text" onChange={(e)=>{setUserName(e.target.value)}}  required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">

@@ -6,7 +6,16 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function NewDonater() {
-
+    const generateRandomString = (length) => {
+        let result = '';
+        const characters = '0123456789';
+        const charactersLength = characters.length;
+        for (let i = 0; i < length; i++) {
+          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+      };
+    const[userId, setUserId] = useState(`UI_${generateRandomString(6)}`);
     const[role, setRole] = useState('Donater');
     const[fullName, setFulltName] =useState();
     const[nic, setNic] =useState();
@@ -19,20 +28,12 @@ function NewDonater() {
     const navigate = useNavigate();
 
     const Validate =(e)=>{
-        e.preventDefault();
 
-        const formData = new FormData();
-            formData.append("role",role);
-            formData.append("fullName",fullName)
-            formData.append("nic",nic)
-            formData.append("address",address);
-            formData.append("email",email);
-            formData.append("mobileNumber",mobileNumber);
-            formData.append("userName",userName);
-            formData.append("password",password);
+        e.preventDefault();
         
-    const  data = 
+        const data = 
         {
+            "userId":userId,
             "role":role,
             "fullName":fullName,
             "nic":nic,
@@ -42,16 +43,28 @@ function NewDonater() {
             "userName":userName,
             "Password":password
         }
+        console.log(data);
+
+        // console.log(userId);
 
 
-        console.log("FormData", formData )
-        axios.post("http://localhost:8080/User/AddUser", data).then(res=>{
+//         console.log("FormData", data )
+
+        axios.post("http://localhost:8080/authUser/RegisterUser", data).then(res=>{
             alert ("New Account Created!");
             navigate(-1);
 
         }).catch(err=>{
             alert(err)
         })
+
+        // axios.post("http://localhost:8080/User/AddUser", data).then(res=>{
+        //     alert ("New Account Created!");
+        //     navigate(-1);
+
+        // }).catch(err=>{
+        //     alert(err)
+        // })
     }
         // const Back = () =>
         // navigate("/Admin/User");
