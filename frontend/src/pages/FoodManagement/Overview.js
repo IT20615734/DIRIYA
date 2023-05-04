@@ -16,7 +16,8 @@ import {
 } from "recharts";
 
 function Overview() {
-  ////////////////Data//////////////////
+  // DATA
+  
   const data = [
     {
       name: "DHAL",
