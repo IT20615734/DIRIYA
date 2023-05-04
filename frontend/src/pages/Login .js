@@ -41,7 +41,7 @@ function Login () {
   return (
     <Container style={{marginTop : 100,width : '500px' , border:'1px solid black', padding:'15px', borderRadius:'20px',marginBottom:20}}>
 
-    <Form>
+    <Form onSubmit={validate}>
         <h2 style={{textAlign:'center', fontSize:'40px', fontWeight:'bold'}}>DIRIYA Account Sign-in</h2>   
         <hr style={{width:'100%'}}></hr>
         <Form.Group className="mb-3" controlId="formBasicEmail">

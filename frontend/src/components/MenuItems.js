@@ -1,20 +1,13 @@
 export const MenuItems = [
-    {
-      title: "Home",
-      url: "/",  
-      cname: "nav-links",
-      icon: "fa-solid fa-house-chimney",
-      access : ["Admin","Donater","VillageOfficer","FoodManager",undefined]
-    },
 
     {
-        title: "What we do ",
-        url: "/Contact",  
+        title: "Admin",
+        url: "/Admin/User",  
         cname: "nav-links",
-        icon: "fa-solid fa-address-card",
-        access : ["Admin","Donater","VillageOfficer","FoodManager",undefined]
+        icon: "fa-solid fa-lock",
+        access : ["Admin"]
     },
-
+    
     {
         title: "Beneficiaries",
         url: "/Beneficiaries/ManageBeneficiary",  
@@ -41,10 +34,18 @@ export const MenuItems = [
     },
 
     {
-        title: "Admin",
-        url: "/Admin/User",  
+        title: "Home",
+        url: "/",  
         cname: "nav-links",
-        icon: "fa-solid fa-lock",
-        access : ["Admin"]
+        icon: "fa-solid fa-house-chimney",
+        access : ["Admin","Donater","VillageOfficer","FoodManager",undefined]
+    },
+
+    {
+        title: "What we do ",
+        url: "/Contact",  
+        cname: "nav-links",
+        icon: "fa-solid fa-address-card",
+        access : ["Admin","Donater","VillageOfficer","FoodManager",undefined]
     },
 ]
