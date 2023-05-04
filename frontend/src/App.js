@@ -28,6 +28,7 @@ import ManageDonations from "./pages/DonatorsManagement/ManageDonations";
 import AddDonations from "./pages/DonatorsManagement/AddDonations";
 import EditDonations from "./pages/DonatorsManagement/EditDonations";
 import NewDonater from "./pages/DonatorsManagement/NewDonater";
+import DonationHistory from "./pages/DonatorsManagement/DonationHistory";
 
 import Food from "./pages/FoodManagement/Food";
 import ManageFood from "./pages/FoodManagement/ManageFood";
@@ -102,6 +103,7 @@ function App() {
           <Route exact path="/Donations/AddDonations" element={<AddDonations />} />
           <Route exact path="/Donations/ManageDonations/Donations/EditDonations/:id" element={<EditDonations />} />
           <Route exact path="/Donater/NewDonater" element={<NewDonater />} />
+          <Route exact path="/Donations/DonateHistory" element={<DonationHistory />} />
 
           {/* Food Management */}
           <Route exact path="/Food" element={<Food />} />
