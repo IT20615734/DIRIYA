@@ -52,9 +52,9 @@ function ManageFood() {
         <h2>All FOODS</h2>
 
         <br></br>
-        <Link to="/Food/AddFood">
+        {/* <Link to="/Food/AddFood">
           <Button variant="primary">+ Add Food Stock</Button>
-        </Link>
+        </Link> */}
         <br></br>
         <Table
           striped
@@ -68,6 +68,7 @@ function ManageFood() {
               <th>Food Category</th>
               <th>Quantity</th>
               <th>Donater Name</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
