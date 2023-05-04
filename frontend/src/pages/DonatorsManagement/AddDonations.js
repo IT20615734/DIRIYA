@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/esm/Container'
 import Form from 'react-bootstrap/Form';
 import Donations from './Donations'
 import axios from 'axios';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 //export default function AddDonations() {
 
@@ -16,6 +17,7 @@ function AddDonations() {
     const[district, setDistrict] =useState();
     const[mobileNumber, setMobileNumber] =useState();
     
+    const navigate = useNavigate();
 
     const Validate =(e)=>{
         e.preventDefault();
@@ -42,6 +44,7 @@ function AddDonations() {
         console.log("FormData", formData )
         axios.post("http://localhost:8080/Donations/AddDonations", data).then(res=>{
             alert ("New Donation Added!")
+            navigate(-1);
 
         }).catch(err=>{
             console.log("create failed " + err)
@@ -82,13 +85,13 @@ function AddDonations() {
         </Form.Group> */}
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Quantity</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setQuantity(e.target.value)}} required/>
+            <Form.Label>Quantity (kg) </Form.Label>
+            <Form.Control type="number" onChange={(e)=>{setQuantity(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Date of Hand-over</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setDateOfHandOver(e.target.value)}} required/>
+            <Form.Control type="date" onChange={(e)=>{setDateOfHandOver(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" >

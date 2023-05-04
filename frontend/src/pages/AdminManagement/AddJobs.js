@@ -122,7 +122,7 @@ function AddJobs() {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Number of People</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setnumberOfPeople(e.target.value)}} required/>
+            <Form.Control type="number" onChange={(e)=>{setnumberOfPeople(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">

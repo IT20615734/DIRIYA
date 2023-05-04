@@ -70,6 +70,7 @@ function User() {
               <th>User Id</th>
               <th>User Type</th>
               <th>Full Name</th>
+              <th>District</th>
               <th>NIC</th>
               <th>Email</th>
               <th>Mobile Number</th>
@@ -90,6 +91,7 @@ function User() {
                 <td>{e.userId}</td>
                 <td>{e.role}</td>
                 <td>{e.fullName}</td>
+                <td>{e.address}</td>
                 <td>{e.nic}</td>
                 <td>{e.email}</td>
                 <td>{e.mobileNumber}</td>
