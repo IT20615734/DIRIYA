@@ -14,7 +14,7 @@ function Food() {
         >
           <Nav.Link href="/Food/ManageFood">Manage Foods</Nav.Link>
           <Nav.Link href="/Food/Overview">Overview</Nav.Link>
-          <Nav.Link href="">Donations</Nav.Link>
+          <Nav.Link href="/Food/Donation">Donations</Nav.Link>
         </Nav>
       </Container>
     </Navbar>

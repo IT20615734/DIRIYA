@@ -55,13 +55,19 @@ function AddFood() {
               <Form.Label>Food Category</Form.Label>
               <Form.Select  onChange={(e)=>{setfoodCategory(e.target.value)}} required >
                 <option></option>
-                <option value = 'Rice'>Rice</option>
-                <option value = 'Dhal'>Dhal</option>
-                <option value='Sugar'>Sugar</option>
+                <option value="Rice">Rice</option>
+                <option value="Dhal">Dhal</option>
+                <option value="Dried Sparts">Dried Sparts</option>
+                <option value="Canned Fish">Canned Fish</option>
+                <option value="Curry Powder">Curry Powder</option>
+                <option value="Papadum">Papadum</option>
+                <option value="Soya Meat">Soya Meat</option>
+                <option value="Chickpeas">Chickpeas</option>
+                <option value="All Pourpose Flour">All Pourpose Flour</option>
               </Form.Select>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>quantity</Form.Label>
+            <Form.Label>Quantity</Form.Label>
             <Form.Control type="text" onChange={(e)=>{setquantity(e.target.value)}}required/>
         </Form.Group>
         

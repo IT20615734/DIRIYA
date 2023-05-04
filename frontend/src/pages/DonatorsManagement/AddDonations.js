@@ -4,6 +4,8 @@ import Container from 'react-bootstrap/esm/Container'
 import Form from 'react-bootstrap/Form';
 import Donations from './Donations'
 import axios from 'axios';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
 
 //export default function AddDonations() {
 
@@ -16,6 +18,7 @@ function AddDonations() {
     const[district, setDistrict] =useState();
     const[mobileNumber, setMobileNumber] =useState();
     
+    const navigate = useNavigate();
 
     const Validate =(e)=>{
         e.preventDefault();
@@ -42,6 +45,7 @@ function AddDonations() {
         console.log("FormData", formData )
         axios.post("http://localhost:8080/Donations/AddDonations", data).then(res=>{
             alert ("New Donation Added!")
+            navigate(-1);
 
         }).catch(err=>{
             console.log("create failed " + err)
@@ -66,29 +70,32 @@ function AddDonations() {
         </Form.Group> */}
 
 
-<Form.Group className="mb-3" >
-              <Form.Label>Select Food Category</Form.Label>
-              <Form.Select  onChange={(e)=>{setFoodCategory(e.target.value)}} required >
-                <option></option>
-                <option value = 'Rice'>Rice</option>
-                <option value = 'Dhal'>Dhal</option>
-                <option value='Sugar'>Sugar</option>
-              </Form.Select>
-        </Form.Group>
-
-        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label></Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setFoodCategory(e.target.value)}} required/>
-        </Form.Group> */}
+    <Form.Group className="mb-3" controlId="formCategoryQuantity">
+        <Form.Label>Select Food Category</Form.Label>
+        <Row>
+        <Col xs={6}>
+        <Form.Select onChange={(e) => setFoodCategory(e.target.value)} required>
+        <option></option>
+        <option value="Rice">Rice</option>
+        <option value="Dhal">Dhal</option>
+        <option value="Dried Sparts">Dried Sparts</option>
+        <option value="Canned Fish">Canned Fish</option>
+        <option value="Curry Powder">Curry Powder</option>
+        <option value="Papadum">Papadum</option>
+        <option value="Soya Meat">Soya Meat</option>
+        <option value="Chickpeas">Chickpeas</option>
+        <option value="All Pourpose Flour">All Pourpose Flour</option>
+      </Form.Select>
+        </Col>
+        <Col xs={6}>
+        <Form.Control type="number" placeholder="Enter Quantity in Kgs" onChange={(e) => setQuantity(e.target.value)} required />
+        </Col>
+    </Row>
+    </Form.Group>
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Quantity</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setQuantity(e.target.value)}} required/>
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Date of Hand-over</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setDateOfHandOver(e.target.value)}} required/>
+            <Form.Control type="date" onChange={(e)=>{setDateOfHandOver(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" >

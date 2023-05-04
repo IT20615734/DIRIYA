@@ -61,7 +61,7 @@
   }
   
   .copyright {
-    height:10px;
+    height:75px;
     background-color: rgb(32, 32, 32);
     width: 100.7%;    
   }
@@ -70,7 +70,7 @@
     font-size: 0.9em;
     text-align: center;
     color: #ffffff;
-    padding:12px;  
+    padding:10px;  
   }
   
   ul {
