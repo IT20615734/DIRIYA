@@ -1,10 +1,10 @@
-.input-group {
+/* .input-group {
     display: flex;
     align-items: center;
   }
   
   .input {
-    min-height: 50px;
+    min-height: 5px;
     max-width: 500px;
     padding: 0 1rem;
     color: rgb(0, 0, 0);
@@ -13,17 +13,17 @@
     border-radius: 6px 0 0 6px;
     background-color: transparent;
   }
-  
+   */
   .button--submit {
-    min-height: 50px;
-    padding: .8em 1em;
-    border: none;
+    /* min-height: 5px;
+    padding: 1em;
+    border: none; */
     border-radius: 0 6px 6px 0;
     background-color: #488de7;
     color: #fff;
-    font-size: 15px;
+    /* font-size: 15px;
     cursor: pointer;
-    transition: background-color .3s ease-in-out;
+    transition: background-color .3s ease-in-out; */
   }
   
   .button--submit:hover {

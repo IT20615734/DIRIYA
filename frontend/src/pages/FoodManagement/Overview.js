@@ -65,26 +65,36 @@ function Overview() {
         style={{
           marginTop: "1%",
           display: "block",
-          width: "50%",
+          width: "100%",
           justifyContent: "center",
         }}
       >
-        <div className="Overview">
-          <h1>Overview Table</h1>
-        </div>
+       
 
         <br></br>
 
-        <div>
+        <div style ={{marginLeft:'-15%', marginTop:'-1.5%'}}>
           <label>
-            <p>
-              Welcome to Overview page.
-              <br /> you can see all Food donation in here...
-            </p>
+            <p style={{fontSize:'135%'}}>
+              Welcome, Dinuka Thilakarathna
+              </p>
+              <p style={{fontSize:'100%', marginTop:'-5%'}}>
+              Donation Manager - Gampaha District
+              </p>
           </label>
         </div>
 
-        <div style={{ width: "150%", height: 450 }}>
+
+
+        <div className="Overview" style={{justifyContent:'center'}}>
+          <h2>DONATION MANAGEMENT DASHBOARD</h2>
+        </div>
+
+        <Container style={{marginTop: "1%", display: "block", width: "25%", justifyContent: "left", padding: "1rem", backgroundColor: 'blue'}}> 
+        <p>This is test</p>
+        </Container>
+
+        <div style={{ width: "75%", height: 450 }}>
           <ResponsiveContainer>
             <ComposedChart
               width={500}
@@ -96,7 +106,7 @@ function Overview() {
                 bottom: 0,
                 left: 250,
               }}
-            >
+              >
               <CartesianGrid stroke="#f5f5f5" />
               <XAxis dataKey="name" scale="band" />
               <YAxis />
@@ -113,6 +123,7 @@ function Overview() {
             </ComposedChart>
           </ResponsiveContainer>
         </div>
+                
       </Container>
     </>
   );
