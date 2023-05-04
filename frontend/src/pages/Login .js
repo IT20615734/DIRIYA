@@ -33,8 +33,6 @@ function Login () {
     }).catch(err =>{
       alert(err)
     })
-
-
   }
   
  

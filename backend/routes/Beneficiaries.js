@@ -1,5 +1,4 @@
 const router = require('express').Router();
-//const { count } = require('../models/Beneficiaries');
 const Beneficiaries = require('../models/Beneficiaries');
 
 router.route("/").get(async (req,res) =>{
@@ -15,16 +14,16 @@ router.route("/").get(async (req,res) =>{
     
 try{
     const{
-        //beneficiaryID,
-        beneficiaryName,
-        address,
-        nic,
-        mobileNumber,
-        monthlyIncome,
-        numberOfFamilyMembers
+    beneficiaryID,
+    beneficiaryName,
+    address,
+    nic,
+    mobileNumber,
+    monthlyIncome,
+    numberOfFamilyMembers
     } = req.body;
 const newBeneficiary = new Beneficiaries({
-    // beneficiaryID,
+    beneficiaryID,
     beneficiaryName,
     address,
     nic,

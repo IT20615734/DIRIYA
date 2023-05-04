@@ -7,7 +7,7 @@ import axios from 'axios';
 import { Navigate,useLocation,useNavigate,useParams } from "react-router-dom";
 
 export default function UpdateBeneficiaries() {
-    //const[beneficiaryID, setBeneficiaryID] = useState();
+    const[beneficiaryID, setBeneficiaryID] = useState();
     const[beneficiaryName, setBeneficiaryName] =useState();
     const[address, setAddress] =useState();
     const[nic, setnic] =useState();
@@ -26,7 +26,7 @@ export default function UpdateBeneficiaries() {
           if (beneficiary["_id"] === id) {
             console.log("user found");
 
-            //setBeneficiaryID(beneficiary["beneficiaryID"]);
+            setBeneficiaryID(beneficiary["beneficiaryID"]);
             setBeneficiaryName(beneficiary["beneficiaryName"]);
             setAddress(beneficiary["address"]);
             setnic(beneficiary["nic"]);
@@ -47,7 +47,7 @@ export default function UpdateBeneficiaries() {
         e.preventDefault();
 
         const data = {
-            //beneficiaryID: beneficiaryID,
+            beneficiaryID: beneficiaryID,
             beneficiaryName: beneficiaryName,
             address: address,
             nic: nic,
@@ -80,10 +80,10 @@ export default function UpdateBeneficiaries() {
     <h1 style={{fontWeight:'bold'}}><center>EDIT DETAILS</center></h1>
         <br></br>
         <hr></hr>
-        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Beneficiary ID</Form.Label>
-            <Form.Control type="text" value={beneficiaryID} onChange={(e)=>{setBeneficiaryID(e.target.value)}} required/>
-        </Form.Group> */}
+            <Form.Control type="text" disabled={true} value={beneficiaryID} onChange={(e)=>{setBeneficiaryID(e.target.value)}} required/>
+        </Form.Group>
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Beneficiary name</Form.Label>

@@ -4,12 +4,22 @@ import Container from 'react-bootstrap/esm/Container'
 import Form from 'react-bootstrap/Form';
 import Beneficiaries from './Beneficiaries'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 //export default function AddBeneficiary() {
 
 function AddBeneficiaries() {
+    const generateRandomString = (length) => {
+        let result = '';
+        const characters = '0123456789';
+        const charactersLength = characters.length;
+        for (let i = 0; i < length; i++) {
+          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+      };
     
-    //const[beneficiaryID, setBeneficiaryID] = useState();
+    const[beneficiaryID, setBeneficiaryID] = useState(`BI_${generateRandomString(6)}`);
     const[beneficiaryName, setBeneficiaryName] =useState();
     const[address, setAddress] =useState();
     const[nic, setnic] =useState();
@@ -17,11 +27,13 @@ function AddBeneficiaries() {
     const[monthlyIncome, setMonthlyIncome] =useState();
     const[numberOfFamilyMembers, setnumberOfFamilyMembers] =useState();
 
+    const navigate = useNavigate();
+
     const Validate =(e)=>{
         e.preventDefault();
         console.log("called") 
         const formData = new FormData();
-            //formData.append("beneficiaryID",beneficiaryID);
+            formData.append("beneficiaryID",beneficiaryID);
             formData.append("beneficiaryName",beneficiaryName)
             formData.append("address",address)
             formData.append("nic",nic);
@@ -31,7 +43,7 @@ function AddBeneficiaries() {
         
     const  data = 
         {
-            //"beneficiaryID":beneficiaryID,
+            "beneficiaryID":beneficiaryID,
             "beneficiaryName":beneficiaryName,
             "address":address,
             "nic":nic,
@@ -44,6 +56,7 @@ function AddBeneficiaries() {
         console.log("FormData", formData )
         axios.post("http://localhost:8080/Beneficiaries/AddBeneficiaries", data).then(res=>{
             alert ("New Beneficiary Added!")
+            navigate(-1);
 
         }).catch(err=>{
             console.log("create failed " + err)

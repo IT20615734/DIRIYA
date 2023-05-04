@@ -13,7 +13,7 @@ function Footer() {
       <div class='column about'>
       <div className='h3'>
       <Link to="/">
-        <img src = {logo2} style={{width : 150 , height : 60 , marginTop : 5  }} />
+        <img src = {logo2} style={{width : 130 , height : 50 , marginTop : 5  }} />
         </Link>
       </div>
 
@@ -39,25 +39,38 @@ function Footer() {
         </div>
       </div>
 
-      <div class="column links">
-        <h3 style={{  marginTop: 20  }}>Links</h3>
+      <div class="column home">
+         <h3 href="http://localhost:3000/" style={{  marginTop: 20  }}>Home</h3>
       <ul>
-       <li>
-         <a href="#faq">FAQ</a>
+        <li>
+         <a href="#cookies-policy">What We Do</a>
         </li>
-       <li>
-         <a href="#cookies-policy">Cookies Policy</a>
-       </li>
-      <li>
-        <a href="#terms-of-services">Terms Of Service</a>
-      </li>
-      <li>
-        <a href="#support">Support</a>
-       </li>
+        <li>
+         <a href="#terms-of-services" >Our Stories</a>
+        </li>
       </ul>
-
       </div>
 
+
+      <div class="column links">
+        <h3 style={{marginTop: 20}}>Links</h3>
+      <ul>
+        <li>
+         <a href="#faq">FAQ</a>
+        </li>
+        <li>
+         <a href="#cookies-policy">Cookies Policy</a>
+        </li>
+        <li>
+         <a href="#terms-of-services" >Terms Of Service</a>
+        </li>
+        <li>
+         <a href="#support">Support</a>
+        </li>
+      </ul>
+      </div>
+
+      
       <div class="column pages">
         <h3 style={{  marginTop: 20  }}>Pages</h3>
         <ul>
@@ -100,3 +113,4 @@ function Footer() {
 }
 
 export default Footer
+
