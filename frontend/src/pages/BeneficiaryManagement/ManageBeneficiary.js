@@ -5,12 +5,12 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
-
+import '../../Styles/Search.css'
 
 export default function ManageBeneficiary() {
 
   const [AddBeneficiaries,setAddBeneficiaries] = useState([]);
-  const [search,setSearch] = useState("");
+  const [search,setSearch] = useState([]);
 
   //GET (GET DATA FROM DB)
   useEffect(() => {
@@ -46,7 +46,13 @@ const deleteRecord = (e) =>{
       <br></br>
       <Link to = "/Beneficiaries/AddBeneficiaries"><Button variant="primary">Add Beneficiary</Button></Link>
       
-      <Table striped bordered hover style={{textAlign : 'center', width : '100%',justifyContent : 'center',marginTop : 20}}>
+      <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40 }}>
+        <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Name" />
+        <input class="button--submit" value="Search" type="submit"></input>
+      </div>
+        <br></br>
+
+      <Table striped bordered hover style={{textAlign : 'center', width : '110%',justifyContent : 'right',marginTop : 20}}>
       <thead>
         <tr>
           <th> Beneficiary ID</th>
@@ -64,13 +70,13 @@ const deleteRecord = (e) =>{
        {AddBeneficiaries.filter((element) =>{
                 if(search === ""){
                     return element
-                }else if (element.role.includes(search)){
+                }else if (element.beneficiaryName.includes(search)){
                     return element
                 }
             }
             ).map((e,i) =>(
                 <tr key={i} style={{textAlign : 'center',fontWeight : '400'}}>
-                    <td>{i+1}</td>
+                    <td>{e.beneficiaryID}</td>
                     <td>{e.beneficiaryName}</td>
                     <td>{e.address}</td>
                     <td>{e.nic}</td>

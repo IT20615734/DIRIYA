@@ -82,7 +82,7 @@ function UpdateUser() {
       <Container style={{marginTop: "1%", display: "block", width: "50%", justifyContent: "center" }}>
         <Form onSubmit={Validate}>
           <h1 style={{ fontWeight: "bold" }}>
-            <center>UPDATE USER</center>
+            <center>EDIT DETAILS</center>
           </h1>
 
           <br></br>

@@ -119,13 +119,17 @@ export default function AddApplications() {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Gender</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setGender(e.target.value)}} required/>
+            <Form.Select onChange={(e)=>{setGender(e.target.value)}}  required >
+                <option></option>
+                <option value = 'Male'>Male</option>
+                <option value = 'Female'>Female</option>
+            </Form.Select>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Date of Birth</Form.Label>
             {/* <DatePicker selected={selectedDate} onChange={handleDateChange} /> */}
-            <Form.Control type="text" onChange={(e)=>{setDateOfBirth(e.target.value)}} maxLength={10} minLength ={10} placeholder='YY/MM/DD' required/>
+            <Form.Control type="date" onChange={(e)=>{setDateOfBirth(e.target.value)}} maxLength={10} minLength ={10} placeholder='YY/MM/DD' required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">

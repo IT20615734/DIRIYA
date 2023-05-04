@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 
 var Beneficiary = new mongoose.Schema({
-    // beneficiaryID:{
-    //     type:String,
-    //     required:true,
-    //     index:true,
-    // },
+    beneficiaryID:{
+        type:String,
+        required:true,
+    },
     beneficiaryName:{
         type:String,
         required:true,
