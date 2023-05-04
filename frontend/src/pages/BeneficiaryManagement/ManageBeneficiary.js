@@ -52,7 +52,7 @@ const deleteRecord = (e) =>{
       </div>
         <br></br>
 
-      <Table striped bordered hover style={{textAlign : 'center', width : '100%',justifyContent : 'center',marginTop : 20}}>
+      <Table striped bordered hover style={{textAlign : 'center', width : '110%',justifyContent : 'right',marginTop : 20}}>
       <thead>
         <tr>
           <th> Beneficiary ID</th>

@@ -1,6 +1,5 @@
 import React from 'react'
 import Container from 'react-bootstrap/esm/Container';
-// import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import "../components/NavLink.css";
 import { MenuItems } from './MenuItems';
@@ -37,12 +36,8 @@ function NavLink() {
   return (
     <>
 
-      {/* <Navbar bg="dark" variant="dark">  */}
-        {/* <Container> */}
-        {/* <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px'}}NavLinkScrol> */}
         <nav className = "NavbarItems">
-            {/* <h1 className = "navbar-logo">Diriya</h1> */}
-            <img src = {logo1}  style={{  width: 300  }} />
+            <img src = {logo1}  style={{  width: 265 }} />
 
             <ul className="nav-manu">
               {MenuItems.map((item,index)=>{
@@ -58,19 +53,15 @@ function NavLink() {
                   </li>
                 )
               })}
-            {/* <a href="/Beneficiaries">Beneficiaries</a>
-            <a href="/Admin">Admin</a> */}
             </ul>
            {auth ? (
-             <Button variant="warning" style={{marginLeft:100,color : "black",fontWeight:'700'}} onClick={logoutAction}>Logout/{user.role}</Button>
+             <Button variant="warning" style={{marginLeft:100,color : "black",fontWeight:'600', fontSize: '50'}} onClick={logoutAction}>Logout/{user.role}</Button>
              ) : (<>
-              <Nav.Link href="/Login" className='btn btn-warning' style={{marginLeft:100,color : "black",fontWeight:'700'}}>Donate</Nav.Link>
+              <Nav.Link href="/Login" className='btn btn-warning' style={{marginLeft:100,color : "black",fontWeight:'600', fontSize: '50'}}>Donate</Nav.Link>
            
            </>)}
         </nav>
-        {/* </Container> */}
-        {/* </Navbar> */}
-    
+
     
     </>
   );
