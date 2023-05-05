@@ -39,7 +39,7 @@ import Donation from "./pages/FoodManagement/Donation";
 function App() {
   return (
     <>
-      <body style={{ backgroundColor: '#FDF7F6' }}>
+      <body style={{ backgroundColor: '#ececec' }}>
       <React.Fragment>
       <NavLink />  
       </React.Fragment>
