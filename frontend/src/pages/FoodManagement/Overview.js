@@ -68,6 +68,7 @@ function Overview() {
           display: "block",
           width: "100%",
           justifyContent: "center",
+          fontFamily:'Verdana',
         }}
       >
        
@@ -91,9 +92,50 @@ function Overview() {
           <h2>DONATION MANAGEMENT DASHBOARD</h2>
         </div>
 
-        <Container style={{marginTop: "1%", display: "block", width: "25%", justifyContent: "left", padding: "1rem", backgroundColor: 'blue'}}> 
-        <p>This is test</p>
-        </Container>
+        <div style={{display: "flex", height: "50px", width: "100%"}}>
+        <Container style={{display: "flex",flexWrap: "wrap",marginTop: "1%",width: "100%",height: "600%",justifyContent: "space-between",backgroundColor:"#ffffff",paddingTop: "1.2rem",paddingBottom: "1.2rem"}}>
+          
+        <p>Statistics of Gampaha District</p>
+        <br></br>
+            <Container style={{ flexBasis: "40%",marginTop: "1%",padding: "1rem", backgroundColor:"#27E1C1",boxShadow: "0px 0px 10px #888888",transition: "box-shadow 0.3s ease-in-out"}}
+            onMouseOver={(e) => e.currentTarget.style.boxShadow = "0px 0px 15px #888888"}
+            onMouseOut={(e) => e.currentTarget.style.boxShadow = "0px 0px 10px #888888"}
+            >
+              <p>Total Number of Families Identified</p>
+              <p>Count till {new Date().toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})}</p>
+            </Container>
+
+            <Container style={{ flexBasis: "40%",marginTop: "1%",padding: "1rem",backgroundColor: "#FFD966",boxShadow: "0px 0px 10px #888888",transition: "box-shadow 0.3s ease-in-out"}}
+            onMouseOver={(e) => e.currentTarget.style.boxShadow = "0px 0px 15px #888888"}
+            onMouseOut={(e) => e.currentTarget.style.boxShadow = "0px 0px 10px #888888"}
+            >
+              <p>GS Divisions with defict of donations</p>
+              <p>Count till {new Date().toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})}</p>
+            </Container>
+
+            <Container style={{ flexBasis: "40%",marginTop: "1%",padding: "1rem",backgroundColor: "#E96479",boxShadow: "0px 0px 10px #888888",transition: "box-shadow 0.3s ease-in-out"}}
+            onMouseOver={(e) => e.currentTarget.style.boxShadow = "0px 0px 15px #888888"}
+            onMouseOut={(e) => e.currentTarget.style.boxShadow = "0px 0px 10px #888888"}
+            >
+              <p>GS Divisions with surplus of donations</p>
+              <p>Count till {new Date().toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})}</p>
+            </Container>
+  </Container>
+</div>
+
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
 
         <div style={{ width: "75%", height: 450 }}>
           <ResponsiveContainer>
