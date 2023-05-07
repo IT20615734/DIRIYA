@@ -2,18 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/esm/Container";
 import Food from "./Food";
 import "../FoodManagement/Overview.css";
-import {
-  ResponsiveContainer,
-  ComposedChart,
-  Line,
-  Area,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from "recharts";
+import { ResponsiveContainer,ComposedChart,Line,Area,Bar,XAxis,YAxis,CartesianGrid,Tooltip,Legend} from "recharts";
 
 function Overview() {
   // DATA
