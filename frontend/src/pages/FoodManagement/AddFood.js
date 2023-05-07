@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Food from './Food'
 import Container from 'react-bootstrap/esm/Container'
 import Form from 'react-bootstrap/Form';
@@ -53,7 +53,7 @@ function AddFood() {
         <hr></hr>
         <Form.Group className="mb-3" >
               <Form.Label>Food Category</Form.Label>
-              <Form.Select  onChange={(e)=>{setfoodCategory(e.target.value)}} required >
+              <Form.Select value={foodCategory} onChange={(e)=>{setfoodCategory(e.target.value)}} required >
                 <option></option>
                 <option value="Rice">Rice</option>
                 <option value="Dhal">Dhal</option>
@@ -68,7 +68,7 @@ function AddFood() {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Quantity</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setquantity(e.target.value)}}required/>
+            <Form.Control type="text" value={quantity} onChange={(e)=>{setquantity(e.target.value)}}required/>
         </Form.Group>
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
