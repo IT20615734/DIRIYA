@@ -4,7 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import slide1 from "../Assets/img1.jpg"
 import slide2 from "../Assets/img2.jpg"
 import slide3 from "../Assets/img3.jpg"
-import slide4 from "../Assets/img4.png"
+import slide4 from "../Assets/img4.jpg"
 import Container from 'react-bootstrap/esm/Container';
 
 
