@@ -31,7 +31,7 @@ function Login () {
       setUser(res.data.user)
       Navigate('/')
     }).catch(err =>{
-      alert(err)
+      alert("User Name or Password Incorrect")
     })
   }
   

@@ -16,7 +16,7 @@ function NavLink() {
   // const navigate = useNavigate();
 
   const auth = localStorage.getItem('user')
-  
+
   const logoutAction = async (e) =>{
     e.preventDefault();
 
@@ -24,8 +24,8 @@ function NavLink() {
       localStorage.removeItem('user');
       localStorage.removeItem('Role');
       setUser({})
-      window.location.reload();
-      // navigate('/')
+      window.location.reload ();
+      
   }
   
   }

@@ -3,10 +3,13 @@ import Container from "react-bootstrap/esm/Container";
 import Food from "./Food";
 import "../FoodManagement/Overview.css";
 import { ResponsiveContainer,ComposedChart,Line,Area,Bar,XAxis,YAxis,CartesianGrid,Tooltip,Legend} from "recharts";
+import { UserDetails } from "../../context/UserContext";
+
 
 function Overview() {
   // DATA
-  
+  const {user,setUser}= UserDetails();
+
   const data = [
     {
       name: "DHAL",
@@ -67,10 +70,10 @@ function Overview() {
         <div style ={{marginLeft:'-15%', marginTop:'-1.5%'}}>
           <label>
             <p style={{fontSize:'135%'}}>
-              Welcome, Dinuka Thilakarathna
+              Welcome, {user.fullName}
               </p>
               <p style={{fontSize:'100%', marginTop:'-5%'}}>
-              Donation Manager - Gampaha District
+              Donation Manager - {user.address} District
               </p>
           </label>
         </div>

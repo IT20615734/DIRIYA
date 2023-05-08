@@ -107,7 +107,7 @@ export default function ManageApplication() {
                 <td>{e.dateOfBirth}</td>
                 <td>
                   <center>
-                    <Link to={`Foods/UpdateFoods/${e._id}`}>
+                    <Link to={`Applications/UpdateApplications/${e._id}`}>
                       <Button variant="outline-primary">Edit</Button>
                     </Link>{" "}
                     <Button

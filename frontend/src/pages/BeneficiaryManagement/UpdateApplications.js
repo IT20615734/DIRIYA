@@ -26,7 +26,7 @@ const { id } = useParams();
         const applications = value.data.AddApplications;
         for (let application of applications) {
           if (application["_id"] === id) {
-            console.log("user found");
+            console.log("Application found");
 
             //setBeneficiaryID(beneficiary["beneficiaryID"]);
             setJobTitle(application["jobTitle"]);
