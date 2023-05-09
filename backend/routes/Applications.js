@@ -17,8 +17,15 @@ router.route("/").get(async (req, res) => {
 router.route("/AddApplications").post(async (req, res) => {
   try {
     //console.log("caled");
-    const { jobTitle, district, applicantName, nic, gender, dateOfBirth, mobileNumber} =
-      req.body;
+    const {
+      jobTitle,
+      district,
+      applicantName,
+      nic,
+      gender,
+      dateOfBirth,
+      mobileNumber,
+    } = req.body;
 
     const newApplication = new Applications({
       // beneficiaryID,
@@ -28,7 +35,7 @@ router.route("/AddApplications").post(async (req, res) => {
       nic,
       gender,
       dateOfBirth,
-      mobileNumber
+      mobileNumber,
     });
 
     return await newApplication
@@ -39,7 +46,6 @@ router.route("/AddApplications").post(async (req, res) => {
       .catch((e) => {
         return res.status(400).send({ status: e });
       });
-  
   } catch (err) {
     console.log("Error => " + err);
     return res.status(500).json({ err });
@@ -61,33 +67,20 @@ router.route("/delete/:id").delete((req, res) => {
 //update reterive part
 router.route("/update/:id").put(async (req, res) => {
   console.log("update method called");
-  const {
-      jobTitle, 
-     district, 
-      applicantName, 
-      nic, 
-      gender, 
-      dateOfBirth, 
-      mobileNumber
-  } = req.body;
-  const id = req.body.id;
-
-  const newData = {
-    // beneficiaryID,
-    jobTitle,
-    district,
-    applicantName,
-    nic,
-    gender,
-    dateOfBirth,
-    mobileNumber,
-  };
-  console.log("id is " + id);
-  Applications.findByIdAndUpdate(id,newData).then((value)=>{
-    return res.status(201).json({"message" : "updated succesfully",value})
-  })
-    .catch((err) => {
-      return res.status(400).send({ state: err });
-    });
+  return await Applications.findById(req.params.id).then((value) => {
+    if (value) {
+      return (
+        value
+          .set(req.body)
+          .save()
+          .then((value) => {
+            return res.status(201).json({ value });
+          }).
+        catch((er) => {
+          return res.status(500).json({ er });
+        })
+      );
+    }
+  });
 });
 module.exports = router;
