@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/esm/Container'
 import Form from 'react-bootstrap/Form';
 import Applications from './Beneficiaries'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 // import DatePicker from "react-datepicker";
 // import "react-datepicker/dist/react-datepicker.css";
 
@@ -19,7 +20,7 @@ export default function AddApplications() {
     const[dateOfBirth, setDateOfBirth] =useState();
     const[mobileNumber, setMobileNumber] =useState();
     
-    
+    const navigate = useNavigate();
     
 
     const Validate =(e)=>{
@@ -50,6 +51,7 @@ export default function AddApplications() {
         console.log("FormData", formData )
         axios.post("http://localhost:8080/Applications/AddApplications", data).then(res=>{
             alert ("New Application Added!")
+            navigate(-1);
             console.log("data adedd")
         }).catch(err=>{
             alert(err)

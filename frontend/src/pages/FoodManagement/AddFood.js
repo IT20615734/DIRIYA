@@ -3,7 +3,7 @@ import Food from './Food'
 import Container from 'react-bootstrap/esm/Container'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/esm/Button'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function AddFood() {
@@ -12,7 +12,10 @@ function AddFood() {
     const[quantity, setquantity] =useState();
     const[donaterName, setdonaterName] =useState();
 
+
+
     const navigate = useNavigate();
+
 
     const Validate =(e)=>{
         e.preventDefault();
@@ -33,7 +36,7 @@ function AddFood() {
         console.log("FormData", formData )
         axios.post("http://localhost:8080/Food/AddFood", data).then(res=>{
             alert ("New Food Stock Added!");
-            navigate(-1);
+            navigate('/Food/ManageFood');
 
         }).catch(err=>{
             alert(e)
