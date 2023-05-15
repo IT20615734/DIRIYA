@@ -6,6 +6,10 @@ var Donation = new mongoose.Schema({
     //     required:true,
     //     index:true,
     // },
+    dname:{
+        type:String,
+        required:true,
+    },
     foodCategory:{
         type:String,
         required:true,

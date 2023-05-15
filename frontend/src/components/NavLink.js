@@ -13,7 +13,7 @@ import { UserDetails } from '../context/UserContext';
 function NavLink() {
 
   const {user,setUser}= UserDetails();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const auth = localStorage.getItem('user')
 
@@ -24,8 +24,8 @@ function NavLink() {
       localStorage.removeItem('user');
       localStorage.removeItem('Role');
       setUser({})
+      navigate ('/');
       window.location.reload ();
-      
   }
   
   }

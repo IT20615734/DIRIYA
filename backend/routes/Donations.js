@@ -14,7 +14,8 @@ router.route("/").get(async (req, res) => {
 router.route("/AddDonations").post(async (req, res) => {
   try {
     const {
-      donationID,
+      // donationID,
+      dname,
       foodCategory,
       quantity,
       dateOfHandOver,
@@ -22,7 +23,8 @@ router.route("/AddDonations").post(async (req, res) => {
       mobileNumber,
     } = req.body;
     const newDonation = new Donations({
-        donationID,
+        // donationID,
+        dname,
         foodCategory,
         quantity,
         dateOfHandOver,
@@ -59,6 +61,7 @@ router.route("/delete/:id").delete((req, res) => {
 router.route("/update/:id").put(async (req, res) => {
   console.log("update metod called");
    const {
+      dname,
       foodCategory,
       quantity,
       dateOfHandOver,
@@ -68,6 +71,7 @@ router.route("/update/:id").put(async (req, res) => {
   const id = req.params.id;
 
   const newData = {
+      dname,
       foodCategory,
       quantity,
       dateOfHandOver,
