@@ -7,6 +7,7 @@ import axios from 'axios';
 import { Navigate, useNavigate } from 'react-router-dom';
 
 
+
 export default function AddApplications() {
 
     // const[beneficiaryID, setBeneficiaryID] = useState();
@@ -19,6 +20,7 @@ export default function AddApplications() {
     const[mobileNumber, setMobileNumber] =useState();
     
     const navigate = useNavigate();
+
 
     const Validate =(e)=>{
         e.preventDefault();
@@ -48,6 +50,7 @@ export default function AddApplications() {
         console.log("FormData", formData )
         axios.post("http://localhost:8080/Applications/AddApplications", data).then(res=>{
             alert ("New Application Added!")
+            navigate(-1);
             console.log("data adedd")
             navigate(-1);
 

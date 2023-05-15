@@ -30,7 +30,9 @@ function Home() {
       </div>
       
       <div style={{ display: 'flex', justifyContent: 'center',marginTop:10 }}>
-      <Link to ="/Login"><Button variant="warning">Donate Now</Button></Link>
+      <Link to ="/Login">
+      <Button variant="warning" style={{ width: '800px',height:'50px'}}>Donate Now</Button>
+        </Link>
     </div>
     <br></br>
     <h2 style={{marginTop:30}}>Highlights</h2>

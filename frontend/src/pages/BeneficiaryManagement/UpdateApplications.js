@@ -25,7 +25,7 @@ const { id } = useParams();
         const applications = value.data.AddApplications;
         for (let application of applications) {
           if (application["_id"] === id) {
-            console.log("user found");
+            console.log("Application found");
 
             //setBeneficiaryID(beneficiary["beneficiaryID"]);
             setJobTitle(application["jobTitle"]);
@@ -91,7 +91,7 @@ const { id } = useParams();
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Job Title</Form.Label>
-            <Form.Control type="text" value={jobTitle} onChange={(e)=>{setJobTitle(e.target.value)}} required/>
+            <Form.Control type="text" value={jobTitle} onChange={(e)=>{setJobTitle(e.target.value);}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3">
@@ -128,27 +128,27 @@ const { id } = useParams();
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Applicant Name</Form.Label>
-            <Form.Control type="text" value={applicantName} onChange={(e)=>{setaAplicantName(e.target.value)}} required/>
+            <Form.Control type="text" value={applicantName} onChange={(e)=>{setaAplicantName(e.target.value);}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>NIC</Form.Label>
-            <Form.Control type="text" value={nic} onChange={(e)=>{setNic(e.target.value)}} maxLength={12} minLength ={10} required/>
+            <Form.Control type="text" value={nic} onChange={(e)=>{setNic(e.target.value);}} maxLength={12} minLength ={10} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Gender</Form.Label>
-            <Form.Control type="text" value={gender} onChange={(e)=>{setGender(e.target.value)}} required/>
+            <Form.Control type="text" value={gender} onChange={(e)=>{setGender(e.target.value);}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Date of Birth</Form.Label>
-            <Form.Control type="text" value={dateOfBirth} onChange={(e)=>{setDateOfBirth(e.target.value)}} required/>
+            <Form.Control type="text" value={dateOfBirth} onChange={(e)=>{setDateOfBirth(e.target.value);}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Mobile Number</Form.Label>
-            <Form.Control type="text" value={gender} onChange={(e)=>{setMobileNumber(e.target.value)}} maxLength={10} minLength ={10} required/>
+            <Form.Control type="text" value={gender} onChange={(e)=>{setMobileNumber(e.target.value);}} maxLength={10} minLength ={10} required/>
         
         </Form.Group>
 

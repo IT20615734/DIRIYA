@@ -46,7 +46,9 @@ export default function ManageApplication() {
         <h2>APPLICATIONS</h2>
         <br></br>
         {
+<<<
           <Link to="/Beneficiaries/AddApplications"><Button variant="primary">Add Applications</Button></Link>
+
         }
 
       <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40 }}>
@@ -70,8 +72,9 @@ export default function ManageApplication() {
           <tbody>
             {AddApplications.filter((element) => {
                 if (search === "") {
-                  return element;
+
                 } else if (element.applicantName.includes(search)) {
+
                   return element;
                 }
               }
@@ -88,8 +91,9 @@ export default function ManageApplication() {
                 <td>{e.dateOfBirth}</td>
                 <td>
                   <center>
-                    <Link to={`Applications/UpdateApplications${e._id}`}>
-                        <Button variant="outline-primary">Edit</Button>
+
+                    <Link to={`Applications/UpdateApplications/${e._id}`}>
+                      <Button variant="outline-primary">Edit</Button>
                     </Link>{" "}
 
                         <Button variant="outline-danger" onClick={() => deleteRecord(e._id)}> Delete </Button></center></td>

@@ -2,22 +2,14 @@ import React from "react";
 import Container from "react-bootstrap/esm/Container";
 import Food from "./Food";
 import "../FoodManagement/Overview.css";
-import {
-  ResponsiveContainer,
-  ComposedChart,
-  Line,
-  Area,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from "recharts";
+import { ResponsiveContainer,ComposedChart,Line,Area,Bar,XAxis,YAxis,CartesianGrid,Tooltip,Legend} from "recharts";
+import { UserDetails } from "../../context/UserContext";
+
 
 function Overview() {
   // DATA
-  
+  const {user,setUser}= UserDetails();
+
   const data = [
     {
       name: "DHAL",
@@ -78,10 +70,10 @@ function Overview() {
         <div style ={{marginLeft:'-15%', marginTop:'-1.5%'}}>
           <label>
             <p style={{fontSize:'135%'}}>
-              Welcome, Dinuka Thilakarathna
+              Welcome, {user.fullName}
               </p>
               <p style={{fontSize:'100%', marginTop:'-5%'}}>
-              Donation Manager - Gampaha District
+              Donation Manager - {user.address} District
               </p>
           </label>
         </div>
@@ -95,7 +87,7 @@ function Overview() {
         <div style={{display: "flex", height: "50px", width: "100%"}}>
         <Container style={{display: "flex",flexWrap: "wrap",marginTop: "1%",width: "100%",height: "600%",justifyContent: "space-between",backgroundColor:"#ffffff",paddingTop: "1.2rem",paddingBottom: "1.2rem"}}>
           
-        <p>Statistics of Gampaha District</p>
+        <p>Statistics of {user.address} District District</p>
         <br></br>
             <Container style={{ flexBasis: "40%",marginTop: "1%",padding: "1rem", backgroundColor:"#27E1C1",boxShadow: "0px 0px 10px #888888",transition: "box-shadow 0.3s ease-in-out"}}
             onMouseOver={(e) => e.currentTarget.style.boxShadow = "0px 0px 15px #888888"}

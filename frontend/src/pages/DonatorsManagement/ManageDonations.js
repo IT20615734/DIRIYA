@@ -5,11 +5,14 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
+import { UserDetails } from '../../context/UserContext';
 
 export default function ManageDonations() {
 
   const [AddDonations,setAddDonations] = useState([]);
   const [search,setSearch] = useState("");
+  const {user,setUser}= UserDetails();
+
 
   useEffect(() => {
     axios.get("http://localhost:8080/Donations").then((res) =>{
@@ -47,6 +50,7 @@ const deleteRecord = (e) =>{
       <thead>
         <tr>
           <th> Your Donation ID </th>
+          <th> Name</th>
           <th> Select Food Category </th>
           <th> Quantity</th>
           <th> Date of Hand-over</th>
@@ -57,7 +61,8 @@ const deleteRecord = (e) =>{
       </thead>
          
       <tbody>
-       {AddDonations.filter((element) =>{
+       {AddDonations.filter((element) => element.dname === user.fullName)
+            .filter((element) => {
                 if(search === ""){
                     return element
                 }else if (element.role.includes(search)){
@@ -68,6 +73,7 @@ const deleteRecord = (e) =>{
                 <tr key={i} style={{textAlign : 'center',fontWeight : '400'}}>
                     <td>{i+1}</td>
                     {/* <td>{e.donationID}</td> */}
+                    <td>{e.dname}</td>
                     <td>{e.foodCategory}</td>
                     <td>{e.quantity}</td>
                     <td>{e.dateOfHandOver}</td>
