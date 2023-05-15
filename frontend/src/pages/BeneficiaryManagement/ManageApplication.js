@@ -8,7 +8,7 @@ import axios from "axios";
 
 export default function ManageApplication() {
   const [AddApplications, setAddApplications] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState([]);
 
   //GET (GET DATA FROM DB)
   useEffect(() => {
@@ -41,20 +41,14 @@ export default function ManageApplication() {
       <Applications />
 
       <Container
-        style={{
-          marginTop: "1%",
-          display: "block",
-          width: "200%",
-          justifyContent: "center",
-        }}
-      >
+        style={{marginTop: "1%",display: "block",width: "200%",justifyContent: "center",}}>
         <br></br>
         <h2>APPLICATIONS</h2>
         <br></br>
         {
-          // <Link to="/Beneficiaries/AddApplications">
-          //   <Button variant="primary">Add Applications</Button>
-          // </Link>
+<<<
+          <Link to="/Beneficiaries/AddApplications"><Button variant="primary">Add Applications</Button></Link>
+
         }
 
       <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40 }}>
@@ -62,17 +56,7 @@ export default function ManageApplication() {
         <input class="button--submit" value="Search" type="submit"></input>
       </div>
 
-        <Table
-          striped
-          bordered
-          hover
-          style={{
-            textAlign: "center",
-            width: "100%",
-            justifyContent: "center",
-            marginTop: 20,
-          }}
-        >
+        <Table striped bordered hover style={{textAlign: "center",width: "100%",justifyContent: "center",marginTop: 20,}}>
           <thead>
             <tr>
               <th> Reference No</th>
@@ -86,11 +70,11 @@ export default function ManageApplication() {
             </tr>
           </thead>
           <tbody>
-            {AddApplications.filter(
-              (element) => {
+            {AddApplications.filter((element) => {
                 if (search === "") {
-                  return element;
-                } else if (element.jobTitle.includes(search)) {
+
+                } else if (element.applicantName.includes(search)) {
+
                   return element;
                 }
               }
@@ -98,7 +82,7 @@ export default function ManageApplication() {
               //catch data for the columns created using on change events
             ).map((e, i) => (
               <tr key={i} style={{ textAlign: "center", fontWeight: "400" }}>
-                <td>{i + 1}</td>
+                <td>{e.ReferenceNo}</td>
                 <td>{e.jobTitle}</td>
                 <td>{e.district}</td>
                 <td>{e.applicantName}</td>
@@ -107,22 +91,18 @@ export default function ManageApplication() {
                 <td>{e.dateOfBirth}</td>
                 <td>
                   <center>
+
                     <Link to={`Applications/UpdateApplications/${e._id}`}>
                       <Button variant="outline-primary">Edit</Button>
                     </Link>{" "}
-                    <Button
-                      variant="outline-danger"
-                      onClick={() => deleteRecord(e._id)}
-                    >
-                      Delete
-                    </Button>
-                  </center>
-                </td>
+
+                        <Button variant="outline-danger" onClick={() => deleteRecord(e._id)}> Delete </Button></center></td>
               </tr>
             ))}
           </tbody>
-        </Table>
+          </Table>
       </Container>
+      
     </>
   );
 }

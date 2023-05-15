@@ -58,8 +58,6 @@ function AddUser() {
             "Password":password
         }
 
-
-        // console.log("FormData", formData )
         axios.post("http://localhost:8080/authUser/RegisterUser", data).then(res=>{
             alert ("New User Added!");
             navigate(-1);
@@ -69,8 +67,6 @@ function AddUser() {
             alert(err)
         })
     }
-        // const Back = () =>
-        // navigate("/Admin/User");
 
   return (
     <>

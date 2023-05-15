@@ -52,7 +52,7 @@ export default function Jobs() {
       <Table striped bordered hover style={{textAlign : 'center', width : '100%',justifyContent : 'center',marginTop : 20}}>
       <thead>
         <tr>
-          <th>Job ID</th>
+          <th> Reference No</th>
           <th> Job Title</th>
           <th> District</th>
           <th> Gender</th>

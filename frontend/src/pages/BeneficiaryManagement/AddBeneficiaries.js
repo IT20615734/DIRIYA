@@ -100,7 +100,7 @@ function AddBeneficiaries() {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Monthly Income</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setMonthlyIncome(e.target.value)}} required/>
+            <Form.Control type="number" max="12500" onChange={(e) => setMonthlyIncome(e.target.value)} required />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
