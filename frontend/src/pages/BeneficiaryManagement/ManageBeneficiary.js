@@ -74,6 +74,8 @@ const deleteRecord = (e) =>{
                     return element
                 }
             }
+
+            //catch data for the columns created using on change events
             ).map((e,i) =>(
                 <tr key={i} style={{textAlign : 'center',fontWeight : '400'}}>
                     <td>{e.beneficiaryID}</td>

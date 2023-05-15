@@ -8,7 +8,6 @@ import { Navigate,useLocation,useNavigate,useParams } from "react-router-dom";
 import Applications from './Beneficiaries'
 
 export default function UpdateBeneficiaries() {
-    //const[beneficiaryID, setBeneficiaryID] = useState();
     const[jobTitle, setJobTitle] =useState();
     const[district, setDistrict] =useState();
     const[applicantName, setaAplicantName] =useState();
