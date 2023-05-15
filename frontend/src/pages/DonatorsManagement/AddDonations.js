@@ -6,16 +6,20 @@ import Donations from './Donations'
 import axios from 'axios';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
+import { UserDetails } from '../../context/UserContext';
 
 //export default function AddDonations() {
 
 function AddDonations() {
 
+    const {user,setUser}= UserDetails();
+
     // const[donationID, setDonationID] = useState();
+    const[dname, setdname] = useState(user.fullName);
     const[foodCategory, setFoodCategory] = useState();
     const[quantity, setQuantity] =useState();
     const[dateOfHandOver, setDateOfHandOver] =useState();
-    const[district, setDistrict] =useState();
+    const[district, setDistrict] =useState(user.address);
     const[mobileNumber, setMobileNumber] =useState();
     
     const navigate = useNavigate();
@@ -25,6 +29,7 @@ function AddDonations() {
         console.log("called") 
         const formData = new FormData();
             // formData.append("donationID",donationID);
+            formData.append("dname",dname);
             formData.append("foodCategory",foodCategory);
             formData.append("quantity",quantity)
             formData.append("dateOfHandOver",dateOfHandOver)
@@ -34,6 +39,7 @@ function AddDonations() {
     const  data = 
         {
             // "donationID":donationID,
+            "dname":dname,
             "foodCategory":foodCategory,
             "quantity":quantity,
             "dateOfHandOver":dateOfHandOver,
@@ -98,13 +104,13 @@ function AddDonations() {
             <Form.Control type="date" onChange={(e)=>{setDateOfHandOver(e.target.value)}} required/>
         </Form.Group>
 
-        <Form.Group className="mb-3" >
-              <Form.Label>District</Form.Label>
-              <Form.Select  onChange={(e)=>{setDistrict(e.target.value)}} required >
+        {/* <Form.Group className="mb-3" >
+              <Form.Label>District </Form.Label>
+              <Form.Select value ={user.address} onChange={(e)=>{setDistrict(e.target.value)}} required >
                 <option></option>
                 <option value= 'Colombo'>Colombo</option>
                 <option value= 'Gampaha'>Gampaha</option>
-                <option value='Kalutara'>Kalutara</option>``
+                <option value='Kalutara'>Kalutara</option>
                 <option value='Kandy'>Kandy</option>
                 <option value='Matale'>Matale</option>
                 <option value=' NuwaraEliya'> Nuwara Eliya</option>
@@ -128,8 +134,13 @@ function AddDonations() {
                 <option value='Ratnapura'>Ratnapura</option>
                 <option value='Kegalle'>Kegalle</option>
               </Form.Select>
+        </Form.Group> */}
+
+        {/* <Form.Group className="mb-3" controlId="formBasicEmail">  
+            <Form.Label>District</Form.Label>
+            <Form.Control  value={user.address}  onChange={(e)=>{setDistrict(e.target.value)}} required />   
         </Form.Group>
-                                                                        
+                                                                         */}
          <Form.Group className="mb-3" controlId="formBasicEmail">  
             <Form.Label>Mobile Number</Form.Label>
             <Form.Control type="text" onChange={(e)=>{setMobileNumber(e.target.value)}} maxLength={10} minLength ={10} required/>   

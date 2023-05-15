@@ -44,7 +44,7 @@ function App() {
       <React.Fragment>
       <NavLink />  
       </React.Fragment>
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
         <Routes>
           {/* Basic */}
           <Route exact path="/" element={<Home />} />
@@ -114,7 +114,7 @@ function App() {
           <Route exact path="/Food/Donation" element={<Donation />} />
         </Routes>
         <Footer/> 
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
       </body>
     </>
   );

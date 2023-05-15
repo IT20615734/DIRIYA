@@ -101,7 +101,7 @@ function EditDonations() {
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Quantity</Form.Label>
-            <Form.Control type="text" value={quantity}onChange={(e) => {setFoodCategory(e.target.value);}} required/>
+            <Form.Control type="number" value={quantity} onChange={(e) => {setQuantity(e.target.value);}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -111,7 +111,7 @@ function EditDonations() {
 
         <Form.Group className="mb-3" >
               <Form.Label>District</Form.Label>
-              <Form.Select value={district}onChange={(e) => {setDistrict(e.target.value);}} required >
+              <Form.Select disabled={true} value={district}onChange={(e) => {setDistrict(e.target.value);}} required >
                 <option></option>
                 <option value= 'Colombo'>Colombo</option>
                 <option value= 'Gampaha'>Gampaha</option>
