@@ -5,10 +5,13 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { UserDetails } from "../../context/UserContext";
 
 export default function ManageApplication() {
   const [AddApplications, setAddApplications] = useState([]);
   const [search, setSearch] = useState("");
+  const {user,setUser}= UserDetails();
+
 
   //GET (GET DATA FROM DB)
   useEffect(() => {
@@ -48,6 +51,17 @@ export default function ManageApplication() {
           justifyContent: "center",
         }}
       >
+        <div style ={{marginLeft:'-15%', marginTop:'1.5%'}}>
+          <label>
+            <p style={{fontSize:'135%'}}>
+              Welcome, {user.fullName}
+              </p>
+              <p style={{fontSize:'100%', marginTop:'-5%'}}>
+              {user.address} District
+              </p>
+          </label>
+       </div>
+
         <br></br>
         <h2>APPLICATIONS</h2>
         <br></br>
