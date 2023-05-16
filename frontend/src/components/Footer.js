@@ -13,7 +13,7 @@ function Footer() {
       <div class='column about'>
       <div className='h3'>
       <Link to="/">
-        <img src = {logo2} style={{width : 130 , height : 50 , marginTop : 5  }} />
+        <img src = {logo2} style={{width : 112 , height : 50 , marginTop : 5  }} />
         </Link>
       </div>
 

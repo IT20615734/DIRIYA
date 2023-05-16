@@ -95,7 +95,6 @@ function AddUser() {
                 <option value = 'Admin'>Admin</option>
                 <option value = 'FoodManager'>Food Manager</option>
                 <option value='VillageOfficer'>Village Officer</option>``
-                <option value='Donater'>Donater</option>
               </Form.Select>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -174,4 +173,4 @@ function AddUser() {
     </>
   )
 }
-export default AddUser;
+export default AddUser;

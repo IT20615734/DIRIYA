@@ -48,12 +48,18 @@ const deleteRecord = (e) =>{
       <br></br>
       <h2>DONATIONS</h2>
       <br></br>
-      <Link to = "/Donations/AddDonations"><Button variant="primary">+ Add Donation</Button></Link>
+      <Link to = "/Donations/AddDonations"><Button variant="primary">Add Donation</Button></Link>
       
+      <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40 }}>
+        <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Name" />
+        <input class="button--submit" value="Search" type="submit"></input>
+      </div>
+        <br></br>
+
       <Table striped bordered hover style={{textAlign : 'center', width : '100%',justifyContent : 'center',marginTop : 20}}>
       <thead>
         <tr>
-          <th> Your Donation ID </th>
+          <th> Donation ID </th>
           <th> Name</th>
           <th> Select Food Category </th>
           <th> Quantity</th>
@@ -73,10 +79,10 @@ const deleteRecord = (e) =>{
                     return element
                 }
             }
+            
             ).map((e,i) =>(
                 <tr key={i} style={{textAlign : 'center',fontWeight : '400'}}>
-                    <td>{i+1}</td>
-                    {/* <td>{e.donationID}</td> */}
+                    <td>{e.donationID}</td>
                     <td>{e.dname}</td>
                     <td>{e.foodCategory}</td>
                     <td>{e.quantity}</td>

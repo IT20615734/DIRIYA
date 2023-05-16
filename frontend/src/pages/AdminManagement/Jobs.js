@@ -43,7 +43,7 @@ export default function Jobs() {
       <br></br>
       <h2>JOB OPPORTUNITIES</h2>
       <br></br>
-      <Link to="/Admin/AddJobs"><Button variant="primary">+ Add Job Opportunity</Button></Link>
+      <Link to="/Admin/AddJobs"><Button variant="primary">Add Job Opportunity</Button></Link>
       <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40}}>
         <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Job title" />
         <input class="button--submit" value="Search" type="submit"></input>
@@ -52,7 +52,7 @@ export default function Jobs() {
       <Table striped bordered hover style={{textAlign : 'center', width : '100%',justifyContent : 'center',marginTop : 20}}>
       <thead>
         <tr>
-          <th>Job ID</th>
+          <th> Reference No</th>
           <th> Job Title</th>
           <th> District</th>
           <th> Gender</th>
