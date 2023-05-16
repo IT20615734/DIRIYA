@@ -50,6 +50,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/Contact" element={<Contact />} />
           <Route exact path="/Login" element={<Login />} />
+          
           {/* Admin */}
           <Route exact path="/Admin" element={<Admin />} />
           <Route exact path="/Admin/User" element={<User />} />

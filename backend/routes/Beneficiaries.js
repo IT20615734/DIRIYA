@@ -7,8 +7,8 @@ router.route("/").get(async (req,res) =>{
      }).catch((err)=>{
          res.status(400).send({status :err})
  
-     })
- })
+     });
+ });
 
  router.route("/AddBeneficiaries").post(async(req,res) => {
     

@@ -3,7 +3,7 @@ const Donations = require('../models/Donations');
 
 router.route("/").get(async (req, res) => {
   await Donations.find()
-    .then((data) => {
+  .then((data) => {
       res.status(200).send({ status: " Data Recieved ", AddDonations : data });
     })
     .catch((err) => {
@@ -14,7 +14,7 @@ router.route("/").get(async (req, res) => {
 router.route("/AddDonations").post(async (req, res) => {
   try {
     const {
-      // donationID,
+      donationID,
       dname,
       foodCategory,
       quantity,
@@ -23,7 +23,7 @@ router.route("/AddDonations").post(async (req, res) => {
       mobileNumber,
     } = req.body;
     const newDonation = new Donations({
-        // donationID,
+        donationID,
         dname,
         foodCategory,
         quantity,
@@ -39,7 +39,7 @@ router.route("/AddDonations").post(async (req, res) => {
       })
       .catch((e) => {
         return res.status(400).send({ status: e });
-      });
+      })
   } catch (err) {
     console.log("Error => " + err);
     return res.status(500).json({ err });
