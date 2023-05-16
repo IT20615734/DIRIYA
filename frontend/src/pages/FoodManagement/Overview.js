@@ -81,15 +81,17 @@ function Overview() {
 
 
         <div className="Overview" style={{justifyContent:'center'}}>
-          <h2>DONATION MANAGEMENT DASHBOARD</h2>
+          <h1>DONATION MANAGEMENT DASHBOARD</h1>
         </div>
 
         <div style={{display: "flex", height: "50px", width: "100%"}}>
-        <Container style={{display: "flex",flexWrap: "wrap",marginTop: "1%",width: "100%",height: "600%",justifyContent: "space-between",backgroundColor:"#ffffff",paddingTop: "1.2rem",paddingBottom: "1.2rem"}}>
+        <Container style={{display: "flex",flexWrap: "wrap",marginTop: "1%",width: "100%",height: "600%",justifyContent: "space-between",backgroundColor:"#ffffff",paddingTop: "1.2rem",paddingBottom: "1.2rem",borderRadius:'20px',boxShadow: "0px 0px 10px #888888"}}>
           
-        <p>Statistics of {user.address} District District</p>
+        <h5>Statistics of {user.address} District</h5>
         <br></br>
-            <Container style={{ flexBasis: "40%",marginTop: "1%",padding: "1rem", backgroundColor:"#27E1C1",boxShadow: "0px 0px 10px #888888",transition: "box-shadow 0.3s ease-in-out"}}
+
+        <div style={{ display: "flex", justifyContent: "space-between",height:"200px",marginTop:"2px",marginLeft:'125px'}}>
+            <Container style={{ borderRadius:'20px', flexBasis: "40%",marginTop: "1%",padding: "1rem", backgroundColor:"#27E1C1",boxShadow: "0px 0px 10px #888888",transition: "box-shadow 0.3s ease-in-out", marginRight: "30px"}}
             onMouseOver={(e) => e.currentTarget.style.boxShadow = "0px 0px 15px #888888"}
             onMouseOut={(e) => e.currentTarget.style.boxShadow = "0px 0px 10px #888888"}
             >
@@ -97,7 +99,7 @@ function Overview() {
               <p>Count till {new Date().toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})}</p>
             </Container>
 
-            <Container style={{ flexBasis: "40%",marginTop: "1%",padding: "1rem",backgroundColor: "#FFD966",boxShadow: "0px 0px 10px #888888",transition: "box-shadow 0.3s ease-in-out"}}
+            <Container style={{ borderRadius:'20px', flexBasis: "40%",marginTop: "1%",padding: "1rem",backgroundColor: "#FFD966",boxShadow: "0px 0px 10px #888888",transition: "box-shadow 0.3s ease-in-out", marginRight: "30px"}}
             onMouseOver={(e) => e.currentTarget.style.boxShadow = "0px 0px 15px #888888"}
             onMouseOut={(e) => e.currentTarget.style.boxShadow = "0px 0px 10px #888888"}
             >
@@ -105,31 +107,18 @@ function Overview() {
               <p>Count till {new Date().toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})}</p>
             </Container>
 
-            <Container style={{ flexBasis: "40%",marginTop: "1%",padding: "1rem",backgroundColor: "#E96479",boxShadow: "0px 0px 10px #888888",transition: "box-shadow 0.3s ease-in-out"}}
+            <Container style={{borderRadius:'20px', flexBasis: "40%",marginTop: "1%",padding: "1rem",backgroundColor: "#E96479",boxShadow: "0px 0px 10px #888888",transition: "box-shadow 0.3s ease-in-out"}}
             onMouseOver={(e) => e.currentTarget.style.boxShadow = "0px 0px 15px #888888"}
             onMouseOut={(e) => e.currentTarget.style.boxShadow = "0px 0px 10px #888888"}
             >
               <p>GS Divisions with surplus of donations</p>
               <p>Count till {new Date().toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})}</p>
             </Container>
-  </Container>
-</div>
+            </div>
+            </Container>
+         </div>
 
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-
-        <div style={{ width: "75%", height: 450 }}>
+        <div style={{ width: "75%", height: 450,marginTop:300 }}>
           <ResponsiveContainer>
             <ComposedChart
               width={500}

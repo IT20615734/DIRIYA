@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import { UserDetails } from '../../context/UserContext';
+import "../DonatorsManagement/movingBanner.css"
 
 export default function ManageDonations() {
 
@@ -41,6 +42,9 @@ const deleteRecord = (e) =>{
     < Donations/>
     
     <Container style={{marginTop : '1%',display : 'block',width : '100%',justifyContent : 'center'}}>
+    <div className="moving-banner" style={{}}>
+      <h2>This is a moving banner</h2>
+    </div>
       <br></br>
       <h2>DONATIONS</h2>
       <br></br>

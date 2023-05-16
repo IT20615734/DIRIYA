@@ -6,11 +6,13 @@ import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import '../../Styles/Search.css'
+import { UserDetails } from '../../context/UserContext';
 
 export default function ManageBeneficiary() {
 
   const [AddBeneficiaries,setAddBeneficiaries] = useState([]);
   const [search,setSearch] = useState([]);
+  const {user,setUser}= UserDetails();
 
   //GET (GET DATA FROM DB)
   useEffect(() => {
@@ -41,6 +43,17 @@ const deleteRecord = (e) =>{
     <Beneficiaries/>
     
     <Container style={{marginTop : '1%',display : 'block',width : '100%',justifyContent : 'center'}}>
+
+    <div style ={{marginLeft:'-15%', marginTop:'1.5%'}}>
+          <label>
+            <p style={{fontSize:'135%'}}>
+              Welcome, {user.fullName}
+              </p>
+              <p style={{fontSize:'100%', marginTop:'-5%'}}>
+              {user.address} District
+              </p>
+          </label>
+    </div>
       <br></br>
       <h2>BENEFICIARIES</h2>
       <br></br>
