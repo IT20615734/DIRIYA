@@ -45,11 +45,9 @@ export default function ManageApplication() {
         <br></br>
         <h2>APPLICATIONS</h2>
         <br></br>
-        {
-<<<
+        {/* {
           <Link to="/Beneficiaries/AddApplications"><Button variant="primary">Add Applications</Button></Link>
-
-        }
+        } */}
 
       <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40 }}>
         <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Name " />
