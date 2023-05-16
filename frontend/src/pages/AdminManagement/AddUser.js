@@ -58,6 +58,8 @@ function AddUser() {
             "Password":password
         }
 
+
+        // console.log("FormData", formData )
         axios.post("http://localhost:8080/authUser/RegisterUser", data).then(res=>{
             alert ("New User Added!");
             navigate(-1);
@@ -67,6 +69,8 @@ function AddUser() {
             alert(err)
         })
     }
+        // const Back = () =>
+        // navigate("/Admin/User");
 
   return (
     <>
@@ -91,7 +95,6 @@ function AddUser() {
                 <option value = 'Admin'>Admin</option>
                 <option value = 'FoodManager'>Food Manager</option>
                 <option value='VillageOfficer'>Village Officer</option>``
-                <option value='Donater'>Donater</option>
               </Form.Select>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -170,4 +173,4 @@ function AddUser() {
     </>
   )
 }
-export default AddUser;
+export default AddUser;
