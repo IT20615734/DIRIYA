@@ -44,7 +44,7 @@ const deleteRecord = (e) =>{
       <br></br>
       <h2>BENEFICIARIES</h2>
       <br></br>
-      <Link to = "/Beneficiaries/AddBeneficiaries"><Button variant="primary">Add Beneficiary</Button></Link>
+      <Link to = "/Beneficiaries/AddBeneficiaries"><Button variant="primary">+ Add Beneficiary</Button></Link>
       
       <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40 }}>
         <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Name" />

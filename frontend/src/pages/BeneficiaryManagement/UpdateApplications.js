@@ -91,12 +91,12 @@ const { id } = useParams();
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Job Title</Form.Label>
-            <Form.Control type="text" value={jobTitle} onChange={(e)=>{setJobTitle(e.target.value);}} required/>
+            <Form.Control disabled={true} value={jobTitle} onChange={(e)=>{setJobTitle(e.target.value);}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3">
             <Form.Label>District</Form.Label>
-            <Form.Select value={district} onChange={(e) => {setDistrict(e.target.value);}} required>
+            <Form.Select disabled={true} value={district} onChange={(e) => {setDistrict(e.target.value);}} required>
             <option></option>
                 <option value = 'Colombo'>Colombo</option>
                 <option value = 'Gampaha'>Gampaha</option>
