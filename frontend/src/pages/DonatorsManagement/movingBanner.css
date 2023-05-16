@@ -1,26 +1,36 @@
 .moving-banner {
+    display: flex;
+    margin-top: -2%;
+    justify-content: flex-end;
+    margin-left: -250px;
     position: relative;
-    width: 150%;
-    height: 50px;
-    background-color: #f5f5f5;
+    width: 136.6%;
+    height: 30px;
+    background-color: #ffc404;
     overflow: hidden;
   }
   
   .moving-banner h2 {
     position: absolute;
-    left: 0;
+    color: black;
+    right: 0;
     top: 0;
     white-space: nowrap;
-    animation: moveText 10s linear infinite;
+    margin-top: 0.3%;
+    font-size: 16px;
+    animation: moveText 20s linear infinite;
   }
   
   @keyframes moveText {
     0% {
-      transform: translateX(0);
+      transform: translateX(50%);
     }
     100% {
-      transform: translateX(100%);
+      transform: translateX(0);
     }
   }
+
+
+  
   
   
