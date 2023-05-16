@@ -5,11 +5,15 @@ import stat from "../Assets/stat.png"
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/esm/Button';
 import first from "../Assets/first.jpg"
+import "../pages/DonatorsManagement/movingBanner.css"
 
 
 function Home() {
   return (
     <>
+    <div className="moving-banner" style={{marginTop:'0%'}}>
+      <h2>Your donations save thousands of families from hunger and help them to alleviate from severe poverty in Sri Lanka | THANK YOU FOR YOUR DONATIONS | Your donations save thousands of families from hunger and help them to alleviate from severe poverty in Sri Lanka | THANK YOU FOR YOUR DONATIONS | Your donations save thousands of families from hunger and help them to alleviate from severe poverty in Sri Lanka | THANK YOU FOR YOUR DONATIONS</h2>
+    </div>
     <SlideShow/>
     <br></br>
    
