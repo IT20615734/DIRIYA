@@ -50,6 +50,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/Contact" element={<Contact />} />
           <Route exact path="/Login" element={<Login />} />
+          
           {/* Admin */}
           <Route exact path="/Admin" element={<Admin />} />
           <Route exact path="/Admin/User" element={<User />} />
@@ -61,41 +62,13 @@ function App() {
 
           {/* Beneficiary */}
           <Route exact path="/Beneficiaries" element={<Beneficiaries />} />
-          <Route
-            exact
-            path="/Beneficiaries/ManageBeneficiary"
-            element={<ManageBeneficiary />}
-          />
-          <Route
-            exact
-            path="/Beneficiaries/AddBeneficiaries"
-            element={<AddBeneficiary />}
-          />
-          <Route
-            exact
-            path="/Beneficiaries/ManageBeneficiary/Beneficiaries/UpdateBeneficiaries/:id"
-            element={<UpdateBeneficiaries />}
-          />
-          <Route
-            exact
-            path="/Beneficiaries/JobOpportunities"
-            element={<JobOpportunities />}
-          />
-          <Route
-            exact
-            path="/Beneficiaries/AddApplications"
-            element={<AddApplication />}
-          />
-          <Route
-            exact
-            path="/Beneficiaries/ManageApplication"
-            element={<ManageApplication />}
-          />
-          <Route
-            exact
-            path="/Beneficiaries/ManageApplication/Applications/UpdateApplications/:id"
-            element={<UpdateApplications />}
-          />
+          <Route exact path="/Beneficiaries/ManageBeneficiary" element={<ManageBeneficiary />}/>
+          <Route exact path="/Beneficiaries/AddBeneficiaries" element={<AddBeneficiary />}/>
+          <Route exact path="/Beneficiaries/ManageBeneficiary/Beneficiaries/UpdateBeneficiaries/:id" element={<UpdateBeneficiaries />}/>
+          <Route exact path="/Beneficiaries/JobOpportunities" element={<JobOpportunities />} />
+          <Route exact path="/Beneficiaries/AddApplications" element={<AddApplication />} />
+          <Route exact path="/Beneficiaries/ManageApplication" element={<ManageApplication />} />
+          <Route exact path="/Beneficiaries/ManageApplication/Applications/UpdateApplications/:id" element={<UpdateApplications />} />
 
           {/* Donations */}
           <Route exact path="/Donations" element={<Donations />} />

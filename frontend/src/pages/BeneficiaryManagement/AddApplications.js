@@ -4,9 +4,8 @@ import Container from 'react-bootstrap/esm/Container'
 import Form from 'react-bootstrap/Form';
 import Applications from './Beneficiaries'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
+import { Navigate, useNavigate } from 'react-router-dom';
+
 
 
 export default function AddApplications() {
@@ -21,7 +20,7 @@ export default function AddApplications() {
     const[mobileNumber, setMobileNumber] =useState();
     
     const navigate = useNavigate();
-    
+
 
     const Validate =(e)=>{
         e.preventDefault();
@@ -53,6 +52,9 @@ export default function AddApplications() {
             alert ("New Application Added!")
             navigate(-1);
             console.log("data adedd")
+            navigate(-1);
+
+            
         }).catch(err=>{
             alert(err)
         })
@@ -78,34 +80,22 @@ export default function AddApplications() {
         </Form.Group>
 
         <Form.Group className="mb-3" >
-              <Form.Label>District</Form.Label>
+              <Form.Label>GN Division</Form.Label>
               <Form.Select onChange={(e)=>{setDistrict(e.target.value)}}  required >
                 <option></option>
-                <option value = 'Colombo'>Colombo</option>
-                <option value = 'Gampaha'>Gampaha</option>
-                <option value='Kalutara'>Kalutara</option>``
-                <option value='Kandy'>Kandy</option>
-                <option value='Matale'>Matale</option>
-                <option value=' NuwaraEliya'> Nuwara Eliya</option>
-                <option value='Galle'>Galle</option>
-                <option value='Matara'>Matara</option>
-                <option value='Hambantota'>Hambantota</option>
-                <option value='Jaffna'>Jaffna</option>
-                <option value='Kilinochchi'>Kilinochchi</option>
-                <option value='Mannar'>Mannar</option>
-                <option value='Vavuniya'>Vavuniya</option>
-                <option value='Mullaitivu'>Mullaitivu</option>
-                <option value='Batticaloa'>Batticaloa</option>
-                <option value='Ampara'>Ampara</option>
-                <option value='Trincomalee'>Trincomalee</option>
-                <option value='Kurunegala'>Kurunegala</option>
-                <option value='Puttalam'>Puttalam</option>
-                <option value='Anuradhapura'>Anuradhapura</option>
-                <option value='Polonnaruwa'>Polonnaruwa</option>
-                <option value='Badulla'>Badulla</option>
-                <option value='Moneragala'>Moneragala</option>
-                <option value='Ratnapura'>Ratnapura</option>
-                <option value='Kegalle'>Kegalle</option>
+                <option value = 'Negombo'>Negombo</option>
+                <option value = 'Katana'>Katana</option>
+                <option value='Divulapitiya'>Divulapitiya</option>``
+                <option value='Mirigama'>Mirigama</option>
+                <option value='Minuwangoda'>Minuwangoda</option>
+                <option value='Wattala'>Wattala</option>
+                <option value='Ja-Ela'>Ja-Ela</option>
+                <option value='Gampaha'>Gampaha</option>
+                <option value='Attanagalla'>Attanagalla</option>
+                <option value='Dompe'>Dompe</option>
+                <option value='Mahara'>Mahara</option>
+                <option value='Kelaniya'>Kelaniya</option>
+                <option value='Biyagama'>Biyagama</option>
               </Form.Select>
         </Form.Group>
 
@@ -116,7 +106,7 @@ export default function AddApplications() {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>NIC</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setnic(e.target.value)}} maxLength={12} minLength ={10} placeholder='Eg: [741922757V or 197419202757]' required/>
+            <Form.Control type="text" onChange={(e)=>{setnic(e.target.value)}} maxLength={12} minLength ={10} placeholder='Eg: [123456789V or 123456789101]' required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -149,28 +139,3 @@ export default function AddApplications() {
   )
 }
 
-// import React, { useState } from "react";
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
-
-// const DatePickerComponent = (props) => {
-//   const { label, name, value, onChange } = props;
-//   const [selectedDate, setSelectedDate] = useState(
-//     value ? new Date(value) : null
-//   );
-
-//   const handleDateChange = (date) => {
-//     setSelectedDate(date);
-//     onChange(name, date);
-//   };
-
-//   return (
-//     <div>
-//       <label>{label}</label>
-//       <br />
-//       <DatePicker selected={selectedDate} onChange={handleDateChange} />
-//     </div>
-//   );
-// };
-
-// export default DatePickerComponent;

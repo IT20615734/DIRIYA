@@ -66,7 +66,7 @@ function AddJobs() {
     <Container style={{marginTop : '1%',display : 'block',width : '35%',justifyContent : 'center'}}>
 
     <Form onSubmit={Validate}>
-    <h1 style={{fontWeight:'bold'}}><center>ADD JOB OPPORTUNITY</center></h1>
+    <h1 style={{fontWeight:'bold'}}><center>+ ADD JOB OPPORTUNITY</center></h1>
         <br></br>
         <hr></hr>
         {/* <Form.Group className="mb-3" controlId="formBasicEmail">
