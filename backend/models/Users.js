@@ -19,6 +19,10 @@ var User = new mongoose.Schema({
         type:String,
         required:true,
     },
+    gsDivision:{
+        type:String,
+        required:false,
+    },
     address:{
         type:String,
         required:true,
