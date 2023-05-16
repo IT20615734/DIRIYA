@@ -73,7 +73,8 @@ const deleteRecord = (e) =>{
                     <td>{e.dateOfHandOver}</td>
                     <td>{e.district}</td>
                     <td>{e.mobileNumber}</td>
-                    <td><center><Link to="/Food/AddFood"><Button variant="outline-primary">Accept</Button></Link>        <Button variant="outline-danger" onClick={() => deleteRecord(e._id)}>Reject</Button></center></td>
+                    <td><center><Link to="/Food/AddFood"><Button variant="outline-primary">Accept</Button></Link>
+                                                        <Button variant="outline-danger" onClick={() => deleteRecord(e._id)}>Reject</Button></center></td>
                 </tr>
             ))}
       </tbody>

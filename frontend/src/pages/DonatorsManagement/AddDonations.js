@@ -4,17 +4,26 @@ import Container from 'react-bootstrap/esm/Container'
 import Form from 'react-bootstrap/Form';
 import Donations from './Donations'
 import axios from 'axios';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import { UserDetails } from '../../context/UserContext';
 
 //export default function AddDonations() {
 
 function AddDonations() {
-
+    const generateRandomString = (length) => {
+        let result = '';
+        const characters = '0123456789';
+        const charactersLength = characters.length;
+        for (let i = 0; i < length; i++) {
+          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+      };
+    
     const {user,setUser}= UserDetails();
-
-    // const[donationID, setDonationID] = useState();
+    
+    const[donationID, setDonationID] = useState(`DI_${generateRandomString(6)}`);
     const[dname, setdname] = useState(user.fullName);
     const[foodCategory, setFoodCategory] = useState();
     const[quantity, setQuantity] =useState();
@@ -28,7 +37,7 @@ function AddDonations() {
         e.preventDefault();
         console.log("called") 
         const formData = new FormData();
-            // formData.append("donationID",donationID);
+            formData.append("donationID",donationID);
             formData.append("dname",dname);
             formData.append("foodCategory",foodCategory);
             formData.append("quantity",quantity)
@@ -38,7 +47,7 @@ function AddDonations() {
         
     const  data = 
         {
-            // "donationID":donationID,
+            "donationID":donationID,
             "dname":dname,
             "foodCategory":foodCategory,
             "quantity":quantity,

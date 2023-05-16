@@ -46,9 +46,7 @@ export default function ManageApplication() {
         <h2>APPLICATIONS</h2>
         <br></br>
         {
-<<<
           <Link to="/Beneficiaries/AddApplications"><Button variant="primary">Add Applications</Button></Link>
-
         }
 
       <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40 }}>

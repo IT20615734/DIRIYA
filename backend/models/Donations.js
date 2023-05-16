@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 
 var Donation = new mongoose.Schema({
-    // donationID:{
-    //     type:String,
-    //     required:true,
-    //     index:true,
-    // },
+    donationID:{
+        type:String,
+        required:true,
+    },
     dname:{
         type:String,
         required:true,
