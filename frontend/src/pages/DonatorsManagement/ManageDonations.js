@@ -51,7 +51,7 @@ const deleteRecord = (e) =>{
       <Link to = "/Donations/AddDonations"><Button variant="primary">Add Donation</Button></Link>
       
       <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40 }}>
-        <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Name" />
+        <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Hand over Date" />
         <input class="button--submit" value="Search" type="submit"></input>
       </div>
         <br></br>
@@ -75,7 +75,7 @@ const deleteRecord = (e) =>{
             .filter((element) => {
                 if(search === ""){
                     return element
-                }else if (element.role.includes(search)){
+                }else if (element.dateOfHandOver.includes(search)){
                     return element
                 }
             }
