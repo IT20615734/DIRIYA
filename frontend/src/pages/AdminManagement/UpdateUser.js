@@ -155,7 +155,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Colombo' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Dehiwala'>Dehiwala</option>
             <option value='Homagama'>Homagama</option>
@@ -174,7 +174,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Gampaha' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value = 'Negombo'>Negombo</option>
             <option value = 'Katana'>Katana</option>
@@ -196,7 +196,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Kalutara' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Agalawatta'>Agalawatta	</option>
             <option value='Bandaragama'>Bandaragama</option>	
@@ -214,7 +214,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Kandy' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Akurana'>Akurana</option>	
             <option value='Doluwa'>Doluwa</option>
@@ -231,7 +231,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Matale' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Ambanganga Korale'>Ambanganga Korale</option> 
             <option value='Dambulla'>Dambulla</option> 
@@ -249,7 +249,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'NuwaraEliya' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Nuwaraeliya'>Nuwaraeliya</option>
             <option value='Kotmale'>Kotmale</option>
@@ -263,7 +263,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Galle' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Ahangama'>Ahangama</option>
             <option value='Ahungalla'>Ahungalla</option>
@@ -279,7 +279,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Matara' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Akuressa'>Akuressa</option>	
             <option value='Thuraliya'>Thuraliya</option>	
@@ -299,7 +299,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Hambantota' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Ambalantota'>Ambalantota </option>
             <option value='Angunakolapellessa'>Angunakolapellessa </option>
@@ -317,7 +317,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Jaffna' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Delft'>Delft</option>	
             <option value='Karainagar'>Karainagar</option>	
@@ -332,7 +332,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Kilinochchi' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Kandavalai'>Kandavalai</option>	
             <option value='Karachchi'>Karachchi</option>	
@@ -346,7 +346,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Mannar' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Madhu'>Madhu</option>	
             <option value='Manthai West'>Manthai West</option>	
@@ -359,7 +359,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Vavuniya' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Vavuniya'>Vavuniya</option>	
             <option value='Vavuniya North'>Vavuniya North</option>
@@ -373,7 +373,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Mullaitivu' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Manthai East'>Manthai East</option>		
             <option value='Maritimepattu'>Maritimepattu</option>
@@ -390,7 +390,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Batticaloa' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Eravurpattu'>Eravurpattu</option>
             <option value='Koralaipattu'>Koralaipattu</option>
@@ -408,7 +408,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Ampara' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Akkaraipattu'>Akkaraipattu</option>		
             <option value='Dehiattakandiya'>Dehiattakandiya</option>	
@@ -425,7 +425,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Trincomalee' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Gomarankadawala'>Gomarankadawala</option>
             <option value='Kantalai'>Kantalai</option>
@@ -441,7 +441,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Kurunegala' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Girathalana'>Girathalana</option>
             <option value='Panagamuwa'>Panagamuwa</option>
@@ -455,7 +455,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Puttalam' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Anamaduwa'>Anamaduwa</option>
             <option value='Battuluoya'>Battuluoya</option>
@@ -469,7 +469,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Anuradhapura' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Galenbindunuwewa'>Galenbindunuwewa</option>
             <option value='Galnewa'>Galnewa</option>
@@ -483,7 +483,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Polonnaruwa' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Thamankaduwa'>Thamankaduwa</option>
             <option value='Hingurakgoda'>Hingurakgoda</option>
@@ -498,7 +498,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Badulla' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Hali-Ela'>Hali-Ela</option>
             <option value='Haputale'>Haputale</option>
@@ -512,7 +512,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Moneragala' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Bibile'>Bibile</option>
             <option value='Buttala'>Buttala</option>
@@ -526,7 +526,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Ratnapura' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Eheliyagoda'>Eheliyagoda</option>
             <option value='Pelmadulla'>Pelmadulla</option>
@@ -542,7 +542,7 @@ function UpdateUser() {
         {role === 'VillageOfficer' && address === 'Kegalle' &&   (
         <Form.Group className="mb-3">
             <Form.Label>GS Division</Form.Label>
-            <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
+            <Form.Select value = {gsDivision} type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
             <option value='Karawanella'>Karawanella</option>
             <option value='Kitulgala'>Kitulgala</option>
