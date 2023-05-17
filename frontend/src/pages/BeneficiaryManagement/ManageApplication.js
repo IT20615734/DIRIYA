@@ -59,7 +59,7 @@ export default function ManageApplication() {
               Welcome, {user.fullName}
               </p>
               <p style={{fontSize:'100%', marginTop:'-5%'}}>
-              {user.address} District
+              {user.gsDivision} GS Division
               </p>
           </label>
        </div>
