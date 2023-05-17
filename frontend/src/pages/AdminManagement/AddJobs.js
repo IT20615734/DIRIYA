@@ -80,34 +80,34 @@ function AddJobs() {
         </Form.Group>
 
         <Form.Group className="mb-3" >
-              <Form.Label>District</Form.Label>
+              <Form.Label>Job Site</Form.Label>
               <Form.Select onChange={(e)=>{setdistrict(e.target.value)}} required >
                 <option></option>
                 <option value = 'Colombo'>Colombo</option>
                 <option value = 'Gampaha'>Gampaha</option>
-                <option value='Kalutara'>Kalutara</option>``
-                <option value='Kandy'>Kandy</option>
-                <option value='Matale'>Matale</option>
-                <option value=' NuwaraEliya'> Nuwara Eliya</option>
-                <option value='Galle'>Galle</option>
-                <option value='Matara'>Matara</option>
-                <option value='Hambantota'>Hambantota</option>
-                <option value='Jaffna'>Jaffna</option>
-                <option value='Kilinochchi'>Kilinochchi</option>
-                <option value='Mannar'>Mannar</option>
-                <option value='Vavuniya'>Vavuniya</option>
-                <option value='Mullaitivu'>Mullaitivu</option>
-                <option value='Batticaloa'>Batticaloa</option>
-                <option value='Ampara'>Ampara</option>
-                <option value='Trincomalee'>Trincomalee</option>
-                <option value='Kurunegala'>Kurunegala</option>
-                <option value='Puttalam'>Puttalam</option>
-                <option value='Anuradhapura'>Anuradhapura</option>
-                <option value='Polonnaruwa'>Polonnaruwa</option>
-                <option value='Badulla'>Badulla</option>
-                <option value='Moneragala'>Moneragala</option>
-                <option value='Ratnapura'>Ratnapura</option>
-                <option value='Kegalle'>Kegalle</option>
+                <option value ='Kalutara'>Kalutara</option>``
+                <option value ='Kandy'>Kandy</option>
+                <option value ='Matale'>Matale</option>
+                <option value =' NuwaraEliya'> Nuwara Eliya</option>
+                <option value ='Galle'>Galle</option>
+                <option value ='Matara'>Matara</option>
+                <option value ='Hambantota'>Hambantota</option>
+                <option value ='Jaffna'>Jaffna</option>
+                <option value ='Kilinochchi'>Kilinochchi</option>
+                <option value ='Mannar'>Mannar</option>
+                <option value  ='Vavuniya'>Vavuniya</option>
+                <option value ='Mullaitivu'>Mullaitivu</option>
+                <option value ='Batticaloa'>Batticaloa</option>
+                <option value ='Ampara'>Ampara</option>
+                <option value ='Trincomalee'>Trincomalee</option>
+                <option value ='Kurunegala'>Kurunegala</option>
+                <option value ='Puttalam'>Puttalam</option>
+                <option value ='Anuradhapura'>Anuradhapura</option>
+                <option value ='Polonnaruwa'>Polonnaruwa</option>
+                <option value ='Badulla'>Badulla</option>
+                <option value ='Moneragala'>Moneragala</option>
+                <option value ='Ratnapura'>Ratnapura</option>
+                <option value ='Kegalle'>Kegalle</option>
               </Form.Select>
         </Form.Group>
   
