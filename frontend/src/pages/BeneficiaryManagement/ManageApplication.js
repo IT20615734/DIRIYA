@@ -93,9 +93,8 @@ export default function ManageApplication() {
           <tbody>
             {AddApplications.filter((element) => {
                 if (search === "") {
-
+                  return element;
                 } else if (element.applicantName.includes(search)) {
-
                   return element;
                 }
               }

@@ -100,14 +100,20 @@ function Overview() {
 
         <div style={{ marginLeft: "-15%", marginTop: "-1.5%" }}>
           <label>
-            <p style={{ fontSize: "135%" }}>Welcome, {user.fullName}</p>
-            <p style={{ fontSize: "100%", marginTop: "-5%" }}>
-              Donation Manager - {user.address} District
-            </p>
+
+            <p style={{fontSize:'135%'}}>
+              Welcome, {user.fullName}
+              </p>
+              <p style={{fontSize:'100%', marginTop:'-5%'}}>
+              {/* Donation Manager - {user.address} District */}
+              {user.fullName === 'Kavinda Sandaruwan' ? 'System' : `Donation Manager - ${user.address} District`}
+              </p>
           </label>
         </div>
 
-        <div className="Overview" style={{ justifyContent: "center" }}>
+
+        <div className="Overview" style={{justifyContent:'center'}}>
+
           <h1>DONATION MANAGEMENT DASHBOARD</h1>
         </div>
 
