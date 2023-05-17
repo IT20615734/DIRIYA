@@ -73,11 +73,11 @@ function Overview() {
               Welcome, {user.fullName}
               </p>
               <p style={{fontSize:'100%', marginTop:'-5%'}}>
-              Donation Manager - {user.address} District
+              {/* Donation Manager - {user.address} District */}
+              {user.fullName === 'Kavinda Sandaruwan' ? 'System' : `Donation Manager - ${user.address} District`}
               </p>
           </label>
         </div>
-
 
 
         <div className="Overview" style={{justifyContent:'center'}}>
