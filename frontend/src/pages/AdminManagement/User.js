@@ -62,7 +62,7 @@ function User() {
           striped
           bordered
           hover
-          style={{ width: "100%", justifyContent: "center", marginTop: 20 }}
+          style={{textAlign : 'center', width: "100%", justifyContent: "center", marginTop: 20 }}
         >
           <thead>
             <tr>

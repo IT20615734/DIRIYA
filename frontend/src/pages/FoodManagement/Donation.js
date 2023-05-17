@@ -55,7 +55,11 @@ function Donation() {
         <br></br>
         <h2>DONATIONS</h2>
         <br></br>
-        <Table
+        <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40 }}>
+        <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Food Category" />
+        <input class="button--submit" value="Search" type="submit"></input>
+      </div>
+        <Table 
           striped
           bordered
           hover
@@ -79,15 +83,14 @@ function Donation() {
             </tr>
           </thead>
           <tbody>
-            {AddDonations.filter(
-              (element) => element.district === user.address
-              // (element) =>{
-              //     if(search ===""){
-              //         return element
-              //     }else if (element.role.includes(search)){
-              //         return element
-              //     }
-              // }
+              {AddDonations.filter((element) => element.dname === user.fullName)
+                .filter((element) => {
+                    if(search === ""){
+                        return element
+                    }else if (element.foodCategory.includes(search)){
+                        return element
+                    }
+                }  
             ).map((e, i) => (
               <tr key={i} style={{ textAlign: "center", fontWeight: "400" }}>
                 <td>{i + 1}</td>

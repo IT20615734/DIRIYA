@@ -55,6 +55,12 @@ function ManageFood() {
         {/* <Link to="/Food/AddFood">
           <Button variant="primary">+ Add Food Stock</Button>
         </Link> */}
+
+      <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40 }}>
+        <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Food Category" />
+        <input class="button--submit" value="Search" type="submit"></input>
+      </div>
+
         <br></br>
         <Table
           striped

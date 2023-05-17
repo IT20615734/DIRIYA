@@ -106,7 +106,7 @@ function Overview() {
               </p>
               <p style={{fontSize:'100%', marginTop:'-5%'}}>
               {/* Donation Manager - {user.address} District */}
-              {user.fullName === 'Kavinda Sandaruwan' ? 'System' : `Donation Manager - ${user.address} District`}
+              {user.fullName === 'Kavinda Sandaruwan' ? 'System Admin' : `Donation Manager - ${user.address} District`}
               </p>
           </label>
         </div>
