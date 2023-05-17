@@ -15,11 +15,12 @@ router.route("/AddFood").post(async (req, res) => {
   // const{role,firstName,lastName,address,email,mobileNumber,userName,Password} = req.body;
 
   try {
-    const { foodCategory, quantity, donaterName } = req.body;
+    const { foodCategory, quantity, donaterName, remarks } = req.body;
     const newFood = new Foods({
       foodCategory,
       quantity,
       donaterName,
+      remarks,
     });
 
     return await newFood
@@ -51,13 +52,14 @@ router.route("/delete/:id").delete((req, res) => {
 //update reterive part
 router.route("/update/:id").put(async (req, res) => {
   console.log("update method called");
-  const { foodCategory, quantity, donaterName } = req.body;
+  const { foodCategory, quantity, donaterName, remarks } = req.body;
   const id = req.body.id;
 
   const newData = {
     foodCategory,
     quantity,
     donaterName,
+    remarks,
   };
   console.log("id is " + id);
   Foods.findByIdAndUpdate(id, newData)

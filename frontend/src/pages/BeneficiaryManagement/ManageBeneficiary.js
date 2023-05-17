@@ -60,7 +60,7 @@ const deleteRecord = (e) =>{
       <Link to = "/Beneficiaries/AddBeneficiaries"><Button variant="primary">+ Add Beneficiary</Button></Link>
       
       <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40 }}>
-        <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Name" />
+        <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search by NIC" />
         <input class="button--submit" value="Search" type="submit"></input>
       </div>
         <br></br>
@@ -68,13 +68,13 @@ const deleteRecord = (e) =>{
       <Table striped bordered hover style={{textAlign : 'center', width : '110%',justifyContent : 'right',marginTop : 20}}>
       <thead>
         <tr>
-          <th> Beneficiary ID</th>
+          <th> Beneficiary <br/>ID</th>
           <th> Beneficiary Name</th>
-          <th> Address</th>
+          <th> Address <br/> </th>
           <th> NIC</th>
-          <th> Mobile Number</th>
-          <th> Number of Family Members</th>
-          <th> Monthly Income</th>
+          <th> Mobile <br/>Number</th>
+          <th> No of <br/>Family Members</th>
+          <th> Monthly <br/>Income</th>
           <th> Action</th>
         </tr>
       </thead>
@@ -83,7 +83,7 @@ const deleteRecord = (e) =>{
        {AddBeneficiaries.filter((element) =>{
                 if(search === ""){
                     return element
-                }else if (element.beneficiaryName.includes(search)){
+                }else if (element.nic.includes(search)){
                     return element
                 }
             }

@@ -96,21 +96,17 @@ function Overview() {
           fontFamily: "Verdana",
         }}
       >
-        <br></br>
 
-        <div style={{ marginLeft: "-15%", marginTop: "-1.5%" }}>
+    <div style ={{marginLeft:'-15%', marginTop:'1.5%'}}>
           <label>
-
             <p style={{fontSize:'135%'}}>
               Welcome, {user.fullName}
               </p>
               <p style={{fontSize:'100%', marginTop:'-5%'}}>
-              {/* Donation Manager - {user.address} District */}
-              {user.fullName === 'Kavinda Sandaruwan' ? 'System Admin' : `Donation Manager - ${user.address} District`}
+              {user.address} District
               </p>
           </label>
-        </div>
-
+      </div>
 
         <div className="Overview" style={{justifyContent:'center'}}>
 

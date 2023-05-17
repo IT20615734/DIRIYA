@@ -11,6 +11,7 @@ export default function UpdateFood() {
   const [foodCategory, setfoodCategory] = useState();
   const [quantity, setquantity] = useState();
   const [donaterName, setdonaterName] = useState();
+  const [remarks, setremarks] = useState();
 
   const location = useLocation();
 
@@ -28,6 +29,7 @@ export default function UpdateFood() {
             setfoodCategory(Food["foodCategory"]);
             setquantity(Food["quantity"]);
             setdonaterName(Food["donaterName"]);
+            setremarks(Food["remarks"]);
           }
         }
       })
@@ -46,6 +48,7 @@ export default function UpdateFood() {
       foodCategory: foodCategory,
       quantity: quantity,
       donaterName: donaterName,
+      remarks: remarks,
     };
 
     await axios
@@ -75,7 +78,7 @@ export default function UpdateFood() {
       >
         <Form onSubmit={Validate}>
           <h1 style={{ fontWeight: "bold" }}>
-            <center>EDIT FOOD DETAILS</center>
+            <center>EDIT DONATION ACCEPTANCE DETAILS</center>
           </h1>
           <br></br>
           <hr></hr>
@@ -121,6 +124,12 @@ export default function UpdateFood() {
               required
             />
           </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Remarks</Form.Label>
+            <Form.Control type="text" value={remarks} onChange={(e) => {setremarks(e.target.value);}} required/>
+          </Form.Group>
+
 
           <Button
             variant="primary"

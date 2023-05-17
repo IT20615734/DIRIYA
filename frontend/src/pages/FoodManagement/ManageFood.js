@@ -5,10 +5,13 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Table from "react-bootstrap/esm/Table";
 import axios from "axios";
+import { UserDetails } from "../../context/UserContext";
+
 
 function ManageFood() {
   const [AddFood, setAddFood] = useState([]);
   const [search, setSearch] = useState("");
+  const {user,setUser}= UserDetails();
 
   useEffect(() => {
     axios
@@ -47,6 +50,18 @@ function ManageFood() {
           justifyContent: "center",
         }}
       >
+
+      <div style ={{marginLeft:'-15%', marginTop:'1.5%'}}>
+          <label>
+            <p style={{fontSize:'135%'}}>
+              Welcome, {user.fullName}
+              </p>
+              <p style={{fontSize:'100%', marginTop:'-5%'}}>
+              {user.address} District
+              </p>
+          </label>
+      </div>
+
         <br></br>
 
         <h2>All FOODS</h2>
@@ -66,7 +81,7 @@ function ManageFood() {
           striped
           bordered
           hover
-          style={{ width: "100%", justifyContent: "center", marginTop: 20 }}
+          style={{ textAlign:'center',width: "100%", justifyContent: "center", marginTop: 20 }}
         >
           <thead>
             <tr>
@@ -74,6 +89,7 @@ function ManageFood() {
               <th>Food Category</th>
               <th>Quantity</th>
               <th>Donater Name</th>
+              <th>Remarks</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -85,11 +101,12 @@ function ManageFood() {
                 return element;
               }
             }).map((e, i) => (
-              <tr key={i} style={{ textAlign: "center", fontWeight: "400" }}>
+              <tr key={i} style={{ fontWeight: "400" }}>
                 <td>{i + 1}</td>
                 <td>{e.foodCategory}</td>
                 <td>{e.quantity}</td>
                 <td>{e.donaterName}</td>
+                <td>{e.remarks}</td>
                 <td>
                   <center>
                     <Link to={`/Food/UpdateFood/${e._id}`}>

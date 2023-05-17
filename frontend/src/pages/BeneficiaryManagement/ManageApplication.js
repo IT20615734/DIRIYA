@@ -73,7 +73,7 @@ export default function ManageApplication() {
 
 
       <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40 }}>
-        <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Name " />
+        <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search by NIC" />
         <input class="button--submit" value="Search" type="submit"></input>
       </div>
 
@@ -94,7 +94,7 @@ export default function ManageApplication() {
             {AddApplications.filter((element) => {
                 if (search === "") {
                   return element;
-                } else if (element.applicantName.includes(search)) {
+                } else if (element.nic.includes(search)) {
                   return element;
                 }
               }
