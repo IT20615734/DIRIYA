@@ -5,6 +5,9 @@ import Container from 'react-bootstrap/esm/Container'
 import Button from 'react-bootstrap/esm/Button';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { Row, Col } from 'react-bootstrap';
+import { UserDetails } from '../../context/UserContext';
+
 
 function EditDonations() {
 
@@ -84,25 +87,28 @@ function EditDonations() {
         </Form.Group> */}
 
 
-<Form.Group className="mb-3" >
-              <Form.Label>Select Food Category</Form.Label>
-              <Form.Select value={foodCategory}onChange={(e) => {setFoodCategory(e.target.value);}} required >
-                <option></option>
-                <option value = 'Rice'>Rice</option>
-                <option value = 'Dhal'>Dhal</option>
-                <option value='Sugar'>Sugar</option>
-              </Form.Select>
-        </Form.Group>
-
-        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label></Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setFoodCategory(e.target.value)}} required/>
-        </Form.Group> */}
-        
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Quantity</Form.Label>
-            <Form.Control type="number" value={quantity} onChange={(e) => {setQuantity(e.target.value);}} required/>
-        </Form.Group>
+<Form.Group className="mb-3" controlId="formCategoryQuantity">
+        <Form.Label>Select Food Category</Form.Label>
+        <Row>
+        <Col xs={6}>
+        <Form.Select onChange={(e) => setFoodCategory(e.target.value)} value={foodCategory} required>
+        <option></option>
+        <option value="Rice">Rice</option>
+        <option value="Dhal">Dhal</option>
+        <option value="Dried Sparts">Dried Sparts</option>
+        <option value="Canned Fish">Canned Fish</option>
+        <option value="Curry Powder">Curry Powder</option>
+        <option value="Papadum">Papadum</option>
+        <option value="Soya Meat">Soya Meat</option>
+        <option value="Chickpeas">Chickpeas</option>
+        <option value="All Pourpose Flour">All Pourpose Flour</option>
+      </Form.Select>
+        </Col>
+        <Col xs={6}>
+        <Form.Control type="number" placeholder="Enter Quantity in Kgs" value={quantity} onChange={(e) => setQuantity(e.target.value)} required />
+        </Col>
+    </Row>
+    </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Date of Hand-over</Form.Label>

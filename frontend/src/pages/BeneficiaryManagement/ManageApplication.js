@@ -68,7 +68,7 @@ export default function ManageApplication() {
         <br></br>
 
         {
-          <Link to="/Beneficiaries/AddApplications"><Button variant="primary">Add Applications</Button></Link>
+          <Link to="/Beneficiaries/AddApplications"><Button variant="primary">+ Add Applications</Button></Link>
         }
 
 
