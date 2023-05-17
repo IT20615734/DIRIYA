@@ -10,6 +10,7 @@ function AddFood() {
   const [foodCategory, setfoodCategory] = useState();
   const [quantity, setquantity] = useState();
   const [donaterName, setdonaterName] = useState();
+  const [remarks, setremarks] = useState();
   const [id, setid] = useState();
   const [data, setData] = useState();
 
@@ -19,6 +20,7 @@ function AddFood() {
     setquantity(location.state.data.quantity);
     setdonaterName(location.state.data.dname);
     setdonaterName(location.state.data.dname);
+    setremarks(location.state.data.remarks);
     setid(location.state.data._id);
   }, []);
 
@@ -31,11 +33,14 @@ function AddFood() {
     formData.append("foodCategory", foodCategory);
     formData.append("quantity", quantity);
     formData.append("donaterName", donaterName);
+    formData.append("remarks", remarks);
+
 
     const data = {
       foodCategory: foodCategory,
       quantity: quantity,
       donaterName: donaterName,
+      remarks: remarks,
     };
 
     console.log("FormData", formData);
@@ -74,7 +79,7 @@ function AddFood() {
       >
         <Form onSubmit={Validate}>
           <h1 style={{ fontWeight: "bold" }}>
-            <center>ADD FOOD STOCK</center>
+            <center>DONATIONS ACCEPTANCE FORM</center>
           </h1>
 
           <br></br>
@@ -125,6 +130,11 @@ function AddFood() {
               required
               disabled
             />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Remarks</Form.Label>
+            <Form.Control type="text" value={remarks} onChange={(e) => {setremarks(e.target.value);}} required/>
           </Form.Group>
 
           <Button

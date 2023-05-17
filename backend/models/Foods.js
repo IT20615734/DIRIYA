@@ -14,6 +14,10 @@ var Food = new mongoose.Schema({
     type: String,
     required: true,
   },
+  remarks: {
+    type: String,
+    required: true,
+  },
 });
 const Foods = mongoose.model("Food", Food);
 module.exports = Foods;

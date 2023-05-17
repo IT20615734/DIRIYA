@@ -119,6 +119,7 @@ function AddUser() {
               <Form.Label>District</Form.Label>
               <Form.Select onChange={(e)=>{setAddress(e.target.value)}} required >
                 <option></option>
+                <option value = 'N/A'>N/A</option>
                 <option value = 'Colombo'>Colombo</option>
                 <option value = 'Gampaha'>Gampaha</option>
                 <option value ='Kalutara'>Kalutara</option>``
@@ -152,6 +153,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Dehiwala'>Dehiwala</option>
             <option value='Homagama'>Homagama</option>
             <option value='Kaduwela'>Kaduwela</option>	
@@ -171,6 +173,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value = 'Negombo'>Negombo</option>
             <option value = 'Katana'>Katana</option>
             <option value ='Divulapitiya'>Divulapitiya</option>``
@@ -193,6 +196,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Agalawatta'>Agalawatta	</option>
             <option value='Bandaragama'>Bandaragama</option>	
             <option value='Beruwala'>Beruwala</option>	
@@ -211,6 +215,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Akurana'>Akurana</option>	
             <option value='Doluwa'>Doluwa</option>
             <option value='Harispattuwa'>Harispattuwa</option>	
@@ -228,6 +233,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Ambanganga Korale'>Ambanganga Korale</option> 
             <option value='Dambulla'>Dambulla</option> 
             <option value='Galewela'>Galewela</option> 
@@ -246,6 +252,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Nuwaraeliya'>Nuwaraeliya</option>
             <option value='Kotmale'>Kotmale</option>
             <option value='Ambagamuwa'>Ambagamuwa</option> 
@@ -260,6 +267,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Ahangama'>Ahangama</option>
             <option value='Ahungalla'>Ahungalla</option>
             <option value='Koggala'>Koggala</option>
@@ -276,6 +284,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Akuressa'>Akuressa</option>	
             <option value='Thuraliya'>Thuraliya</option>	
             <option value='Devinuwara'>Devinuwara</option>
@@ -296,6 +305,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Ambalantota'>Ambalantota </option>
             <option value='Angunakolapellessa'>Angunakolapellessa </option>
             <option value='Beliatte'>Beliatte</option> 
@@ -314,6 +324,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Delft'>Delft</option>	
             <option value='Karainagar'>Karainagar</option>	
             <option value='Nallur'>Nallur</option>	
@@ -329,6 +340,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Kandavalai'>Kandavalai</option>	
             <option value='Karachchi'>Karachchi</option>	
             <option value='Pachchilaipalli'>Pachchilaipalli</option>	
@@ -343,6 +355,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Madhu'>Madhu</option>	
             <option value='Manthai West'>Manthai West</option>	
             <option value='Musali'>Musali</option>
@@ -356,6 +369,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Vavuniya'>Vavuniya</option>	
             <option value='Vavuniya North'>Vavuniya North</option>
             <option value='Vavuniya South'>Vavuniya South</option>		
@@ -370,6 +384,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Manthai East'>Manthai East</option>		
             <option value='Maritimepattu'>Maritimepattu</option>
             <option value='Oddusuddan'>Oddusuddan</option>
@@ -387,6 +402,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Eravurpattu'>Eravurpattu</option>
             <option value='Koralaipattu'>Koralaipattu</option>
             <option value='Manmunai North'>Manmunai North</option>
@@ -405,6 +421,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Akkaraipattu'>Akkaraipattu</option>		
             <option value='Dehiattakandiya'>Dehiattakandiya</option>	
             <option value='Kalmunai'>Kalmunai</option> 
@@ -422,6 +439,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Gomarankadawala'>Gomarankadawala</option>
             <option value='Kantalai'>Kantalai</option>
             <option value='Kinniya'>Kinniya</option>
@@ -438,6 +456,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Girathalana'>Girathalana</option>
             <option value='Panagamuwa'>Panagamuwa</option>
             <option value='Narammala'>Narammala</option>
@@ -452,6 +471,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Anamaduwa'>Anamaduwa</option>
             <option value='Battuluoya'>Battuluoya</option>
             <option value='Dankotuwa'>Dankotuwa</option>
@@ -466,6 +486,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Galenbindunuwewa'>Galenbindunuwewa</option>
             <option value='Galnewa'>Galnewa</option>
             <option value='Ganewalpola'>Ganewalpola</option>
@@ -480,6 +501,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Thamankaduwa'>Thamankaduwa</option>
             <option value='Hingurakgoda'>Hingurakgoda</option>
             <option value='Medirigiriya'>Medirigiriya</option>
@@ -495,6 +517,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Hali-Ela'>Hali-Ela</option>
             <option value='Haputale'>Haputale</option>
             <option value='Mahiyanganaya'>Mahiyanganaya</option>
@@ -509,6 +532,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Bibile'>Bibile</option>
             <option value='Buttala'>Buttala</option>
             <option value='Wellawaya'>Wellawaya</option>
@@ -523,6 +547,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Eheliyagoda'>Eheliyagoda</option>
             <option value='Pelmadulla'>Pelmadulla</option>
             <option value='Kuruwita'>Kuruwita</option>
@@ -539,6 +564,7 @@ function AddUser() {
             <Form.Label>GS Division</Form.Label>
             <Form.Select type="text" onChange={(e)=>{setgsDivision(e.target.value)}} required>
             <option></option>
+            <option value = 'N/A'>N/A</option>
             <option value='Karawanella'>Karawanella</option>
             <option value='Kitulgala'>Kitulgala</option>
             <option value='Kotiyakumbura'>Kotiyakumbura</option>

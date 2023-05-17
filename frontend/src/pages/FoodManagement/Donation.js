@@ -52,6 +52,20 @@ function Donation() {
           justifyContent: "center",
         }}
       >
+
+      <div style ={{marginLeft:'-15%', marginTop:'1.5%'}}>
+          <label>
+            <p style={{fontSize:'135%'}}>
+              Welcome, {user.fullName}
+              </p>
+              <p style={{fontSize:'100%', marginTop:'-5%'}}>
+              {user.address} District
+              </p>
+          </label>
+      </div>
+
+
+
         <br></br>
         <h2>DONATIONS</h2>
         <br></br>
@@ -83,7 +97,7 @@ function Donation() {
             </tr>
           </thead>
           <tbody>
-              {AddDonations.filter((element) => element.dname === user.fullName)
+              {AddDonations.filter((element) => element.district === user.address)
                 .filter((element) => {
                     if(search === ""){
                         return element

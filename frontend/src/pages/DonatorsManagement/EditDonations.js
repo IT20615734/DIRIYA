@@ -117,7 +117,7 @@ function EditDonations() {
 
         <Form.Group className="mb-3" >
               <Form.Label>District</Form.Label>
-              <Form.Select disabled={true} value={district}onChange={(e) => {setDistrict(e.target.value);}} required >
+              <Form.Select value={district}onChange={(e) => {setDistrict(e.target.value);}} required >
                 <option></option>
                 <option value= 'Colombo'>Colombo</option>
                 <option value= 'Gampaha'>Gampaha</option>
