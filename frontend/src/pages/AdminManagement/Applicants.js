@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import Container from "react-bootstrap/esm/Container";
-import Applications from "./Beneficiaries";
-import Table from "react-bootstrap/Table";
-import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import { UserDetails } from "../../context/UserContext";
+import React, { useEffect, useState } from 'react'
+import Admin from './Admin';
+import { UserDetails } from '../../context/UserContext';
+import axios from 'axios';
+import Container from 'react-bootstrap/esm/Container';
+import Table from 'react-bootstrap/esm/Table';
+import Button from 'react-bootstrap/esm/Button';
+import GeneratePDF from './GeneratePDF';
 
-export default function ManageApplication() {
+function Applicants() {
   const [AddApplications, setAddApplications] = useState([]);
   const [search, setSearch] = useState("");
   const {user,setUser}= UserDetails();
 
-
+  const columnsPDF = [{ Title:'Title',District:'District',LivingArea:'LivingArea',ApplicantName:'ApplicantName',NIC : 'NIC', Gender:'Gender', BirthDate:'BirthDate'  }]
 
   //GET (GET DATA FROM DB)
   useEffect(() => {
@@ -26,23 +26,9 @@ export default function ManageApplication() {
       });
   }, [AddApplications]);
 
-  //DELETE (DELETE DATA FROM DB)
-  const deleteRecord = (e) => {
-    console.log(e);
-    axios
-      .delete(`http://localhost:8080/Applications/delete/${e}`)
-      .then((res) => {
-        alert("Beneficiary Deleted !");
-        console.log(res.state);
-      })
-      .catch((err) => {
-        alert(err);
-      });
-  };
-
   return (
-    <>
-      <Applications />
+     <>
+      <Admin />
 
       <Container
 
@@ -53,16 +39,6 @@ export default function ManageApplication() {
           justifyContent: "center",
         }}
       >
-        <div style ={{marginLeft:'-15%', marginTop:'1.5%'}}>
-          <label>
-            <p style={{fontSize:'135%'}}>
-              Welcome, {user.fullName}
-              </p>
-              <p style={{fontSize:'100%', marginTop:'-5%'}}>
-              {user.gsDivision} GS Division
-              </p>
-          </label>
-       </div>
         <br></br>
         <h2>APPLICATIONS</h2>
         <br></br>
@@ -83,7 +59,7 @@ export default function ManageApplication() {
               <th> NIC</th>
               <th> Gender</th>
               <th> Date of Birth</th>
-              <th> Action</th>
+              
             </tr>
           </thead>
           <tbody>
@@ -106,20 +82,28 @@ export default function ManageApplication() {
                 <td>{e.nic}</td>
                 <td>{e.gender}</td>
                 <td>{e.dateOfBirth}</td>
-                <td>
-                  <center>
-
-                    <Link to={`Applications/UpdateApplications/${e._id}`}>
-                      <Button variant="outline-primary">Edit</Button>
-                    </Link>{" "}
-
-                        <Button variant="outline-danger" onClick={() => deleteRecord(e._id)}> Delete </Button></center></td>
               </tr>
             ))}
           </tbody>
           </Table>
+
+          <Button variant="warning" onClick={
+                () => GeneratePDF(
+                  AddApplications.map(e => ({
+                  Title: e.jobTitle,
+                  District: e.district,
+                  LivingArea: e.livingArea,
+                  ApplicantName: e.applicantName,
+                  NIC: e.nic,
+                  Gender: e.gender,
+                  BirthDate: e.dateOfBirth,
+                }
+          )), columnsPDF, false, "All Applicants")} style = {{marginBottom:20}}>Download All Applicant Report</Button>
+
       </Container>
       
     </>
-  );
+  )
 }
+
+export default Applicants

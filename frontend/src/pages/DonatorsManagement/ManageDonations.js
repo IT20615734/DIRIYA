@@ -45,6 +45,16 @@ const deleteRecord = (e) =>{
     <div className="moving-banner" style={{}}>
       <h2>Your donations save thousands of families from hunger and help them to alleviate from severe poverty in Sri Lanka | THANK YOU FOR YOUR DONATIONS | Your donations save thousands of families from hunger and help them to alleviate from severe poverty in Sri Lanka | THANK YOU FOR YOUR DONATIONS | Your donations save thousands of families from hunger and help them to alleviate from severe poverty in Sri Lanka | THANK YOU FOR YOUR DONATIONS</h2>
     </div>
+    <div style ={{marginLeft:'-15%', marginTop:'1.5%'}}>
+          <label>
+            <p style={{fontSize:'135%'}}>
+              Welcome, {user.fullName}
+              </p>
+              <p style={{fontSize:'100%', marginTop:'-5%'}}>
+              {user.address} District
+              </p>
+          </label>
+      </div>
       <br></br>
       <h2>DONATIONS</h2>
       <br></br>

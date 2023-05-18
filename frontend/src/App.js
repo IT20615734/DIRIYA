@@ -13,6 +13,7 @@ import Jobs from "./pages/AdminManagement/Jobs";
 import AddJobs from "./pages/AdminManagement/AddJobs";
 import UpdateUser from "./pages/AdminManagement/UpdateUser";
 import UpdateJob from "./pages/AdminManagement/UpdateJob";
+import Applicants from "./pages/AdminManagement/Applicants";
 
 import Beneficiaries from "./pages/BeneficiaryManagement/Beneficiaries";
 import ManageBeneficiary from "./pages/BeneficiaryManagement/ManageBeneficiary";
@@ -59,6 +60,7 @@ function App() {
           <Route exact path="/Admin/AddJobs" element={<AddJobs />} />
           <Route exact path="/Admin/User/Admin/UpdateUser/:id" element={<UpdateUser />}/>
           <Route exact path="/Admin/Jobs/Admin/UpdateJob/:id" element={<UpdateJob />}/>
+          <Route exact path="/Admin/Applicants" element={<Applicants />} />
 
           {/* Beneficiary */}
           <Route exact path="/Beneficiaries" element={<Beneficiaries />} />

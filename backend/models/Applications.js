@@ -14,6 +14,10 @@ var Application = new mongoose.Schema({
         type:String,
         required:true,
     },
+    livingArea:{
+        type:String,
+        required:true,
+    },
     applicantName:{
         type:String,
         required:true,

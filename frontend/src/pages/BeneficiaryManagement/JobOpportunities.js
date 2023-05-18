@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/esm/Container'
 import Applications from './Beneficiaries'
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { UserDetails } from '../../context/UserContext';
 
@@ -11,6 +11,7 @@ export default function JobOpportunities() {
   const [AddJob, setAddJob] = useState([]);
   const [search, setSearch] = useState("");
   const {user,setUser}= UserDetails();
+  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -24,6 +25,10 @@ export default function JobOpportunities() {
         alert(e);
       });
   }, [AddJob]);
+
+  const acceptData = (data) => {
+    navigate("/Beneficiaries/AddApplications", { state: { data: data } });
+  };
 
   return (
      <>
@@ -75,7 +80,7 @@ export default function JobOpportunities() {
                 <td>{e.numberOfPeople}</td>
                 <td>{e.companyName}</td>
                 <td>{e.contactNumber}</td>
-                <td><Link to = "/Beneficiaries/AddApplications"><center><Button variant="primary">APPLY</Button></center></Link></td>
+                <td><center><Button variant="primary" onClick={() => acceptData(e)} >APPLY</Button></center></td>
               </tr>
             ))}
           </tbody>

@@ -19,7 +19,7 @@ function AddFood() {
     setfoodCategory(location.state.data.foodCategory);
     setquantity(location.state.data.quantity);
     setdonaterName(location.state.data.dname);
-    setdonaterName(location.state.data.dname);
+    // setdonaterName(location.state.data.dname);
     setremarks(location.state.data.remarks);
     setid(location.state.data._id);
   }, []);
