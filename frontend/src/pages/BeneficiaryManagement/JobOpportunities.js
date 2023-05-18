@@ -56,7 +56,7 @@ export default function JobOpportunities() {
         <tr>
           <th> Reference No</th>
           <th> Job Title</th>
-          <th> District</th>
+          <th> Job Site</th>
           <th> Gender</th>
           <th> Number Of People</th>
           <th> Company Name</th>

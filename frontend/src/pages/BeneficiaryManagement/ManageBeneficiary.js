@@ -81,6 +81,7 @@ const deleteRecord = (e) =>{
       </thead>
          
       <tbody>
+
        {AddBeneficiaries.filter((element) => element.gsDivision === user.gsDivision)
        .filter((element) =>{
                 if(search === ""){

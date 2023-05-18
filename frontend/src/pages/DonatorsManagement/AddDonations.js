@@ -79,12 +79,6 @@ function AddDonations() {
         <br></br>
         <hr></hr>
 
-        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Your Donation ID</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setDonationID(e.target.value)}} required/>
-        </Form.Group> */}
-
-
     <Form.Group className="mb-3" controlId="formCategoryQuantity">
         <Form.Label>Select Food Category</Form.Label>
         <Row>
@@ -112,6 +106,7 @@ function AddDonations() {
             <Form.Label>Date of Hand-over</Form.Label>
             <Form.Control type="date" onChange={(e)=>{setDateOfHandOver(e.target.value)}} required/>
         </Form.Group>
+
 
         {/* <Form.Group className="mb-3" >
               <Form.Label>District </Form.Label>
@@ -166,4 +161,4 @@ function AddDonations() {
 }
 
 
-export default AddDonations;
+export default AddDonations;
