@@ -100,6 +100,7 @@ function AddUser() {
                 <option value='VillageOfficer'>Village Officer</option>``
               </Form.Select>
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Full Name</Form.Label>
             <Form.Control type="text" onChange={(e)=>{setFulltName(e.target.value)}} required/>
@@ -107,13 +108,12 @@ function AddUser() {
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>NIC</Form.Label>
-            <Form.Control type="text" maxLength={12} minLength ={10} onChange={(e)=>{setNic(e.target.value)}} required/>
+            <Form.Control type="text" onChange={(e) => {const value = e.target.value;
+                if (
+                    /^[0-9]{9}[vV]$/.test(value) || // Check if input has 9 digits with "v" or "V" as the last character
+                    /^[0-9]{12}$/.test(value) // Check if input has exactly 12 digits
+                ) {setNic(value);}}} maxLength={12} minLength={10} pattern="^[0-9]{9}[vV]$|^[0-9]{12}$" placeholder='Eg: [741922757V or 197419202757]' required/>
         </Form.Group>
-
-        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Address</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setAddress(e.target.value)}} required/>
-        </Form.Group> */}
 
         <Form.Group className="mb-3" >
               <Form.Label>District</Form.Label>
