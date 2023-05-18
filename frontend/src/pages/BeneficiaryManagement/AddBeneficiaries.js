@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Beneficiaries from './Beneficiaries'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { UserDetails } from '../../context/UserContext';
 
 //export default function AddBeneficiary() {
 
@@ -18,10 +19,13 @@ function AddBeneficiaries() {
         }
         return result;
       };
+
+    const {user,setUser}= UserDetails();  
     
-    const[beneficiaryID, setBeneficiaryID] = useState(`BI_${generateRandomString(6)}`);
+    const[beneficiaryID, setBeneficiaryID] = useState(`BI_${generateRandomString(6)}`); //gsDivision
     const[beneficiaryName, setBeneficiaryName] =useState();
     const[address, setAddress] =useState();
+    const[gsDivision, setgsDivision] =useState(user.gsDivision);
     const[nic, setnic] =useState();
     const[mobileNumber, setMobileNumber] =useState();
     const[monthlyIncome, setMonthlyIncome] =useState();
@@ -36,6 +40,7 @@ function AddBeneficiaries() {
             formData.append("beneficiaryID",beneficiaryID);
             formData.append("beneficiaryName",beneficiaryName)
             formData.append("address",address)
+            formData.append("gsDivision",gsDivision)
             formData.append("nic",nic);
             formData.append("mobileNumber",mobileNumber);
             formData.append("monthlyIncome",monthlyIncome);
@@ -46,6 +51,7 @@ function AddBeneficiaries() {
             "beneficiaryID":beneficiaryID,
             "beneficiaryName":beneficiaryName,
             "address":address,
+            "gsDivision":gsDivision,
             "nic":nic,
             "mobileNumber":mobileNumber,
             "monthlyIncome":monthlyIncome,

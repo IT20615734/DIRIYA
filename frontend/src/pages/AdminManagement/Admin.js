@@ -15,6 +15,7 @@ function Admin() {
           >
             <Nav.Link href="/Admin/User">Users</Nav.Link>
             <Nav.Link href="/Admin/Jobs">Job Bank</Nav.Link>
+            <Nav.Link href="/Admin/Applicants">Applicants</Nav.Link>
           </Nav>
         </Container>
     </Navbar>

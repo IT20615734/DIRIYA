@@ -13,6 +13,10 @@ var Beneficiary = new mongoose.Schema({
         type:String,
         required:true,
     },
+    gsDivision:{
+        type:String,
+        required:true,
+    },
     nic:{
         type:String,
         required:true,

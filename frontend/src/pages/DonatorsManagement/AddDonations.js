@@ -29,7 +29,7 @@ function AddDonations() {
     const[quantity, setQuantity] =useState();
     const[dateOfHandOver, setDateOfHandOver] =useState();
     const[district, setDistrict] =useState(user.address);
-    const[mobileNumber, setMobileNumber] =useState();
+    const[mobileNumber, setMobileNumber] =useState(user.mobileNumber);
     
     const navigate = useNavigate();
 
@@ -150,10 +150,10 @@ function AddDonations() {
             <Form.Control  value={user.address}  onChange={(e)=>{setDistrict(e.target.value)}} required />   
         </Form.Group>
                                                                          */}
-         <Form.Group className="mb-3" controlId="formBasicEmail">  
+         {/* <Form.Group className="mb-3" controlId="formBasicEmail">  
             <Form.Label>Mobile Number</Form.Label>
             <Form.Control type="text" onChange={(e)=>{setMobileNumber(e.target.value)}} maxLength={10} minLength ={10} required/>   
-        </Form.Group>
+        </Form.Group> */}
 
         <Button variant="primary" type="submit" style={{width:'20%',marginBottom:20}}>
             Add

@@ -20,6 +20,7 @@ router.route("/AddApplications").post(async (req, res) => {
     const {
       jobTitle,
       district,
+      livingArea,
       applicantName,
       nic,
       gender,
@@ -31,6 +32,7 @@ router.route("/AddApplications").post(async (req, res) => {
       // beneficiaryID,
       jobTitle,
       district,
+      livingArea,
       applicantName,
       nic,
       gender,

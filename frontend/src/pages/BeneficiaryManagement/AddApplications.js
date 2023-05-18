@@ -1,23 +1,41 @@
-import { React ,useState } from 'react';
+import { React ,useEffect,useState } from 'react';
 import Button from 'react-bootstrap/esm/Button';
 import Container from 'react-bootstrap/esm/Container'
 import Form from 'react-bootstrap/Form';
 import Applications from './Beneficiaries'
 import axios from 'axios';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+// import { UserDetails } from '../../context/UserContext';
 
 
 
 export default function AddApplications() {
-
+    // const {user,setUser}= UserDetails();
     // const[beneficiaryID, setBeneficiaryID] = useState();
     const[jobTitle, setJobTitle] =useState();
     const[district, setDistrict] =useState();
+    const[livingArea, setlivingArea] =useState();
     const[applicantName, setApplicantName] =useState();
     const[nic, setnic] =useState();
     const[gender, setGender] =useState();
     const[dateOfBirth, setDateOfBirth] =useState();
     const[mobileNumber, setMobileNumber] =useState();
+    const [id, setid] = useState();
+    const [data, setData] = useState();
+
+    const location = useLocation();
+    useEffect(() => {
+        setJobTitle(location.state.data.jobTitle);
+        setDistrict(location.state.data.district);
+        setlivingArea(location.state.data.livingArea);
+        setApplicantName(location.state.data.applicantName);
+        setnic(location.state.data.nic);
+        setGender(location.state.data.gender);
+        setDateOfBirth(location.state.data.mobileNumber);
+        setMobileNumber(location.state.data._id);
+        setid(location.state.data._id);
+    
+  }, []);
     
     const navigate = useNavigate();
 
@@ -29,6 +47,7 @@ export default function AddApplications() {
             //formData.append("beneficiaryID",beneficiaryID);
             formData.append("jobTitle",jobTitle)
             formData.append("district",district)
+            formData.append("livingArea",livingArea)
             formData.append("applicantName",applicantName);
             formData.append("nic",nic);
             formData.append("gender",gender);
@@ -37,13 +56,14 @@ export default function AddApplications() {
         
     const  data = 
         {
-            "jobTitle":jobTitle,
-            "district":district,
-            "applicantName":applicantName,
-            "nic":nic,
-            "gender":gender,
-            "dateOfBirth":dateOfBirth,
-            "mobileNumber":mobileNumber,
+            jobTitle:jobTitle,
+            district:district,
+            livingArea:livingArea,
+            applicantName:applicantName,
+            nic:nic,
+            gender:gender,
+            dateOfBirth:dateOfBirth,
+            mobileNumber:mobileNumber,
         }
 
 
@@ -76,44 +96,17 @@ export default function AddApplications() {
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Job Title</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setJobTitle(e.target.value)}} required/>
+            <Form.Control value={jobTitle} type="text" onChange={(e)=>{setJobTitle(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Job Site</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setJobTitle(e.target.value)}} required/>
+            <Form.Control value={district} type="text" onChange={(e)=>{setDistrict(e.target.value)}} required/>
         </Form.Group>
 
-        <Form.Group className="mb-3" >
-              <Form.Label>Applicant's Area of Living</Form.Label>
-              <Form.Select onChange={(e)=>{setDistrict(e.target.value)}}  required >
-                <option></option>
-                <option value = 'Colombo'>Colombo</option>
-                <option value = 'Gampaha'>Gampaha</option>
-                <option value ='Kalutara'>Kalutara</option>``
-                <option value ='Kandy'>Kandy</option>
-                <option value ='Matale'>Matale</option>
-                <option value =' NuwaraEliya'> Nuwara Eliya</option>
-                <option value ='Galle'>Galle</option>
-                <option value ='Matara'>Matara</option>
-                <option value ='Hambantota'>Hambantota</option>
-                <option value ='Jaffna'>Jaffna</option>
-                <option value ='Kilinochchi'>Kilinochchi</option>
-                <option value ='Mannar'>Mannar</option>
-                <option value  ='Vavuniya'>Vavuniya</option>
-                <option value ='Mullaitivu'>Mullaitivu</option>
-                <option value ='Batticaloa'>Batticaloa</option>
-                <option value ='Ampara'>Ampara</option>
-                <option value ='Trincomalee'>Trincomalee</option>
-                <option value ='Kurunegala'>Kurunegala</option>
-                <option value ='Puttalam'>Puttalam</option>
-                <option value ='Anuradhapura'>Anuradhapura</option>
-                <option value ='Polonnaruwa'>Polonnaruwa</option>
-                <option value ='Badulla'>Badulla</option>
-                <option value ='Moneragala'>Moneragala</option>
-                <option value ='Ratnapura'>Ratnapura</option>
-                <option value ='Kegalle'>Kegalle</option>
-              </Form.Select>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Applicant's Area of Living</Form.Label>
+            <Form.Control type="text" onChange={(e)=>{setlivingArea(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">

@@ -70,7 +70,8 @@ const deleteRecord = (e) =>{
         <tr>
           <th> Beneficiary <br/>ID</th>
           <th> Beneficiary Name</th>
-          <th> Address <br/> </th>
+          <th> Address </th>
+          <th> GS Division</th>
           <th> NIC</th>
           <th> Mobile <br/>Number</th>
           <th> No of <br/>Family Members</th>
@@ -80,7 +81,8 @@ const deleteRecord = (e) =>{
       </thead>
          
       <tbody>
-       {AddBeneficiaries.filter((element) =>{
+       {AddBeneficiaries.filter((element) => element.gsDivision === user.gsDivision)
+       .filter((element) =>{
                 if(search === ""){
                     return element
                 }else if (element.nic.includes(search)){
@@ -94,6 +96,7 @@ const deleteRecord = (e) =>{
                     <td>{e.beneficiaryID}</td>
                     <td>{e.beneficiaryName}</td>
                     <td>{e.address}</td>
+                    <td>{e.gsDivision}</td>
                     <td>{e.nic}</td>
                     <td>{e.mobileNumber}</td>
                     <td>{e.numberOfFamilyMembers}</td>
