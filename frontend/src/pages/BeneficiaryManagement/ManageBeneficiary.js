@@ -80,13 +80,14 @@ const deleteRecord = (e) =>{
       </thead>
          
       <tbody>
-       {AddBeneficiaries.filter((element) =>{
-                if(search === ""){
-                    return element
-                }else if (element.nic.includes(search)){
-                    return element
-                }
-            }
+      {AddBeneficiaries
+                .filter((element) => {
+                    if(search === ""){
+                        return element
+                    }else if (element.nic.includes(search)){
+                        return element
+                    }
+                }  
 
             //catch data for the columns created using on change events
             ).map((e,i) =>(

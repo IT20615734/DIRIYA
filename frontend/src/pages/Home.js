@@ -18,7 +18,7 @@ function Home() {
     <br></br>
    
     <div className="description">
-      <h1>What is DIRIYA?</h1>
+      <h1>Who Are We?</h1>
       <p>At Diriya, we are committed to fighting poverty and providing opportunities for underprivileged communities in Sri Lanka. Unfortunately, poverty in Sri Lanka has risen from 13% to 25% in 2022. We believe that no one should have to suffer from lack of basic needs such as food, water, and healthcare, and we are dedicated to making a difference.</p>
       <div style={{ display: 'flex', marginLeft:900, marginTop: 40 ,height:600}}>
       <img src={stat} />
