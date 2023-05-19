@@ -3,10 +3,6 @@ import Container from "react-bootstrap/esm/Container";
 import Food from "./Food";
 import "../FoodManagement/Overview.css";
 import {
-  ResponsiveContainer,
-  ComposedChart,
-  Line,
-  Area,
   BarChart,
   Bar,
   XAxis,
@@ -34,54 +30,6 @@ function Overview() {
       });
   }, []);
   const { user, setUser } = UserDetails();
-
-  // const data = [
-  //   {
-  //     name: "Rice",
-  //     pv: 800,
-  //     amt: 1700,
-  //   },
-  //   {
-  //     name: "Dhal",
-  //     pv: 967,
-  //     amt: 1700,
-  //   },
-  //   {
-  //     name: "Dried Sparts",
-  //     pv: 1098,
-  //     amt: 1700,
-  //   },
-  //   {
-  //     name: "Canned Fish",
-  //     pv: 1200,
-  //     amt: 1700,
-  //   },
-  //   {
-  //     name: "Curry Powder",
-  //     pv: 1108,
-  //     amt: 1700,
-  //   },
-  //   {
-  //     name: "Papadum",
-  //     pv: 680,
-  //     amt: 1700,
-  //   },
-  //   {
-  //     name: "Soya Meat",
-  //     pv: 680,
-  //     amt: 1700,
-  //   },
-  //   {
-  //     name: "Chickpeas",
-  //     pv: 680,
-  //     amt: 1700,
-  //   },
-  //   {
-  //     name: "All Pourpose Flour",
-  //     pv: 680,
-  //     amt: 1700,
-  //   },
-  // ];
 
   return (
     <>

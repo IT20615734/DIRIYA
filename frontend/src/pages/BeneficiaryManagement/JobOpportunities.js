@@ -28,7 +28,9 @@ export default function JobOpportunities() {
 
   const acceptData = (data) => {
     navigate("/Beneficiaries/AddApplications", { state: { data: data } });
+
   };
+  
 
   return (
      <>
