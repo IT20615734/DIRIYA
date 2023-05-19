@@ -75,7 +75,8 @@ export default function JobOpportunities() {
         </tr>
       </thead>
       <tbody>
-            {AddJob.filter((element) => {
+
+            {AddJob.filter((element) => { //search
               if (search === "") {
                 return element;
               } else if (element.jobTitle.includes(search)) {

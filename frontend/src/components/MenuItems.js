@@ -1,5 +1,29 @@
 export const MenuItems = [
 
+    // {
+    //     title: " ",
+    //     url: " ",  
+    //     cname: "nav-links",
+    //     icon: " ",
+    //     access : [" ",undefined]
+    // },
+
+    {
+        title: "Home",
+        url: "/",  
+        cname: "nav-links",
+        icon: "fa-solid fa-house-chimney",
+        access : ["Donater"]
+    },
+
+    {
+        title: "What we do ",
+        url: "/Contact",  
+        cname: "nav-links",
+        icon: "fa-solid fa-address-card",
+        access : ["Donater"]
+    },
+
     {
         title: "Home",
         url: "/",  
@@ -48,15 +72,7 @@ export const MenuItems = [
         icon: "fa-solid fa-bars-progress",
         access : ["Admin","FoodManager"]
     },
-    
-    // {
-    //     title: "What we do ",
-    //     url: "/Contact",  
-    //     cname: "nav-links",
-    //     icon: "fa-solid fa-address-card",
-    //     access : ["Donater",undefined]
-    // },
-
+   
     // {
     //     title: "Home",
     //     url: "/",  
@@ -72,4 +88,5 @@ export const MenuItems = [
     //     icon: "fa-solid fa-address-card",
     //     access : ["Admin","Donater","VillageOfficer","FoodManager",undefined]
     // },
+
 ]

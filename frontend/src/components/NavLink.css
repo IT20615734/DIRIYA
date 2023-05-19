@@ -29,7 +29,8 @@
    list-style: none;
    align-items: center;
    height: 45px;
-   width: 35%;
+   width: 45%;
+   margin-top: -0.5%;
 }
 
 .nav-links{

@@ -56,7 +56,7 @@ const deleteRecord = (e) =>{
           </label>
       </div>
       <br></br>
-      <h2>DONATIONS</h2>
+      <h2>MY DONATIONS</h2>
       <br></br>
       <Link to = "/Donations/AddDonations"><Button variant="primary">Add Donation</Button></Link>
       
