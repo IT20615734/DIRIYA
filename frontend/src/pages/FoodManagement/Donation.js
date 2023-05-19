@@ -52,26 +52,37 @@ function Donation() {
           justifyContent: "center",
         }}
       >
-
-      <div style ={{marginLeft:'-15%', marginTop:'1.5%'}}>
+        <div style={{ marginLeft: "-15%", marginTop: "1.5%" }}>
           <label>
-            <p style={{fontSize:'135%'}}>
-              Welcome, {user.fullName}
-              </p>
-              <p style={{fontSize:'100%', marginTop:'-5%'}}>
+            <p style={{ fontSize: "135%" }}>Welcome, {user.fullName}</p>
+            <p style={{ fontSize: "100%", marginTop: "-5%" }}>
               {user.address} District
-              </p>
+            </p>
           </label>
-      </div>
+        </div>
 
         <br></br>
         <h2>DONATIONS</h2>
         <br></br>
-        <div style={{flex : 1,display : 'flex',justifyContent : 'right',marginTop:-40 }}>
-        <input type="text"  value={search} onChange={(e) =>{setSearch(e.target.value)}}  placeholder="Search Food Category" />
-        <input class="button--submit" value="Search" type="submit"></input>
-      </div>
-        <Table 
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            justifyContent: "right",
+            marginTop: -40,
+          }}
+        >
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
+            placeholder="Search Food Category"
+          />
+          <input class="button--submit" value="Search" type="submit"></input>
+        </div>
+        <Table
           striped
           bordered
           hover
@@ -95,42 +106,42 @@ function Donation() {
             </tr>
           </thead>
           <tbody>
-              {AddDonations.filter((element) => element.district === user.address)
-                .filter((element) => {
-                    if(search === ""){
-                        return element
-                    }else if (element.foodCategory.includes(search)){
-                        return element
-                    }
-                }  
-            ).map((e, i) => (
-              <tr key={i} style={{ textAlign: "center", fontWeight: "400" }}>
-                <td>{i + 1}</td>
-                {/* <td>{e.donationID}</td> */}
-                <td>{e.dname}</td>
-                <td>{e.foodCategory}</td>
-                <td>{e.quantity}</td>
-                <td>{e.dateOfHandOver}</td>
-                <td>{e.district}</td>
-                <td>{e.mobileNumber}</td>
-                <td>
-                  <center>
-                    <Button
-                      variant="outline-primary"
-                      onClick={() => acceptData(e)}
-                    >
-                      Accept
-                    </Button>
-                    <Button
-                      variant="outline-danger"
-                      onClick={() => deleteRecord(e._id)}
-                    >
-                      Reject
-                    </Button>
-                  </center>
-                </td>
-              </tr>
-            ))}
+            {AddDonations.filter((element) => element.district === user.address)
+              .filter((element) => {
+                if (search === "") {
+                  return element;
+                } else if (element.foodCategory.includes(search)) {
+                  return element;
+                }
+              })
+              .map((e, i) => (
+                <tr key={i} style={{ textAlign: "center", fontWeight: "400" }}>
+                  <td>{i + 1}</td>
+                  {/* <td>{e.donationID}</td> */}
+                  <td>{e.dname}</td>
+                  <td>{e.foodCategory}</td>
+                  <td>{e.quantity}</td>
+                  <td>{e.dateOfHandOver}</td>
+                  <td>{e.district}</td>
+                  <td>{e.mobileNumber}</td>
+                  <td>
+                    <center>
+                      <Button
+                        variant="outline-primary"
+                        onClick={() => acceptData(e)}
+                      >
+                        Accept
+                      </Button>
+                      <Button
+                        variant="outline-danger"
+                        onClick={() => deleteRecord(e._id)}
+                      >
+                        Reject
+                      </Button>
+                    </center>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </Table>
       </Container>
