@@ -87,7 +87,8 @@ export default function ManageApplication() {
             </tr>
           </thead>
           <tbody>
-            {AddApplications.filter((element) => {
+            {AddApplications.filter((element) => element.livingArea === user.gsDivision)
+            .filter((element) => {
                 if (search === "") {
                   return element;
                 } else if (element.nic.includes(search)) {
