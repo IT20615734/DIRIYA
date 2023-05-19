@@ -6,6 +6,7 @@ const GeneratePDF = (tableRows, columns, isLandscape,QName) => {
       orientation: isLandscape ? "landscape" : 'portrait'
    });
    
+   doc.text(20,10, 'All Applicants')
    doc.autoTable({
       head: columns,
       body: tableRows,
