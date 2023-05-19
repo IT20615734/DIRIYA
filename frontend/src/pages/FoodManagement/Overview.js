@@ -3,10 +3,7 @@ import Container from "react-bootstrap/esm/Container";
 import Food from "./Food";
 import "../FoodManagement/Overview.css";
 import {
-  ResponsiveContainer,
-  ComposedChart,
-  Line,
-  Area,
+  BarChart,
   Bar,
   XAxis,
   YAxis,
@@ -23,7 +20,7 @@ function Overview() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/Food/GetFoods")
+      .get("http://localhost:8080/Food")
       .then((res) => {
         console.log(res.data);
         setData(res.data.AddFood);
@@ -33,55 +30,6 @@ function Overview() {
       });
   }, []);
   const { user, setUser } = UserDetails();
-
-  const data = [
-    {
-      name: "Rice",
-
-      pv: 800,
-      amt: 1700,
-    },
-    {
-      name: "Dhal",
-      pv: 967,
-      amt: 1700,
-    },
-    {
-      name: "Dried Sparts",
-      pv: 1098,
-      amt: 1700,
-    },
-    {
-      name: "Canned Fish",
-      pv: 1200,
-      amt: 1700,
-    },
-    {
-      name: "Curry Powder",
-      pv: 1108,
-      amt: 1700,
-    },
-    {
-      name: "Papadum",
-      pv: 680,
-      amt: 1700,
-    },
-    {
-      name: "Soya Meat",
-      pv: 680,
-      amt: 1700,
-    },
-    {
-      name: "Chickpeas",
-      pv: 680,
-      amt: 1700,
-    },
-    {
-      name: "All Pourpose Flour",
-      pv: 680,
-      amt: 1700,
-    },
-  ];
 
   return (
     <>
@@ -96,20 +44,16 @@ function Overview() {
           fontFamily: "Verdana",
         }}
       >
-
-    <div style ={{marginLeft:'-15%', marginTop:'1.5%'}}>
+        <div style={{ marginLeft: "-15%", marginTop: "1.5%" }}>
           <label>
-            <p style={{fontSize:'135%'}}>
-              Welcome, {user.fullName}
-              </p>
-              <p style={{fontSize:'100%', marginTop:'-5%'}}>
+            <p style={{ fontSize: "135%" }}>Welcome, {user.fullName}</p>
+            <p style={{ fontSize: "100%", marginTop: "-5%" }}>
               {user.address} District
-              </p>
+            </p>
           </label>
-      </div>
+        </div>
 
-        <div className="Overview" style={{justifyContent:'center'}}>
-
+        <div className="Overview" style={{ justifyContent: "center" }}>
           <h1>DONATION MANAGEMENT DASHBOARD</h1>
         </div>
 
@@ -243,9 +187,10 @@ function Overview() {
         <br></br>
         <br></br>
         <br></br>
-
-        <div style={{ width: "100%", height: 450 }}>
-          <ResponsiveContainer>
+        
+        <center>
+        <div style={{ twidth: "100%", height: 450 }}>
+          {/* <ResponsiveContainer>
             <ComposedChart
               width={500}
               height={400}
@@ -258,7 +203,7 @@ function Overview() {
               }}
             >
               <CartesianGrid stroke="#f5f5f5" />
-              <XAxis dataKey="name" scale="band" />
+              <XAxis dataKey="foodCategory" scale="band" />
               <YAxis />
               <Tooltip />
               <Legend />
@@ -269,10 +214,21 @@ function Overview() {
                 stroke="#8884d8"
               />
               <Bar dataKey="pv" barSize={50} fill="#413ea0" />
-              <Line type="monotone" dataKey="uv" stroke="#ff7300" />
+              <Line type="monotone" dataKey="quantity" stroke="#ff7300" />
             </ComposedChart>
-          </ResponsiveContainer>
-        </div>
+          </ResponsiveContainer> */}
+
+        <BarChart width={800} height={400} data={datas}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="foodCategory" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="quantity" fill="#8884d8" />
+        {/* <Bar dataKey="Needed" fill="#82ca9d" /> */}
+      </BarChart>
+      </div>
+      </center>
       </Container>
     </>
   );

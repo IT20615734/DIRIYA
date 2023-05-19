@@ -13,22 +13,32 @@ export default function JobOpportunities() {
   const {user,setUser}= UserDetails();
   const navigate = useNavigate();
 
-
   useEffect(() => {
     axios
-      .get("http://localhost:8080/Job")
-      .then((res) => {
-        // console.log(res.data.Users)
-        setAddJob(res.data.AddJob);
-      })
-      .catch((e) => {
-        alert(e);
-      });
+    .get("http://localhost:8080/Job")
+    .then((res) => {
+      // console.log(res.data.Users)
+      setAddJob(res.data.AddJob);
+    })
+    .catch((e) => {
+      alert(e);
+    });
   }, [AddJob]);
-
+  
   const acceptData = (data) => {
+    console.log(data);
+    const id = data._id;
+    axios
+    .put(`http://localhost:8080/Job/updatebyone/${id}`)
+    .then((res) => {
+      navigate(0)
+    })
+
     navigate("/Beneficiaries/AddApplications", { state: { data: data } });
+
+
   };
+  
 
   return (
      <>
