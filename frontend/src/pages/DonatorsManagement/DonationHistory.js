@@ -64,7 +64,7 @@ function DonationHistory() {
 
         <br></br>
 
-        <h2>All FOODS</h2>
+        <h2>ACCEPTED DONATIONS</h2>
 
         <br></br>
         {/* <Link to="/Food/AddFood">

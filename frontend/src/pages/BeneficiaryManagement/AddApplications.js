@@ -44,7 +44,6 @@ export default function AddApplications() {
         e.preventDefault();
 
         const formData = new FormData();
-            //formData.append("beneficiaryID",beneficiaryID);
             formData.append("jobTitle",jobTitle)
             formData.append("district",district)
             formData.append("livingArea",livingArea)
@@ -96,12 +95,12 @@ export default function AddApplications() {
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Job Title</Form.Label>
-            <Form.Control value={jobTitle} type="text" onChange={(e)=>{setJobTitle(e.target.value)}} required/>
+            <Form.Control disabled={true} value={jobTitle} type="text" onChange={(e)=>{setJobTitle(e.target.value)}} required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Job Site</Form.Label>
-            <Form.Control value={district} type="text" onChange={(e)=>{setDistrict(e.target.value)}} required/>
+            <Form.Control disabled={true} value={district} type="text" onChange={(e)=>{setDistrict(e.target.value)}} required/>
         </Form.Group>
 
 

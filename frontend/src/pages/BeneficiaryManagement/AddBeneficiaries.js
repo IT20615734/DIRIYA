@@ -20,9 +20,9 @@ function AddBeneficiaries() {
         return result;
       };
 
-    const {user,setUser}= UserDetails();  
+    const {user,setUser}= UserDetails(); // get user details
     
-    const[beneficiaryID, setBeneficiaryID] = useState(`BI_${generateRandomString(6)}`); //gsDivision
+    const[beneficiaryID, setBeneficiaryID] = useState(`BI_${generateRandomString(6)}`); //get auto data by not insertng
     const[beneficiaryName, setBeneficiaryName] =useState();
     const[address, setAddress] =useState();
     const[gsDivision, setgsDivision] =useState(user.gsDivision);
@@ -31,8 +31,9 @@ function AddBeneficiaries() {
     const[monthlyIncome, setMonthlyIncome] =useState();
     const[numberOfFamilyMembers, setnumberOfFamilyMembers] =useState();
 
-    const navigate = useNavigate();
+    const navigate = useNavigate();//navigating for pages
 
+    //send data to the db  fro form
     const Validate =(e)=>{
         e.preventDefault();
         console.log("called") 
@@ -58,7 +59,7 @@ function AddBeneficiaries() {
             "numberOfFamilyMembers":numberOfFamilyMembers,
         }
 
-
+        //post url
         console.log("FormData", formData )
         axios.post("http://localhost:8080/Beneficiaries/AddBeneficiaries", data).then(res=>{
             alert ("New Beneficiary Added!")
@@ -79,10 +80,6 @@ function AddBeneficiaries() {
     <h1 style={{fontWeight:'bold'}}><center>ADD BENEFICIARIES</center></h1>
         <br></br>
         <hr></hr>
-        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Beneficiary ID</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setBeneficiaryID(e.target.value)}} required/>
-        </Form.Group> */}
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Beneficiary name</Form.Label>
@@ -98,8 +95,8 @@ function AddBeneficiaries() {
             <Form.Label>NIC</Form.Label>
             <Form.Control type="text" onChange={(e) => {const value = e.target.value;
                 if (
-                    /^[0-9]{9}[vV]$/.test(value) || // Check if input has 9 digits with "v" or "V" as the last character
-                    /^[0-9]{12}$/.test(value) // Check if input has exactly 12 digits
+                    /^[0-9]{9}[vV]$/.test(value) || 
+                    /^[0-9]{12}$/.test(value) 
                 ) {setnic(value);}}} maxLength={12} minLength={10} pattern="^[0-9]{9}[vV]$|^[0-9]{12}$" placeholder='Eg: [741922757V or 197419202757]' required/>
         </Form.Group>
 

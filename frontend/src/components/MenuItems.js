@@ -1,5 +1,29 @@
 export const MenuItems = [
 
+    // {
+    //     title: " ",
+    //     url: " ",  
+    //     cname: "nav-links",
+    //     icon: " ",
+    //     access : [" ",undefined]
+    // },
+
+    {
+        title: "Home",
+        url: "/",  
+        cname: "nav-links",
+        icon: "fa-solid fa-house-chimney",
+        access : ["Donater"]
+    },
+
+    {
+        title: "What we do ",
+        url: "/Contact",  
+        cname: "nav-links",
+        icon: "fa-solid fa-address-card",
+        access : ["Donater"]
+    },
+
     {
         title: "Admin",
         url: "/Admin/User",  
@@ -33,19 +57,6 @@ export const MenuItems = [
         access : ["Admin","FoodManager"]
     },
 
-    {
-        title: "Home",
-        url: "/",  
-        cname: "nav-links",
-        icon: "fa-solid fa-house-chimney",
-        access : ["Admin","Donater","VillageOfficer","FoodManager",undefined]
-    },
-
-    {
-        title: "What we do ",
-        url: "/Contact",  
-        cname: "nav-links",
-        icon: "fa-solid fa-address-card",
-        access : ["Admin","Donater","VillageOfficer","FoodManager",undefined]
-    },
+    
+    
 ]
