@@ -32,7 +32,7 @@ export default function ManageApplication() {
     axios
       .delete(`http://localhost:8080/Applications/delete/${e}`)
       .then((res) => {
-        alert("Beneficiary Deleted !");
+        alert("Application Deleted !");
         console.log(res.state);
       })
       .catch((err) => {
