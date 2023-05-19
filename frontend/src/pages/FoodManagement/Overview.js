@@ -7,6 +7,7 @@ import {
   ComposedChart,
   Line,
   Area,
+  BarChart,
   Bar,
   XAxis,
   YAxis,
@@ -34,54 +35,53 @@ function Overview() {
   }, []);
   const { user, setUser } = UserDetails();
 
-  const data = [
-    {
-      name: "Rice",
-
-      pv: 800,
-      amt: 1700,
-    },
-    {
-      name: "Dhal",
-      pv: 967,
-      amt: 1700,
-    },
-    {
-      name: "Dried Sparts",
-      pv: 1098,
-      amt: 1700,
-    },
-    {
-      name: "Canned Fish",
-      pv: 1200,
-      amt: 1700,
-    },
-    {
-      name: "Curry Powder",
-      pv: 1108,
-      amt: 1700,
-    },
-    {
-      name: "Papadum",
-      pv: 680,
-      amt: 1700,
-    },
-    {
-      name: "Soya Meat",
-      pv: 680,
-      amt: 1700,
-    },
-    {
-      name: "Chickpeas",
-      pv: 680,
-      amt: 1700,
-    },
-    {
-      name: "All Pourpose Flour",
-      pv: 680,
-      amt: 1700,
-    },
-  ];
+  // const data = [
+  //   {
+  //     name: "Rice",
+  //     pv: 800,
+  //     amt: 1700,
+  //   },
+  //   {
+  //     name: "Dhal",
+  //     pv: 967,
+  //     amt: 1700,
+  //   },
+  //   {
+  //     name: "Dried Sparts",
+  //     pv: 1098,
+  //     amt: 1700,
+  //   },
+  //   {
+  //     name: "Canned Fish",
+  //     pv: 1200,
+  //     amt: 1700,
+  //   },
+  //   {
+  //     name: "Curry Powder",
+  //     pv: 1108,
+  //     amt: 1700,
+  //   },
+  //   {
+  //     name: "Papadum",
+  //     pv: 680,
+  //     amt: 1700,
+  //   },
+  //   {
+  //     name: "Soya Meat",
+  //     pv: 680,
+  //     amt: 1700,
+  //   },
+  //   {
+  //     name: "Chickpeas",
+  //     pv: 680,
+  //     amt: 1700,
+  //   },
+  //   {
+  //     name: "All Pourpose Flour",
+  //     pv: 680,
+  //     amt: 1700,
+  //   },
+  // ];
 
   return (
     <>
@@ -239,9 +239,10 @@ function Overview() {
         <br></br>
         <br></br>
         <br></br>
-
-        <div style={{ width: "100%", height: 450 }}>
-          <ResponsiveContainer>
+        
+        <center>
+        <div style={{ twidth: "100%", height: 450 }}>
+          {/* <ResponsiveContainer>
             <ComposedChart
               width={500}
               height={400}
@@ -254,7 +255,7 @@ function Overview() {
               }}
             >
               <CartesianGrid stroke="#f5f5f5" />
-              <XAxis dataKey="name" scale="band" />
+              <XAxis dataKey="foodCategory" scale="band" />
               <YAxis />
               <Tooltip />
               <Legend />
@@ -265,10 +266,21 @@ function Overview() {
                 stroke="#8884d8"
               />
               <Bar dataKey="pv" barSize={50} fill="#413ea0" />
-              <Line type="monotone" dataKey="uv" stroke="#ff7300" />
+              <Line type="monotone" dataKey="quantity" stroke="#ff7300" />
             </ComposedChart>
-          </ResponsiveContainer>
-        </div>
+          </ResponsiveContainer> */}
+
+        <BarChart width={800} height={400} data={datas}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="foodCategory" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="quantity" fill="#8884d8" />
+        {/* <Bar dataKey="Needed" fill="#82ca9d" /> */}
+      </BarChart>
+      </div>
+      </center>
       </Container>
     </>
   );

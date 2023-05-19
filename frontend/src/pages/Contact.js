@@ -1,7 +1,6 @@
 import React from 'react'
 import first from "../Assets/first.jpg"
 import "../Styles/Banner.css"
-
 function Contact() {
   return (
     <>
