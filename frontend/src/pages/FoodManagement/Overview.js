@@ -23,7 +23,7 @@ function Overview() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/Food/GetFoods")
+      .get("http://localhost:8080/Food")
       .then((res) => {
         console.log(res.data);
         setData(res.data.AddFood);
@@ -96,20 +96,16 @@ function Overview() {
           fontFamily: "Verdana",
         }}
       >
-
-    <div style ={{marginLeft:'-15%', marginTop:'1.5%'}}>
+        <div style={{ marginLeft: "-15%", marginTop: "1.5%" }}>
           <label>
-            <p style={{fontSize:'135%'}}>
-              Welcome, {user.fullName}
-              </p>
-              <p style={{fontSize:'100%', marginTop:'-5%'}}>
+            <p style={{ fontSize: "135%" }}>Welcome, {user.fullName}</p>
+            <p style={{ fontSize: "100%", marginTop: "-5%" }}>
               {user.address} District
-              </p>
+            </p>
           </label>
-      </div>
+        </div>
 
-        <div className="Overview" style={{justifyContent:'center'}}>
-
+        <div className="Overview" style={{ justifyContent: "center" }}>
           <h1>DONATION MANAGEMENT DASHBOARD</h1>
         </div>
 
