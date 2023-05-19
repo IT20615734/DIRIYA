@@ -16,46 +16,43 @@ export default function UpdateFood() {
   const location = useLocation();
 
   const { id } = useParams();
+  // console.log(id);
   useEffect(() => {
     axios
-      .get("http://localhost:8080/Food")
-      .then((value) => {
-        const Foods = value.data.AddFoods;
-        for (let Food of Foods) {
-          if (Food["_id"] === id) {
-            console.log("Food found");
+      .get(`http://localhost:8080/Food/${id}`)
+      .then((res) => {
+        console.log(res.data.food);
+        setfoodCategory(res.data.food.foodCategory);
+        setquantity(res.data.food.quantity);
+        setdonaterName(res.data.food.donaterName);
+        setremarks(res.data.food.remarks);
 
-            //setFoodID(Food["FoodID"]);
-            setfoodCategory(Food["foodCategory"]);
-            setquantity(Food["quantity"]);
-            setdonaterName(Food["donaterName"]);
-            setremarks(Food["remarks"]);
-          }
-        }
       })
       .catch((err) => {
         console.log("cant find the Food" + err);
       });
-  }, [id]);
+  }, []);
 
+ 
   const navigate = useNavigate();
 
   const Validate = async (e) => {
     e.preventDefault();
 
-    const data = {
-      //FoodID: FoodID,
-      foodCategory: foodCategory,
-      quantity: quantity,
-      donaterName: donaterName,
-      remarks: remarks,
-    };
-
+    const form = {
+      id,
+      foodCategory,
+      quantity,
+      donaterName,
+      remarks,
+    }
+    // console.log(form);
+    console.log(id);
     await axios
-      .put("http://localhost:8080/Food/update/" + id, data)
+      .put(`http://localhost:8080/Food/update`, form)
       .then((res) => {
         alert("Update Food");
-        navigate(-1);
+        navigate(-1);  
       })
       .catch((err) => {
         console.log(err);
@@ -119,8 +116,6 @@ export default function UpdateFood() {
               onChange={(e) => {
                 setdonaterName(e.target.value);
               }}
-              maxLength={12}
-              minLength={10}
               required
             />
           </Form.Group>
