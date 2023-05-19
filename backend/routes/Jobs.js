@@ -88,4 +88,24 @@ router.route("/").get(async (req, res) => {
       });
   });
 
+  router.route("/updatebyone/:id").put(async (req, res) => {
+    console.log("update method called");
+    const id = req.params.id;
+  
+    try {
+      const job = await Jobs.findById(id);
+      if (!job) {
+        return res.status(404).json({ message: "Job not found" });
+      }
+  
+      job.numberOfPeople -= 1;
+      await job.save();
+  
+      return res.status(200).json({ message: "Number of people reduced by one", job });
+    } catch (err) {
+      return res.status(400).json({ error: err.message });
+    }
+  });
+  
+
   module.exports = router;
