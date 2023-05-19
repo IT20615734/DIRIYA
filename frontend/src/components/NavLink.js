@@ -37,7 +37,7 @@ function NavLink() {
     <>
 
         <nav className = "NavbarItems">
-            <img src = {logo1}  style={{  width: 265 }} />
+        <Link to="/">   <img src = {logo1}  style={{  width: 265 }} /></Link>
 
             <ul className="nav-manu">
               {MenuItems.map((item,index)=>{

@@ -1,5 +1,15 @@
 export const MenuItems = [
 
+    // {
+    //     title: "Home",
+    //     url: "/",  
+    //     cname: "nav-links",
+    //     icon: "fa-solid fa-house-chimney",
+    //     access : ["Admin","Donater","VillageOfficer","FoodManager",undefined]
+    // },
+
+    
+
     {
         title: "Admin",
         url: "/Admin/User",  
@@ -32,20 +42,28 @@ export const MenuItems = [
         icon: "fa-solid fa-bars-progress",
         access : ["Admin","FoodManager"]
     },
-
-    {
-        title: "Home",
-        url: "/",  
-        cname: "nav-links",
-        icon: "fa-solid fa-house-chimney",
-        access : ["Admin","Donater","VillageOfficer","FoodManager",undefined]
-    },
-
+    
     {
         title: "What we do ",
         url: "/Contact",  
         cname: "nav-links",
         icon: "fa-solid fa-address-card",
-        access : ["Admin","Donater","VillageOfficer","FoodManager",undefined]
+        access : ["Donater"]
     },
+
+    // {
+    //     title: "Home",
+    //     url: "/",  
+    //     cname: "nav-links",
+    //     icon: "fa-solid fa-house-chimney",
+    //     access : ["Admin","Donater","VillageOfficer","FoodManager",undefined]
+    // },
+
+    // {
+    //     title: "What we do ",
+    //     url: "/Contact",  
+    //     cname: "nav-links",
+    //     icon: "fa-solid fa-address-card",
+    //     access : ["Admin","Donater","VillageOfficer","FoodManager",undefined]
+    // },
 ]
