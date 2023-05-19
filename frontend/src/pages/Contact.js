@@ -1,11 +1,11 @@
 import React from 'react'
 import first from "../Assets/first.jpg"
-import "../pages/DonatorsManagement/movingBanner.css"
+import "../Styles/Banner.css"
 
 function Contact() {
   return (
     <>
-    <div className="moving-banner" style={{ marginTop: '0%' }}>
+    <div className="banner" style={{ marginTop: '0%' }}>
       <h2>Your donations save thousands of families from hunger and help them to alleviate from severe poverty in Sri Lanka | THANK YOU FOR YOUR DONATIONS | Your donations save thousands of families from hunger and help them to alleviate from severe poverty in Sri Lanka | THANK YOU FOR YOUR DONATIONS | Your donations save thousands of families from hunger and help them to alleviate from severe poverty in Sri Lanka | THANK YOU FOR YOUR DONATIONS</h2>
     </div><div className="description">
 

@@ -1,0 +1,36 @@
+.banner {
+    display: flex;
+    margin-top: -2%;
+    justify-content: flex-end;
+    margin-left: -250px;
+    position: relative;
+    width: 114.3%;
+    height: 30px;
+    background-color: #ffc404;
+    overflow: hidden;
+  }
+  
+  .banner h2 {
+    position: absolute;
+    color: black;
+    right: 0;
+    top: 0;
+    white-space: nowrap;
+    margin-top: 0.3%;
+    font-size: 16px;
+    animation: moveText 20s linear infinite;
+  }
+  
+  @keyframes moveText {
+    0% {
+      transform: translateX(50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+  
+  
+  
