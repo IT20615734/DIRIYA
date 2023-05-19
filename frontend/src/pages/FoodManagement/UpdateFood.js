@@ -23,7 +23,7 @@ export default function UpdateFood() {
         const Foods = value.data.AddFoods;
         for (let Food of Foods) {
           if (Food["_id"] === id) {
-            console.log("user found");
+            console.log("Food found");
 
             //setFoodID(Food["FoodID"]);
             setfoodCategory(Food["foodCategory"]);
@@ -127,9 +127,15 @@ export default function UpdateFood() {
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Remarks</Form.Label>
-            <Form.Control type="text" value={remarks} onChange={(e) => {setremarks(e.target.value);}} required/>
+            <Form.Control
+              type="text"
+              value={remarks}
+              onChange={(e) => {
+                setremarks(e.target.value);
+              }}
+              required
+            />
           </Form.Group>
-
 
           <Button
             variant="primary"
