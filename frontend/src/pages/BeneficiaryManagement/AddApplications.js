@@ -88,11 +88,7 @@ export default function AddApplications() {
     <h1 style={{fontWeight:'bold'}}><center>ADD JOB APPLICATIONS</center></h1>
         <br></br>
         <hr></hr>
-        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Reference No</Form.Label>
-            <Form.Control type="text" onChange={(e)=>{setBeneficiaryID(e.target.value)}} required/>
-        </Form.Group> */}
-        
+
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Job Title</Form.Label>
             <Form.Control disabled={true} value={jobTitle} type="text" onChange={(e)=>{setJobTitle(e.target.value)}} required/>
@@ -134,7 +130,6 @@ export default function AddApplications() {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Date of Birth</Form.Label>
-            {/* <DatePicker selected={selectedDate} onChange={handleDateChange} /> */}
             <Form.Control type="date" onChange={(e)=>{setDateOfBirth(e.target.value)}} maxLength={10} minLength ={10} placeholder='YY/MM/DD' required/>
         </Form.Group>
 
