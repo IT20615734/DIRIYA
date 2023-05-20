@@ -10,16 +10,14 @@ router.route("/").get(async (req, res) => {
       res.status(400).send({ status: err });
     });
 });
+
 router.route("/:id").get(async (req, res) => {
   const foodId = req.params.id; // Get the food ID from the request parameters
-
   try {
     const food = await Foods.findById(foodId); // Find the food by its ID using Mongoose
-
     if (!food) {
       return res.status(404).send({ status: "Food not found" });
     }
-
     res.status(200).send({ status: "Data Received", food });
   } catch (err) {
     res.status(400).send({ status: err.message });
